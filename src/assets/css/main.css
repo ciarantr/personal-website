@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Note: G- prefix specifies a global style  */
+/*-------------------------------------------*\
+    1.Base
+     - Color Palette
+     - Transitions
+    2.Components
+      - Card shadows
+      - Buttons
+    3.Animations
+    4.Accessibility
+\*-------------------------------------------*/
+
+/* 
+ ************************** 
+  Base styles 
+ ************************** */
+@layer base {
+  :root {
+    /* Base theme gray */
+    --base: 236 8%;
+    --base-10: var(--base) 10%;
+    --base-15: var(--base) 15%; /*  shadow one  */
+    --base-20: var(--base) 25%; /*  shadow one  */
+    --base-30: var(--base) 35%; /* body & base shadow  */
+    --base-40: var(--base) 40%; /*  h2 hr  */
+    --base-45: var(--base) 45%; /* shadow secondary */
+    --base-60: var(--base) 65%; /* Inactive tabs */
+    --base-70: var(--base) 70%; /* base text */
+    --base-80: var(--base) 80%; /* content heading */
+    --base-90: var(--base) 90%; /* content heading */
+    --orange: 17 85% 60%;
+    --dark: 213 19% 12%;
+
+    /* Transition */
+    --transition-2: 200s;
+    --transition-5: 500s;
+    --transition-7: 700s;
+  }
+
+  html {
+    height: 100%;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    scroll-behavior: smooth;
+    background-color: hsl(var(--base-30));
+    color: hsl(var(--base-80));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: hsl(var(--base-90));
+  }
+
+  /* 
+ ************************** 
+  Accessability styles 
+ ************************** */
+  @media (prefers-contrast: more) {
+    body,
+    p,
+    li div,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: hsl(var(--base-90));
+    }
+  }
+}
