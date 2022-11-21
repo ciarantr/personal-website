@@ -1,5 +1,13 @@
 <script setup>
   const contactCard = $ref(null)
+  onMounted(() => {
+    createObserver({
+      observeTarget: contactCard,
+      target: contactCard,
+      style: 'shadow-orange',
+      threshold: 1,
+    })
+  })
 </script>
 
 <template>
