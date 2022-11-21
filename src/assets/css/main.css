@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO: Dark them */
+/* [data-theme='dark'] {
+   --base: 100, 8%;
+} */
+
 /* Note: G- prefix specifies a global style  */
 /*-------------------------------------------*\
     1.Base
@@ -78,6 +83,130 @@
     h5,
     h6 {
       color: hsl(var(--base-90));
+    }
+  }
+}
+
+/* 
+ ************************** 
+  components styles 
+ ************************** */
+@layer components {
+  /* card components */
+  .G-container-shadow {
+    background: hsl(var(--base-30));
+    box-shadow: inset 7px 7px 10px hsl(var(--base-20)),
+      inset -7px -7px 10px hsl(var(--base-45));
+
+    @apply rounded-2xl;
+
+    &-spacing-base {
+      @apply p-5;
+    }
+
+    &-spacing-lg {
+      @apply px-3 py-8;
+
+      @screen md {
+        @apply px-6 pt-8 pb-10;
+        /* @apply px-8; */
+      }
+    }
+  }
+
+  /* card components */
+  .button {
+    @apply rounded-md px-3 py-1;
+  }
+
+  .gradient-gray {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--base-30)) 0%,
+      hsl(var(--base-30)) 100%
+    );
+  }
+
+  /* 
+   ************************** 
+    Animations styles 
+   ************************** */
+
+  /* Animation effect on hover for anchor tags */
+  @screen sm {
+    .G-border-animate {
+      @apply relative;
+
+      &::after {
+        @apply absolute
+          left-0
+          block w-0
+          border-b
+          border-orange
+          transition-[width]
+          ease-in content-[''];
+      }
+
+      &:hover::after {
+        @apply w-full;
+      }
+    }
+  }
+
+ /* Add lighter background & orange borders on hover */
+  .G-container-illuminate {
+    @apply relative z-50
+    cursor-pointer
+    rounded-md
+    border
+    border-solid
+    border-base-90/5 
+    bg-base-90/5
+    p-6
+    transition-[background-color]
+    duration-300 ease-in-out;
+
+    &:hover {
+      @apply border-transparent
+      bg-base-90/10;
+    }
+    
+   
+    &::after {
+      @apply absolute
+      inset-0
+      -z-10
+      -m-[1px] rounded-[6px]
+      border
+      border-transparent
+      from-base-40
+      to-orange
+      opacity-0
+      will-change-[opacity]
+      content-[''];
+      background-image: linear-gradient(
+        145deg,
+        hsla(0, 0%, 100%, 0.074),
+        hsla(0, 0%, 100%, 0.024) 23.96%,
+        hsla(0, 0%, 100%, 0.092) 48.44%,
+        hsla(0, 0%, 100%, 0.15) 76.04%,
+        hsla(0, 0%, 100%, 0)
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+    }
+    &:nth-child(odd)::after {
+      @apply bg-gradient-to-l;
+    }
+
+    &:nth-child(even)::after {
+      @apply bg-gradient-to-r;
+    }
+
+    &:hover::after {
+      opacity: 1;
     }
   }
 }
