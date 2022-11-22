@@ -9,7 +9,7 @@
   <div class="h-screen bg-base-30">
     <embed
       class="h-full w-full"
-      src="/data/ciaran-toner-resume.pdf"
+      src="/data/resume.pdf"
       type="application/pdf"
     />
   </div>
