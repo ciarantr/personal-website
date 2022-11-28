@@ -6,7 +6,7 @@
         'A web app built as my first project for Code Institute to become a full stack software developer. It is a fictional business that offers naturopathic treatments. The app is built with Vue.js and Nuxt.js which allows users to book appointments & send requests for naturopathic  treatments. Note: I have not yet implemented a payment system, user login & email but I will do so in the future.',
       technologies: new Set(['Heroku', 'VueJs 3', 'NuxtJs 3', 'Tailwindcss']),
       githubLink: 'https://github.com/ciaran-io/freyja-healing',
-      deployedLink: 'https://freya-healing.herokuapp.com/',
+      deployedLink: 'https://freyja-healing.pages.dev',
       isFeatured: true,
     },
     {
