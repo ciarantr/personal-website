@@ -29,7 +29,7 @@
         'Merchandising store & promotional items to ensure sales targets where met & provide a great customer experience ',
         'Inventory management & loss prevention',
       ],
-      website: 'nourish.ie',
+      website: 'www.nourish.ie',
     },
     {
       name: 'Natural Living',

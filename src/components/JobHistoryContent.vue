@@ -48,10 +48,10 @@
             <div class="font-bold capitalize">{{ history.name }}</div>
 
             <div v-if="history.website">
-              <a
-                :href="history.website"
+              <nuxt-link
+                :to="`https://${history.website}`"
                 target="_blank"
-                >@{{ history.website }}</a
+                >@{{ history.name }}</nuxt-link
               >
             </div>
           </div>
