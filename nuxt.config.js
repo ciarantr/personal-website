@@ -3,12 +3,7 @@ import { version } from './package.json'
 export default defineNuxtConfig({
   // Src directory
   srcDir: 'src/',
-  // Experimental features
-  vite: {
-    vue: {
-      reactivityTransform: true, // Enable Reactivity Transform
-    },
-  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@nuxt/image-edge'],
   // Tailwind config
@@ -21,7 +16,7 @@ export default defineNuxtConfig({
 
   image: {
     cloudinary: {
-      baseURL: 'https://res.cloudinary.com/c-io/image/upload/v1667988586',
+      baseURL: 'https://res.cloudinary.com/c-io/image/upload/v1675258978',
     },
   },
 
@@ -33,8 +28,17 @@ export default defineNuxtConfig({
       },
       meta: [
         { name: 'author', content: 'Ciaran Toner' },
-        { name: 'keywords', content: 'web developer, web development' },
-        { name: 'description', content: 'web developer, web development' },
+        {
+          name: 'keywords',
+          content:
+            'web developer, web development, vuejs developer, full-stack, web developer, front-end developer ',
+        },
+        {
+          name: 'description',
+          content:
+            "Hi, i'm Ciaran a full-stack web developer from Ireland." +
+            'I design & build websites using the latest web technologies that deliver blazingly fast responsive sites.',
+        },
         { name: 'msapplication-config', content: '/browserconfig.xml' },
         { name: 'msapplication-TileColor', content: '#525360' },
         { name: 'theme-color', content: '#525360' },
@@ -47,17 +51,28 @@ export default defineNuxtConfig({
         },
         {
           rel: 'icon',
-          type: 'image/png',
+          type: 'image/svg+xml',
           sizes: '32x32',
-          href: '/favicon-32x32.png',
+          href: '/favicon.svg',
         },
         {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '16x16',
-          href: '/favicon-16x16.png',
+          rel: 'mask-icon',
+          type: 'image/svg+xml',
+          sizes: '32x32',
+          href: '/mask-icon.svg',
+          color: '#525360',
         },
         { rel: 'manifest', href: '/site.webmanifest' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossOrigin: 'true',
+        },
+        {
+          href: 'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap',
+          rel: 'stylesheet',
+        },
       ],
     },
   },
