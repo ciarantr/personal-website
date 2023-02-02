@@ -1,6 +1,6 @@
 {
-    "name": "ciarant.dev",
-    "short_name": "ciarant.dev",
+    "name": "ciaran-io.dev",
+    "short_name": "ciaran-io.dev",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#31323E",
-    "background_color": "#31323E",
+    "theme_color": "#525360",
+    "background_color": "#525360",
     "display": "standalone"
 }
