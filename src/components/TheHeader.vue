@@ -143,8 +143,8 @@
               >
                 View
                 <Icon
-                  class="h-4 w-4"
                   name="ph:magnifying-glass-plus-bold"
+                  class="h-4 w-4"
                 />
                 <!-- download pdf -->
               </nuxt-link>
