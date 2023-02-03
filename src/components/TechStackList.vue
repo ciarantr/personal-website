@@ -1,5 +1,5 @@
 <script setup>
-// FIXME:Animation stutter when restarting 
+  // FIXME:Animation stutter when restarting
   defineProps({
     technologies: {
       type: Array,
@@ -7,13 +7,13 @@
     },
   })
   const animationPaused = ref(null)
-  // Turn off animation in development
-  const animationPause = computed(() =>
+
+  onMounted(() =>
+    // Turn off animation in development
     process.env.NODE_ENV !== 'production'
       ? (animationPaused.value = 'paused')
       : (animationPaused.value = 'running')
   )
-  onMounted(() => animationPause.value)
 </script>
 
 <template>
@@ -55,15 +55,15 @@
 </template>
 
 <style lang="postcss" scoped>
-  /* 
- ************************** 
-  accessability styles 
+  /*
+ **************************
+  accessibility styles
  ************************** */
   /* change list layout for motion-reduce */
   @media (prefers-reduced-motion: reduce) {
     .animate-list {
       animation: none !important;
-      @apply container 
+      @apply container
       grid-flow-row
       gap-x-4
       gap-y-6;
@@ -79,9 +79,8 @@
     animation-iteration-count: infinite;
     animation-direction: normal;
     animation-fill-mode: both;
-    animation-play-state: running;
-
     animation-play-state: v-bind(animationPaused);
+
     &:hover {
       animation-play-state: paused;
     }
