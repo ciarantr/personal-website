@@ -1,6 +1,10 @@
-<script setup>
+<script setup lang="ts">
   defineProps({
-    roadmap: {
+    roadmapMonths: {
+      type: Object,
+      required: true,
+    },
+    roadmapProjects: {
       type: Object,
       required: true,
     },
@@ -10,10 +14,13 @@
     },
   })
 
-  const roadmapList = $ref(null)
+  const roadmapList = ref<HTMLDivElement | null>(null)
+
   onMounted(() => {
-    roadmapList.lastElementChild.style.minHeight =
-      roadmapList.scrollHeight  + 'px'
+    // Set the height of the ul element to the height of the container scrollHeight
+    //  Prevent the container from collapsing when the list is empty
+    const lastElement = roadmapList.value?.lastElementChild as HTMLElement
+    lastElement.style.minHeight = roadmapList.value?.scrollHeight + 'px'
   })
 </script>
 
@@ -24,7 +31,7 @@
   >
     <div class="grid grid-flow-col">
       <div
-        v-for="(months, index) in roadmap.months"
+        v-for="(months, index) in roadmapMonths"
         :key="index"
         class="border-b text-center"
       >
@@ -35,10 +42,10 @@
     <TransitionGroup
       name="list"
       tag="ul"
-      class="grid grid-cols-3 grid-rows-5 gap-y-3  "
+      class="grid grid-cols-3 grid-rows-5 gap-y-3"
     >
       <li
-        v-for="({ title, status, area }, index) in roadmap.projects"
+        v-for="({ title, status, area }, index) in roadmapProjects"
         v-show="!roadmapLoading"
         :key="title"
         :style="{
