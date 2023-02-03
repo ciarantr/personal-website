@@ -12,11 +12,11 @@
       <div
         class="grid h-full w-full rounded-xl bg-gradient-to-b from-base-15 via-base-15 to-dark p-4 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-orange max-md:col-span-2 md:w-1/2"
       >
-        <img
-          class="h-16 w-16 rounded-md"
-          src="/icons/logo.svg"
-          alt=""
+        <Icon
+          class="text-base-50 h-8 w-8"
+          name="arcticons:cinexplore"
         />
+
         <div class="mt-auto flex gap-x-3 md:justify-between">
           <!-- GitHub link -->
           <nuxt-link
@@ -44,7 +44,7 @@
           </nuxt-link>
         </div>
       </div>
-      
+
       <div
         class="col-span-2 w-full space-y-2 rounded-xl bg-gradient-to-r from-base-15 via-base-15 to-dark p-4 text-xs shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-orange sm:flex sm:justify-between sm:space-y-0 md:mt-auto"
       >

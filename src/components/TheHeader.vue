@@ -1,16 +1,19 @@
 <script setup>
   // TODO:(Enhancement) Change menu spans to svg
-  const isMobileMenuOpen = $ref(false)
+  const isMobileMenuOpen = ref(false)
   const navigation = new Set(['about', 'experience', 'projects', 'contact'])
-  const subNavActive = $ref(false)
-  const subNavFocus = $ref(false)
+  const subNavActive = ref(false)
+  const subNavFocus = ref(false)
   const mobileSize = 640
 
-  // Hide submenu when focus is lost
-  // from menu & submenu
+  // Hide resume submenu when focus is lost
+  // after 450ms
   function hideSubMenu() {
     setTimeout(
-      () => (subNavActive && !subNavFocus ? (subNavActive = false) : null),
+      () =>
+        subNavActive.value && !subNavFocus.value
+          ? (subNavActive.value = false)
+          : null,
       450
     )
   }
@@ -20,7 +23,7 @@
   onMounted(() => {
     window.addEventListener('resize', () => {
       if (window.innerWidth > mobileSize) {
-        isMobileMenuOpen = false
+        isMobileMenuOpen.value = false
       }
     })
   })
@@ -28,11 +31,11 @@
 
 <template>
   <header class="container sm:relative">
-    <a
-      href="#main-content"
-      class="fixed left-0 top-0 w-full -translate-y-full bg-base-20 p-1 text-center transition-transform focus:translate-y-0"
-      >Skip to main content</a
-    >
+    <nuxt-link
+      to="/#main-content"
+      class="fixed left-0 top-0 z-[100] w-full -translate-y-full bg-base-20 p-1 text-center transition-transform focus:translate-y-0"
+      >Skip to main content
+    </nuxt-link>
 
     <nav
       aria-label="main navigation"
@@ -43,12 +46,12 @@
       }"
     >
       <div class="flex w-full gap-x-2 sm:w-auto">
-        <img
-          src="/icons/logo.svg"
-          alt="website logo"
-          width="80"
-          height="26"
-        />
+        <NuxtLink to="/">
+          <Icon
+            name="arcticons:cinexplore"
+            class="h-8 w-8"
+          />
+        </NuxtLink>
         <!-- Mobile menu button -->
         <button
           aria-controls="primary navigation"
@@ -57,9 +60,9 @@
           class="ml-auto sm:hidden"
           @click="isMobileMenuOpen = !isMobileMenuOpen"
         >
-          <div
+          <span
             aria-hidden="true"
-            class="relative h-7 w-7 [&_span]:absolute [&_span]:left-0 [&_span]:h-[2px] [&_span]:rounded-sm [&_span]:bg-base-70 [&_span]:content-[''] [&_span:nth-child(1n+2)]:transition-all"
+            class="relative block h-7 w-7 [&_span]:absolute [&_span]:left-0 [&_span]:h-[2px] [&_span]:rounded-sm [&_span]:bg-base-70 [&_span]:content-[''] [&_span:nth-child(1n+2)]:transition-all"
           >
             <span
               :class="{
@@ -84,7 +87,7 @@
               }"
               class="top-6"
             ></span>
-          </div>
+          </span>
         </button>
       </div>
       <!-- Main nav menu -->
@@ -167,7 +170,10 @@
     <div
       v-show="subNavActive"
       class="z-50 pt-7 sm:absolute sm:top-[0.5rem] sm:right-[2.5rem]"
-      @mouseleave=";(subNavFocus = false), (subNavActive = false)"
+      @mouseleave="
+        subNavFocus = false
+        subNavActive = false
+      "
       @mouseenter="subNavFocus = true"
     >
       <nav
@@ -206,21 +212,20 @@
       class="G-container-shadow G-container-shadow-spacing-lg lg-gap-x-0 relative top-24 mt-12 space-y-12 sm:top-0 md:flex md:h-max md:gap-x-12 md:space-y-0 lg:flex-col lg:space-y-12"
     >
       <div class="G-container-shadow G-container-shadow-spacing-lg">
-        <h1 class="text-center text-2xl lg:text-4xl lg:leading-relaxed">
-          Hi, welcome to my personal <br />
-          portfolio / <span>sandbox</span>
+        <h1 class="text-center text-2xl lg:text-3xl lg:leading-relaxed">
+          Welcome to my<br />
+          <span>Personal Portfolio</span>
         </h1>
       </div>
       <div
-        class="G-container-shadow G-container-shadow-spacing-lg mx-auto text-xl md:text-2xl lg:max-w-3xl"
+        class="G-container-shadow G-container-shadow-spacing-lg mx-auto text-lg md:text-xl lg:max-w-3xl"
       >
-        <p class="mx-auto max-w-[40ch]">
-          I'm a frontend web developer with a passion for <br /><span
-            class="relative"
-          >
-            creating innovative, unique
+        <p class="mx-auto max-w-[40ch] text-center text-xl">
+          I create cool things for the web.<br />
+          <span class="relative">
+            Bringing ideas to life with modern design principles
           </span>
-          websites using the latest web technologies.
+          using the latest web technologies.
         </p>
       </div>
     </section>
@@ -230,18 +235,21 @@
 <style lang="postcss" scoped>
   h1,
   h2 {
-    @apply lg:mx-auto  
+    @apply lg:mx-auto
     lg:w-1/2;
   }
 
   /* Bracket gradient */
   h1 > span {
+    @apply text-base-20;
     &::before,
     &::after {
-      @apply bg-gradient-to-t
-    from-base-40 via-base-40 
-    bg-clip-text
-    text-transparent;
+      @apply bg-gradient-to-b
+      from-transparent
+      via-base-40
+      to-base-45
+      bg-clip-text
+      text-transparent;
     }
 
     &::before {
@@ -261,7 +269,8 @@
     h-0.5
     w-full
     bg-gradient-to-tr
-    from-transparent via-base-40 to-base-80 pr-2
-  content-[''];
+    from-transparent
+    via-base-40 to-base-80 pr-2
+    content-[''];
   }
 </style>
