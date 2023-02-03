@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   useHead({
     title: 'Personal portfolio',
   })
@@ -13,7 +13,7 @@
     <div class="container lg:max-w-5xl">
       <section>
         <div class="grid justify-items-center md:grid-cols-[1fr_auto]">
-          <h2>I build modern full stack web applications for todays web.</h2>
+          <h2>Building modern full stack web applications for today's web.</h2>
           <Icon
             class="h-10 w-10 md:mb-2 md:self-end [&>circle]:animate-[pulse_3s_ease-in-out_infinite] [&>circle]:text-orange"
             name="clarity:world-outline-badged"
@@ -71,7 +71,7 @@
         ref="roadmapSection"
         class="container space-y-12 lg:max-w-5xl"
       >
-      <lazy-roadmap-container />
+        <lazy-roadmap-container />
       </section>
       <!-- Contact us -->
       <section class="mx-auto h-full px-4 pt-32 md:w-max md:px-0">
@@ -82,7 +82,7 @@
 </template>
 
 <style lang="postcss" scoped>
-/* Gradient on all h2 */
+  /* Gradient on all h2 */
   :deep(h2) {
     @apply bg-gradient-to-r
     from-gray-400/50
@@ -90,27 +90,27 @@
     to-gray-400
     bg-clip-text
     pb-1
-    text-center 
+    text-center
     text-transparent;
-    @apply text-5xl
-    md:text-7xl;
+    @apply text-3xl
+    md:text-5xl;
   }
 
-  /* Faded appearance on overflow teck cards   */
+  /* Faded appearance on overflow tech cards   */
   #tech-stack {
     &::before,
     &::after {
-      @apply absolute 
+      @apply absolute
       top-20
       z-20
       block
-      h-full 
+      h-full
       w-[10%]
       content-[''];
     }
 
     &::before {
-      @apply left-0 
+      @apply left-0
       bg-gradient-to-r from-base-30;
     }
 
@@ -119,11 +119,6 @@
       bg-gradient-to-l
       from-base-30;
     }
-  }
-
-  .translate-text {
-    @apply opacity-100;
-
   }
 </style>
 
