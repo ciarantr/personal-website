@@ -18,6 +18,11 @@
     )
   }
 
+  function closeSubMenu() {
+    subNavFocus.value = false
+    subNavActive.value = false
+  }
+
   // Close mobile menu onn screen sizes
   // greater than mobileSize
   onMounted(() => {
@@ -170,10 +175,7 @@
     <div
       v-show="subNavActive"
       class="z-50 pt-7 sm:absolute sm:top-[0.5rem] sm:right-[2.5rem]"
-      @mouseleave="
-        subNavFocus = false
-        subNavActive = false
-      "
+      @mouseleave="closeSubMenu"
       @mouseenter="subNavFocus = true"
     >
       <nav
