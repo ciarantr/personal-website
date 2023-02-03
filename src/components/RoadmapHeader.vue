@@ -4,8 +4,8 @@
       type: Boolean,
       required: true,
     },
-    currentRoadmap: {
-      type: Object,
+    currentRoadmapTitle: {
+      type: String,
       required: true,
     },
     roadmap: {
@@ -16,13 +16,17 @@
   defineEmits(['closeRoadmapMenu', 'openRoadmapMenu', 'updateRoadmap'])
 
   const roadmapTitles = computed(() => {
+    // Get all roadmap titles from props.roadmap object
+    // Filter out the current roadmap title
     const titles = []
+
     for (const year in props.roadmap) {
       for (const quarter in props.roadmap[year]) {
         titles.push(props.roadmap[year][quarter].title)
       }
     }
-    return titles.filter((title) => title !== props.currentRoadmap.title).sort()
+
+    return titles.filter((title) => title !== props.currentRoadmapTitle).sort()
   })
 </script>
 
@@ -45,7 +49,7 @@
           :aria-expanded="showRoadmapMenu"
           class="flex items-center rounded-md px-2 shadow"
         >
-          {{ currentRoadmap.title }}
+          {{ currentRoadmapTitle }}
           <Icon
             class="h-8 w-8 transition-[transform_colors] duration-500 ease-in-out"
             :class="{ '-rotate-180 text-orange': showRoadmapMenu }"
@@ -55,7 +59,7 @@
         <Transition>
           <ul
             v-show="showRoadmapMenu"
-            class=" w-full space-y-2 rounded-md bg-[#91919a] px-2 py-4 shadow"
+            class="w-full space-y-2 rounded-md bg-[#91919a] px-2 py-4 shadow"
           >
             <template
               v-for="(title, index) in roadmapTitles"
