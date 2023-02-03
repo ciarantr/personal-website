@@ -1,9 +1,9 @@
-<script setup>
-  const contactCard = $ref(null)
+<script setup lang="ts">
+  const contactCard = ref<HTMLDivElement | null>(null)
   onMounted(() => {
     createObserver({
-      observeTarget: contactCard,
-      target: contactCard,
+      observeTarget: contactCard.value,
+      target: contactCard.value,
       style: 'shadow-orange',
       threshold: 1,
     })

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   const jobHistory = [
     {
       name: 'Love Nature',
@@ -46,11 +46,13 @@
     },
   ]
 
-  const jobNames = computed(() => jobHistory.map((el) => el.name))
-  const activeTab = $ref(0)
+  const jobNames = computed<Array<string>>(() =>
+    jobHistory.map((el) => el.name)
+  )
+  const activeTab = ref<number>(0)
 
-  function changeTab(index) {
-    activeTab = index
+  function changeTab(index: number): void {
+    activeTab.value = index
   }
 </script>
 

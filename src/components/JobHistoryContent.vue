@@ -7,22 +7,23 @@
     activeTab: {
       type: Number,
       required: true,
+      default: 0,
     },
   })
-  const tabPanel = $ref(null)
-  const tabMinHeight = $ref(null)
+  const tabPanel = ref(null)
+  const tabMinHeight = ref(null)
 
   // set min height of tab panel to max scroll height of tab content
   function getMaxScrollHeight(tabElements) {
-    let elementHeights = []
+    const elementHeights = []
     for (const child of tabElements.children) {
       elementHeights.push(child.scrollHeight)
     }
-    tabMinHeight = Math.max(...elementHeights)
+    tabMinHeight.value = Math.max(...elementHeights)
   }
 
   onMounted(() => {
-    getMaxScrollHeight(tabPanel)
+    getMaxScrollHeight(tabPanel.value)
   })
 </script>
 

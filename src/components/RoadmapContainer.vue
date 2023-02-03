@@ -84,41 +84,41 @@
     },
   }
 
-  const currentRoadmapDates = $ref({
-    roadmapYear: 2022,
-    roadmapQuarter: 'q4',
+  const currentRoadmapDates = ref({
+    roadmapYear: 2023,
+    roadmapQuarter: 'q1',
   })
 
-  const roadmapContainer = $ref(null)
-  const showRoadmapMenu = $ref(false)
-  const roadmapLoading = $ref(false)
+  const roadmapContainer = ref(null)
+  const showRoadmapMenu = ref(false)
+  const roadmapLoading = ref(false)
   const getRoadmap = ({ year, quarter }) => roadmap[year][quarter]
   // Return roadmap data for the current roadmap year and quarter
-  const currentRoadmap = $computed(() => {
+  const currentRoadmap = computed(() => {
     return getRoadmap({
-      year: currentRoadmapDates.roadmapYear,
-      quarter: currentRoadmapDates.roadmapQuarter,
+      year: currentRoadmapDates.value.roadmapYear,
+      quarter: currentRoadmapDates.value.roadmapQuarter,
     })
   })
 
   function updateRoadMap(roadmapTitle) {
-    let roadmapYear = roadmapTitle.substring(roadmapTitle.length - 4)
-    let roadmapQuarter = roadmapTitle.substring(0, 2)
+    const roadmapYear = roadmapTitle.substring(roadmapTitle.length - 4)
+    const roadmapQuarter = roadmapTitle.substring(0, 2)
 
-    currentRoadmapDates.roadmapYear = Number(roadmapYear)
-    currentRoadmapDates.roadmapQuarter = roadmapQuarter
+    currentRoadmapDates.value.roadmapYear = Number(roadmapYear)
+    currentRoadmapDates.value.roadmapQuarter = roadmapQuarter
 
-    roadmapLoading = true
+    roadmapLoading.value = true
 
     setTimeout(() => {
-      roadmapLoading = false
+      roadmapLoading.value = false
     }, 1000)
   }
 
   onMounted(() => {
-    const roadmapHeading = roadmapContainer.firstElementChild
+    const roadmapHeading = roadmapContainer.value.firstElementChild
     createObserver({
-      observeTarget: roadmapContainer,
+      observeTarget: roadmapContainer.value,
       target: roadmapHeading,
       style: '!translate-y-0',
       threshold: 1,
@@ -151,6 +151,7 @@
       <RoadmapHeader
         class="glass-effect"
         :roadmap="roadmap"
+        :current-roadmap-title="currentRoadmap.title"
         :current-roadmap="currentRoadmap"
         :show-roadmap-menu="showRoadmapMenu"
         @open-roadmap-menu="showRoadmapMenu = true"
@@ -160,7 +161,8 @@
 
       <RoadmapProjects
         class="glass-effect min-w-[550px]"
-        :roadmap="currentRoadmap"
+        :roadmap-months="currentRoadmap.months"
+        :roadmap-projects="currentRoadmap.projects"
         :roadmap-loading="roadmapLoading"
       />
     </div>
@@ -169,12 +171,11 @@
 
 <style scoped lang="postcss">
   :deep(.glass-effect) {
-    @apply 
-    rounded-xl
-    border 
+    @apply rounded-xl
+    border
     border-base-90/20
-    bg-base-90/10 
-    shadow-md 
+    bg-base-90/10
+    shadow-md
     backdrop-blur-sm;
   }
 </style>
