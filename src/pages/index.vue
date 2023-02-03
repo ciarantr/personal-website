@@ -74,7 +74,10 @@
         <lazy-roadmap-container />
       </section>
       <!-- Contact us -->
-      <section class="mx-auto h-full px-4 pt-32 md:w-max md:px-0">
+      <section
+        id="contact"
+        class="mx-auto h-full px-4 pt-32 md:w-max md:px-0"
+      >
         <lazy-contact-card />
       </section>
     </div>
