@@ -23,7 +23,7 @@
     subNavActive.value = false
   }
 
-  // Close mobile menu onn screen sizes
+  // Close mobile menu on screen sizes
   // greater than mobileSize
   onMounted(() => {
     window.addEventListener('resize', () => {
@@ -51,12 +51,11 @@
       }"
     >
       <div class="flex w-full gap-x-2 sm:w-auto">
-        <NuxtLink to="/">
-          <Icon
-            name="arcticons:cinexplore"
-            class="h-8 w-8"
-          />
-        </NuxtLink>
+        <Icon
+          name="arcticons:cinexplore"
+          class="h-8 w-8"
+        />
+
         <!-- Mobile menu button -->
         <button
           aria-controls="primary navigation"
@@ -114,11 +113,12 @@
             v-for="list in navigation"
             :key="list"
             class="py-1.5 sm:py-0"
-            @click="isMobileMenuOpen = false"
           >
             <a
+              :aria-label="`navigate to ${list} section`"
               :href="`#${list}`"
               class="G-border-animate block w-full"
+              @click="isMobileMenuOpen ? (isMobileMenuOpen = false) : null"
               >{{ list }}</a
             >
           </li>
