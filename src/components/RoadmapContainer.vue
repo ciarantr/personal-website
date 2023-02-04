@@ -170,12 +170,27 @@
 </template>
 
 <style scoped lang="postcss">
+  /*
+**************************
+  Accessibility styles
+ ************************** */
+  @media (prefers-contrast: more) {
+    :deep(.glass-effect) {
+      @apply !bg-base-90/50
+    !text-base-10;
+
+      & li span {
+        @apply !text-base-10;
+      }
+    }
+  }
+
   :deep(.glass-effect) {
     @apply rounded-xl
-    border
-    border-base-90/20
-    bg-base-90/10
-    shadow-md
-    backdrop-blur-sm;
+  border
+  border-base-90/20
+  bg-base-90/10
+  shadow-md
+  backdrop-blur-sm;
   }
 </style>
