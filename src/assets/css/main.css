@@ -19,9 +19,9 @@
     4.Accessibility
 \*-------------------------------------------*/
 
-/* 
- ************************** 
-  Base styles 
+/*
+ **************************
+  Base styles
  ************************** */
 @layer base {
   :root {
@@ -53,6 +53,7 @@
   }
 
   body {
+    font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
     background-color: hsl(var(--base-30));
     color: hsl(var(--base-80));
@@ -67,29 +68,21 @@
     color: hsl(var(--base-90));
   }
 
-  /* 
- ************************** 
-  Accessability styles 
+  /*
+ **************************
+  Accessibility styles
  ************************** */
   @media (prefers-contrast: more) {
-    body,
-    p,
-    li div,
-    li,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: hsl(var(--base-90));
+    span,
+    body {
+      color: hsl(var(--base-90)) !important;
     }
   }
 }
 
-/* 
- ************************** 
-  components styles 
+/*
+ **************************
+  components styles
  ************************** */
 @layer components {
   /* card components */
@@ -127,10 +120,10 @@
     );
   }
 
-  /* 
-   ************************** 
-    Animations styles 
-   ************************** */
+  /*
+ **************************
+  Animations styles
+ ************************** */
 
   /* Animation effect on hover for anchor tags */
   @screen sm {
@@ -139,12 +132,12 @@
 
       &::after {
         @apply absolute
-          left-0
-          block w-0
-          border-b
-          border-orange
-          transition-[width]
-          ease-in content-[''];
+       left-0
+       block w-0
+       border-b
+       border-orange
+       transition-[width]
+       ease-in content-[''];
       }
 
       &:hover::after {
@@ -153,25 +146,24 @@
     }
   }
 
- /* Add lighter background & orange borders on hover */
+  /* Add lighter background & orange borders on hover */
   .G-container-illuminate {
     @apply relative z-50
-    cursor-pointer
-    rounded-md
-    border
-    border-solid
-    border-base-90/5 
-    bg-base-90/5
-    p-6
-    transition-[background-color]
-    duration-300 ease-in-out;
+      cursor-pointer
+      rounded-md
+      border
+      border-solid
+      border-base-90/5
+      bg-base-90/5
+      p-6
+      transition-[background-color]
+      duration-300 ease-in-out;
 
     &:hover {
       @apply border-transparent
       bg-base-90/10;
     }
-    
-   
+
     &::after {
       @apply absolute
       inset-0
@@ -192,11 +184,13 @@
         hsla(0, 0%, 100%, 0.15) 76.04%,
         hsla(0, 0%, 100%, 0)
       );
+
       -webkit-mask: linear-gradient(#fff 0 0) padding-box,
         linear-gradient(#fff 0 0);
       mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
       mask-composite: exclude;
     }
+
     &:nth-child(odd)::after {
       @apply bg-gradient-to-l;
     }
