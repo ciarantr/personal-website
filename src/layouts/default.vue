@@ -4,4 +4,4 @@
     <slot />
     <LazyTheFooter />
   </div>
-</template>t
+</template>
