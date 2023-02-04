@@ -67,11 +67,13 @@ export default defineNuxtConfig({
         {
           rel: 'preconnect',
           href: 'https://fonts.gstatic.com',
-          crossOrigin: 'true',
+          crossOrigin: '',
         },
         {
-          href: 'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap',
           rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap',
+          media: 'print',
+          onload: "this.onload=null;this.removeAttribute('media');", // load font asynchronously
         },
       ],
     },
