@@ -2,21 +2,47 @@ import { version } from './package.json'
 
 export default defineNuxtConfig({
   // Src directory
-  srcDir: 'src/',
 
+  srcDir: 'src/',
+  devtools: {
+    enabled: false,
+  },
+  runtimeConfig: {
+    githubSecret : process.env.GITHUB_TOKEN,
+
+    public: {
+      CLIENT_VERSION: version,
+    },
+  },
+
+  // configuration incorrect see
+  // https://github.com/unjs/nitro/discussions/1298
+  // nitro: {
+  //   storage: {
+  //       'db': {
+  //         driver: 'localStorage',
+  //         localStorage:{}
+  //       }
+  //   },
+  // },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@nuxt/image-edge'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    'nuxt-icon',
+    '@nuxt/image-edge',
+    '@nuxt/devtools',
+  ],
   // Tailwind config
   tailwindcss: {
     cssPath: '~/assets/css/main.css',
-    configPath: '~~/tailwind.config.js',
+    configPath: '~~/config/tailwind.config.js',
     injectPosition: 0,
     viewer: false,
   },
 
   image: {
     cloudinary: {
-      baseURL: 'https://res.cloudinary.com/c-io/image/upload/v1675258978',
+      baseURL: 'https://res.cloudinary.com/c-io/image/upload/dev-domain',
     },
   },
 
@@ -63,24 +89,7 @@ export default defineNuxtConfig({
           color: '#525360',
         },
         { rel: 'manifest', href: '/site.webmanifest' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.gstatic.com',
-          crossOrigin: '',
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap',
-          media: 'print',
-          onload: "this.onload=null;this.removeAttribute('media');", // load font asynchronously
-        },
       ],
-    },
-  },
-  runtimeConfig: {
-    public: {
-      CLIENT_VERSION: version,
     },
   },
 })
