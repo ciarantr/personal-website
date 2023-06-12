@@ -14,7 +14,14 @@ export default defineNuxtConfig({
       CLIENT_VERSION: version,
     },
   },
-
+  experimental: {
+    payloadExtraction: true
+  },
+  routeRules: {
+    '/index': {static: true},
+    'resume': {static: true},
+  '/api/github': {cors: true}
+  },
   // configuration incorrect see
   // https://github.com/unjs/nitro/discussions/1298
   // nitro: {
