@@ -15,7 +15,7 @@
         <div class="grid justify-items-center md:grid-cols-[1fr_auto]">
           <h2>Building modern full stack web applications for today's web.</h2>
           <Icon
-            class="h-10 w-10 md:mb-2 md:self-end [&>circle]:animate-[pulse_3s_ease-in-out_infinite] [&>circle]:text-orange"
+            class="[&>circle]:text-orange h-10 w-10 md:mb-2 md:self-end [&>circle]:animate-[pulse_3s_ease-in-out_infinite]"
             name="clarity:world-outline-badged"
           />
         </div>
@@ -45,8 +45,14 @@
 
         <!-- Projects -->
         <section class="mt-64 space-y-12">
-          <h2>Some things I built</h2>
-          <featured-project-container
+          <div class="flex items-center justify-center gap-x-2 text-2xl">
+            <h2>Some things I built</h2>
+            <icon
+              class="text-base-20"
+              name="mdi:hammer-wrench"
+            />
+          </div>
+          <project-container
             id="projects"
             aria-label="A curated group of apps I have made with description and links to code repositories"
           />
@@ -64,9 +70,9 @@
     </section>
     <!-- Gradient wrapper  -->
     <div
-      class="mt-64 space-y-64 bg-gradient-to-b from-transparent to-dark pb-96"
+      class="to-dark mt-64 space-y-64 bg-gradient-to-b from-transparent pb-96"
     >
-      <!-- Raodmap -->
+      <!-- Roadmap -->
       <section
         ref="roadmapSection"
         class="container space-y-12 lg:max-w-5xl"
@@ -113,14 +119,14 @@
     }
 
     &::before {
-      @apply left-0
-      bg-gradient-to-r from-base-30;
+      @apply from-base-30
+      left-0 bg-gradient-to-r;
     }
 
     &::after {
-      @apply right-0
-      bg-gradient-to-l
-      from-base-30;
+      @apply from-base-30
+      right-0
+      bg-gradient-to-l;
     }
   }
 </style>
