@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/index': {static: true},
-    'resume': {static: true},
+    '/resume': {static: true},
   '/api/github': {cors: true}
   },
   // configuration incorrect see
