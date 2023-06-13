@@ -1,22 +1,13 @@
 <script setup lang="ts">
-  //  TODO: Add error state for fetch
-  // Fixme: ts errors (data.value possibly null)
-  const { data } = await useFetch('/api/github/repos')
+  //  TODO: Quick view of projects when user hovers over project card
 
-  //    call repoLanguages api and add to data.languages
-  const { data: languages } = await useFetch('/api/github/repoLanguages', {
-    transform: (languages) => {
-      data.value.forEach((repo, index) => {
-        data.value[index].languages = languages[index]
-      })
-    },
-  })
+  const { data: repos } = await useFetch('/api/github/repoData')
 
-  const featuredProjects = computed(() =>
-    data.value.filter((project) => project.name !== 'pantry')
-  )
   const projects = computed(() =>
-    data.value.filter((project) => project.name === 'pantry')
+    repos.value?.filter((repo) => repo.name === 'pantry')
+  )
+  const featuredProjects = computed(() =>
+    repos.value?.filter((repo) => repo.name !== 'pantry')
   )
 </script>
 
