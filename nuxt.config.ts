@@ -4,23 +4,17 @@ export default defineNuxtConfig({
   // Src directory
 
   srcDir: 'src/',
+
   devtools: {
     enabled: false,
   },
+
   runtimeConfig: {
     githubSecret : process.env.GITHUB_TOKEN,
 
     public: {
       CLIENT_VERSION: version,
     },
-  },
-  experimental: {
-    payloadExtraction: true
-  },
-  routeRules: {
-    '/index': {static: true},
-    '/resume': {static: true},
-  '/api/github': {cors: true}
   },
   // configuration incorrect see
   // https://github.com/unjs/nitro/discussions/1298
