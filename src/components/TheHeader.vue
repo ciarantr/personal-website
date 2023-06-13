@@ -38,13 +38,13 @@
   <header class="container sm:relative">
     <nuxt-link
       to="/#main-content"
-      class="fixed left-0 top-0 z-[100] w-full -translate-y-full bg-base-20 p-1 text-center transition-transform focus:translate-y-0"
+      class="bg-base-20 fixed left-0 top-0 z-[100] w-full -translate-y-full p-1 text-center transition-transform focus:translate-y-0"
       >Skip to main content
     </nuxt-link>
 
     <nav
       aria-label="main navigation"
-      class="G-container-shadow G-container-shadow-spacing-base duration-350 absolute top-0 right-0 left-0 z-50 mx-2 mt-6 grid content-start gap-y-6 transition-[height] ease-in-out sm:relative sm:flex sm:h-max sm:items-center sm:justify-between sm:gap-y-0"
+      class="G-container-shadow G-container-shadow-spacing-base duration-350 absolute left-0 right-0 top-0 z-50 mx-2 mt-6 grid content-start gap-y-6 transition-[height] ease-in-out sm:relative sm:flex sm:h-max sm:items-center sm:justify-between sm:gap-y-0"
       :class="{
         'h-16': !isMobileMenuOpen,
         'h-[90vh] ': isMobileMenuOpen,
@@ -66,7 +66,7 @@
         >
           <span
             aria-hidden="true"
-            class="relative block h-7 w-7 [&_span]:absolute [&_span]:left-0 [&_span]:h-[2px] [&_span]:rounded-sm [&_span]:bg-base-70 [&_span]:content-[''] [&_span:nth-child(1n+2)]:transition-all"
+            class="[&_span]:bg-base-70 relative block h-7 w-7 [&_span:nth-child(1n+2)]:transition-all [&_span]:absolute [&_span]:left-0 [&_span]:h-[2px] [&_span]:rounded-sm [&_span]:content-['']"
           >
             <span
               :class="{
@@ -107,7 +107,7 @@
             'G-container-shadow G-container-shadow-spacing-base':
               isMobileMenuOpen,
           }"
-          class="flex flex-col divide-y divide-base-20 sm:flex-row sm:items-center sm:gap-y-0 sm:gap-x-6 sm:divide-y-0"
+          class="divide-base-20 flex flex-col divide-y sm:flex-row sm:items-center sm:gap-x-6 sm:gap-y-0 sm:divide-y-0"
         >
           <li
             v-for="list in navigation"
@@ -137,13 +137,12 @@
         <div
           class="G-container-shadow G-container-shadow-spacing-base mt-3 space-y-2 sm:hidden"
         >
-          <div class="border-b-[0.5px] border-base-20">Resume</div>
+          <div class="border-base-20 border-b-[0.5px]">Resume</div>
           <!-- view pdf -->
           <ul class="space-y-1">
             <li>
               <nuxt-link
                 to="/resume"
-                target="_blank"
                 class="flex items-center justify-between pt-1"
               >
                 View
@@ -151,21 +150,7 @@
                   name="ph:magnifying-glass-plus-bold"
                   class="h-4 w-4"
                 />
-                <!-- download pdf -->
               </nuxt-link>
-            </li>
-            <li>
-              <a
-                href="/data/resume.pdf"
-                download="ciaran-toner-resume.pdf"
-                class="flex items-center justify-between"
-              >
-                Download
-                <Icon
-                  class="h-5 w-5"
-                  name="humbleicons:download-alt"
-                />
-              </a>
             </li>
           </ul>
         </div>
@@ -174,38 +159,26 @@
     <!-- Sub navigation resume desktop -->
     <div
       v-show="subNavActive"
-      class="z-50 pt-7 sm:absolute sm:top-[0.5rem] sm:right-[2.5rem]"
+      class="z-50 pt-7 sm:absolute sm:right-[2.5rem] sm:top-[0.5rem]"
       @mouseleave="closeSubMenu"
       @mouseenter="subNavFocus = true"
     >
       <nav
         aria-label="Main nav submenu"
-        class="relative top-3 mt-4 space-y-2 rounded-md bg-base-30 p-3 text-sm shadow-md"
+        class="bg-base-30 relative top-3 mt-4 space-y-2 rounded-md p-3 text-sm shadow-md"
       >
         <!-- view pdf -->
         <nuxt-link
           to="/resume"
           target="_blank"
-          class="G-border-animate flex items-center justify-between gap-x-3 after:top-5 [&:hover_>_svg]:text-orange"
+          class="G-border-animate [&:hover_>_svg]:text-orange flex items-center justify-between gap-x-3 after:top-5"
         >
           View
           <Icon
             class="h-4 w-4 transition-colors duration-300 ease-in-out"
             name="ph:magnifying-glass-plus-bold"
           />
-          <!-- download pdf -->
         </nuxt-link>
-        <a
-          href="/data/resume.pdf"
-          download="ciaran-toner-resume.pdf"
-          class="G-border-animate flex items-center justify-between gap-x-3 after:top-5 [&:hover_>_svg]:text-orange"
-        >
-          Download
-          <Icon
-            class="h-5 w-5 transition-colors duration-300 ease-in-out"
-            name="humbleicons:download-alt"
-          />
-        </a>
       </nav>
     </div>
 
@@ -246,10 +219,10 @@
     @apply text-base-20;
     &::before,
     &::after {
-      @apply bg-gradient-to-b
-      from-transparent
-      via-base-40
+      @apply via-base-40
       to-base-45
+      bg-gradient-to-b
+      from-transparent
       bg-clip-text
       text-transparent;
     }
@@ -265,14 +238,14 @@
 
   /* Underline border gradient */
   p > span::after {
-    @apply absolute
-    left-0
+    @apply via-base-40
+    to-base-80
+    absolute
     -bottom-1
+    left-0
     h-0.5
     w-full
-    bg-gradient-to-tr
-    from-transparent
-    via-base-40 to-base-80 pr-2
+    bg-gradient-to-tr from-transparent pr-2
     content-[''];
   }
 </style>
