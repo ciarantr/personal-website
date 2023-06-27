@@ -13,7 +13,7 @@
     "@nuxt/image-edge": "1.0.0-27919678.2f5b64b",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/partytown": "^1.3.0",
-    "@nuxtjs/tailwindcss": "^6.7.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-vue": "^9.14.1",
