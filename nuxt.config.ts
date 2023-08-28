@@ -43,7 +43,7 @@ export default defineNuxtConfig({
 
   image: {
     cloudinary: {
-      baseURL: 'https://res.cloudinary.com/c-io/image/upload/dev-domain',
+      baseURL: 'https://res.cloudinary.com/c-io/image/upload/v1/dev-domain'
     },
   },
 

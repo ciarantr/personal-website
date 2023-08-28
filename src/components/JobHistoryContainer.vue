@@ -4,7 +4,7 @@
       name: 'Love Nature',
       timeInJob: {
         start: 'June 2021',
-        end: 'current',
+        end: 'May 2023',
       },
       position: ['developer online store'],
       responsibilities: [
