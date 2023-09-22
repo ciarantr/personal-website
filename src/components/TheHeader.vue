@@ -14,7 +14,7 @@
         subNavActive.value && !subNavFocus.value
           ? (subNavActive.value = false)
           : null,
-      450
+      450,
     )
   }
 
@@ -44,10 +44,10 @@
 
     <nav
       aria-label="main navigation"
-      class="G-container-shadow G-container-shadow-spacing-base duration-350 absolute left-0 right-0 top-0 z-50 mx-2 mt-6 grid content-start gap-y-6 transition-[height] ease-in-out sm:relative sm:flex sm:h-max sm:items-center sm:justify-between sm:gap-y-0"
+      class="G-container-shadow G-container-shadow-spacing-base duration-350 mt-6 grid content-start gap-y-6 transition-[height] ease-in-out sm:relative sm:flex sm:h-max sm:items-center sm:justify-between sm:gap-y-0"
       :class="{
         'h-16': !isMobileMenuOpen,
-        'h-[90vh] ': isMobileMenuOpen,
+        'absolute h-[90vh] left-0 right-0 top-0 z-50 mx-4': isMobileMenuOpen,
       }"
     >
       <div class="flex w-full gap-x-2 sm:w-auto">
@@ -107,7 +107,7 @@
             'G-container-shadow G-container-shadow-spacing-base':
               isMobileMenuOpen,
           }"
-          class="divide-base-20 flex flex-col divide-y sm:flex-row sm:items-center sm:gap-x-6 sm:gap-y-0 sm:divide-y-0"
+          class="divide-base-20 flex flex-col divide-y text-sm sm:flex-row sm:items-center sm:gap-x-6 sm:gap-y-0 sm:divide-y-0"
         >
           <li
             v-for="list in navigation"
@@ -137,9 +137,9 @@
         <div
           class="G-container-shadow G-container-shadow-spacing-base mt-3 space-y-2 sm:hidden"
         >
-          <div class="border-base-20 border-b-[0.5px]">Resume</div>
+          <div class="border-base-20 border-b-[0.5px] text-sm">Resume</div>
           <!-- view pdf -->
-          <ul class="space-y-1">
+          <ul class="space-y-1 text-sm">
             <li>
               <nuxt-link
                 to="/resume"
@@ -184,41 +184,37 @@
 
     <section
       aria-label="banner"
-      class="G-container-shadow G-container-shadow-spacing-lg lg-gap-x-0 relative top-24 mt-12 space-y-12 sm:top-0 md:flex md:h-max md:gap-x-12 md:space-y-0 lg:flex-col lg:space-y-12"
+      class="G-container-shadow mt-16 py-28 text-center"
     >
-      <div class="G-container-shadow G-container-shadow-spacing-lg">
-        <h1 class="text-center text-2xl lg:text-3xl lg:leading-relaxed">
-          Welcome to my<br />
-          <span>Personal Portfolio</span>
+      <div class="space-y-12">
+        <h1 class="text-3xl md:text-5xl text-center">
+          Ciaran Toner
+          <span class="block md:inline text-xl">Full-Stack web developer</span>
         </h1>
-      </div>
-      <div
-        class="G-container-shadow G-container-shadow-spacing-lg mx-auto text-lg md:text-xl lg:max-w-3xl"
-      >
-        <p class="mx-auto max-w-[40ch] text-center text-xl">
-          I create cool things for the web.<br />
-          <span class="relative">
-            Bringing ideas to life with modern design principles
-          </span>
-          using the latest web technologies.
+      <div>
+        <p
+          class="relative bg-gradient-to-r from-gray-400/50 via-gray-400/60 to-gray-400 bg-clip-text pb-1 text-center text-xl text-transparent inline-block max-w-[30ch]"
+        >
+          Building modern full stack web applications for today's web
         </p>
+        <Icon
+          class="[&>circle]:text-orange text-base-20 h-5 w-5 md:mb-2 [&>circle]:animate-[pulse_3s_ease-in-out_infinite] !align-sub"
+          name="clarity:world-outline-badged"
+        />
+      </div>
       </div>
     </section>
   </header>
 </template>
 
 <style lang="postcss" scoped>
-  h1,
-  h2 {
-    @apply lg:mx-auto
-    lg:w-1/2;
-  }
+
+  h1 {
+    @apply text-base-20;
 
   /* Bracket gradient */
-  h1 > span {
-    @apply text-base-20;
-    &::before,
-    &::after {
+    span::before,
+    span::after {
       @apply via-base-40
       to-base-45
       bg-gradient-to-b
@@ -227,22 +223,22 @@
       text-transparent;
     }
 
-    &::before {
-      content: '[';
+    span::before {
+      content: '( ';
     }
 
-    &::after {
-      content: ']';
+    span::after {
+      content: ' )';
     }
   }
 
   /* Underline border gradient */
-  p > span::after {
+  p::after {
     @apply via-base-40
     to-base-80
     absolute
     -bottom-1
-    left-0
+    inset-x-0
     h-0.5
     w-full
     bg-gradient-to-tr from-transparent pr-2
