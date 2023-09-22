@@ -15,7 +15,6 @@ type repoData = {
   name: string
   description: string
   language: string
-  topics: Array<string>
   html_url: string
   homepage: string
   languages?: Object | null
@@ -38,7 +37,6 @@ async function fetchUrls(urls: Array<string>) {
     return data
   } catch (error) {
     console.error(error, 'error loading github data from api')
-    console.error('check urls are correct', urls)
   }
 
 }
@@ -47,15 +45,15 @@ function extractKeyRepoData(data: Array<any>) {
   const repoData: Array<repoData> = []
   const languages: Array<Object> = []
 
-  for (let { name, description, language, topics, homepage, html_url} of data) {
-
+  for (let { name, description, language, homepage, html_url} of data) {
+    const imageUrl = name;
     name = name.replace(/-/g, " ")
 
     repoData.push({
       name,
+      imageUrl,
       description,
       language,
-      topics,
       homepage,
       html_url,
       languages
