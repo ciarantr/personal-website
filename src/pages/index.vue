@@ -1,6 +1,6 @@
 <script setup lang="ts">
   useHead({
-    title: 'Personal portfolio',
+    title: 'Home',
   })
 </script>
 
@@ -8,23 +8,16 @@
   <main
     id="main-content"
     aria-label="main content"
-    class="mt-80"
+    class="mt-48"
   >
     <div class="container lg:max-w-5xl">
       <section>
-        <div class="grid justify-items-center md:grid-cols-[1fr_auto]">
-          <h2>Building modern full stack web applications for today's web.</h2>
-          <Icon
-            class="[&>circle]:text-orange h-10 w-10 md:mb-2 md:self-end [&>circle]:animate-[pulse_3s_ease-in-out_infinite]"
-            name="clarity:world-outline-badged"
-          />
-        </div>
         <div class="mt-12 space-y-32">
           <!-- About me  -->
           <content-container
             id="about"
             aria-label="about me content"
-            heading="About me"
+            heading="About"
           >
             <template #content-main>
               <about-content />
@@ -45,10 +38,10 @@
 
         <!-- Projects -->
         <section class="mt-64 space-y-12">
-          <div class="flex items-center justify-center gap-x-2 text-2xl">
-            <h2>Some things I built</h2>
+          <div class="text-center">
+            <h3 class="inline text-6xl">Some things I built</h3>
             <icon
-              class="text-base-20"
+              class="text-base-20 ml-4 !align-bottom text-5xl"
               name="mdi:hammer-wrench"
             />
           </div>
@@ -65,7 +58,13 @@
       class="relative mt-64 space-y-12 overflow-clip"
       aria-label="A list of technologies I have worked with and small description"
     >
-      <h2 class="text-center text-7xl">Some technologies I use</h2>
+      <div class="relative z-50 text-center">
+        <h3 class="inline text-6xl">Some technologies I use</h3>
+        <icon
+          class="text-base-20 ml-4 !align-baseline text-5xl"
+          name="material-symbols:settings-suggest"
+        />
+      </div>
       <lazy-tech-stack-card />
     </section>
     <!-- Gradient wrapper  -->
@@ -92,6 +91,7 @@
 
 <style lang="postcss" scoped>
   /* Gradient on all h2 */
+  :deep(h3),
   :deep(h2) {
     @apply bg-gradient-to-r
     from-gray-400/50
@@ -101,8 +101,6 @@
     pb-1
     text-center
     text-transparent;
-    @apply text-3xl
-    md:text-5xl;
   }
 
   /* Faded appearance on overflow tech cards   */
