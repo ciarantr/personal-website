@@ -10,10 +10,10 @@
         profileImage?.classList.toggle('!grayscale-0', entry[0].isIntersecting)
         profileImageContainer.value?.classList.toggle(
           'border-shadow',
-          entry[0].isIntersecting
+          entry[0].isIntersecting,
         )
       },
-      { threshold: 1 }
+      { threshold: 1 },
     )
     if (profileImageContainer.value)
       observer.observe(profileImageContainer.value)
@@ -42,21 +42,32 @@
       />
     </div>
 
-    <div class="md:row-start-1">
+    <div class="space-y-8 md:row-start-1 lg:w-3/4">
+      <div>
+        <p
+          class="first-letter:text-base-20 first-letter:float-left first-letter:mr-3 first-letter:text-5xl"
+        >
+          Hello there! A little about me: I'm a web developer, designer, and
+          entrepreneur. My venture into the digital realm commenced in 2017 when
+          I established a WordPress website for my business. Subsequently, I
+          embarked on a journey to enhance my skills and successfully obtained a
+          diploma in Full Stack Software Development from
+          <a
+            class="text-orange inline-block after:text-xs after:content-['_↗']"
+            href="https://codeinstitute.net/ie/"
+            target="_blank"
+            >Code Institute</a
+          >
+          Currently, I am further deepening my understanding of software
+          development by pursuing a BSc in Computing at the Technological
+          University of Dublin.
+        </p>
+      </div>
+
       <p>
-        <span class="text-base-20 float-left mr-2 text-6xl">Hi,</span>
-        i'm Ciaran a Full-Stack web developer with a passion for technology and
-        a hunger to learn, I am eager to take on new challenges and make my mark
-        in the industry. While I may be early in my career, I bring a fresh
-        perspective and a hunger to learn that allows me to approach challenges
-        with a unique and innovative mindset. Whether working on personal
-        projects or collaborating with others, I approach every task with
-        enthusiasm and a commitment to excellence.<br /><br />
-        What sets me apart is my ability to think creatively and outside the
-        box, and my willingness to take on new technologies and techniques. With
-        a strong work ethic and a dedication to continuous improvement, I am
-        confident that I can make a valuable contribution to any team looking to
-        drive innovation and achieve its goals.
+        Fueled by my belief in technology's capacity to redefine businesses and
+        lives, I'm continually on the lookout for new challenges and
+        opportunities to enhance my knowledge and skills.
       </p>
     </div>
   </div>
