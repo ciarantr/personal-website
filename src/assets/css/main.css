@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO: Dark them */
+/* TODO: Dark theme*/
 /* [data-theme='dark'] {
    --base: 100, 8%;
 } */
+
+/* TODO(perf): refactor animation prefers-reduced-motion */
+/* * performance selector */
 
 /* Note: G- prefix specifies a global style  */
 /*-------------------------------------------*\
@@ -26,15 +29,25 @@
 @layer base {
   @font-face {
     font-family: 'Lato';
-    font-weight: normal;
+    font-weight: 400;
+    font-style: normal;
     font-display: swap;
     src: url('/fonts/Lato-Regular.woff2') format('woff2');
   }
+
   @font-face {
     font-family: 'Lato';
     font-display: swap;
     src: url('/fonts/Lato-Bold.woff2') format('woff2');
     font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    font-display: swap;
+    src: url('/fonts/Lato-Black.woff2') format('woff2');
+    font-weight: 900;
     font-style: normal;
   }
 
@@ -94,9 +107,25 @@
   Accessibility styles
  ************************** */
   @media (prefers-contrast: more) {
+    body,
     span,
-    body {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li {
       color: hsl(var(--base-90)) !important;
+    }
+  }
+
+  /* Remove animation styles when reduced motion is preferred */
+  @media (prefers-reduced-motion: reduce) {
+    /* Reset or remove animation styles */
+    * {
+      animation: none !important;
     }
   }
 }
@@ -109,7 +138,8 @@
   /* card components */
   .G-container-shadow {
     background: hsl(var(--base-30));
-    box-shadow: inset 7px 7px 10px hsl(var(--base-20)),
+    box-shadow:
+      inset 7px 7px 10px hsl(var(--base-20)),
       inset -7px -7px 10px hsl(var(--base-45));
 
     @apply rounded-2xl;
@@ -177,11 +207,11 @@
       @apply relative;
 
       &::after {
-        @apply absolute
-       left-0
-       block w-0
+        @apply border-orange
+       absolute
+       left-0 block
+       w-0
        border-b
-       border-orange
        transition-[width]
        ease-in content-[''];
       }
@@ -194,31 +224,31 @@
 
   /* Add lighter background & orange borders on hover */
   .G-container-illuminate {
-    @apply relative z-50
+    @apply border-base-90/5 bg-base-90/5
+      relative
+      z-50
       cursor-pointer
       rounded-md
       border
       border-solid
-      border-base-90/5
-      bg-base-90/5
       p-6
       transition-[background-color]
       duration-300 ease-in-out;
 
     &:hover {
-      @apply border-transparent
-      bg-base-90/10;
+      @apply bg-base-90/10
+      border-transparent;
     }
 
     &::after {
-      @apply absolute
-      inset-0
-      -z-10
-      -m-[1px] rounded-[6px]
+      @apply from-base-40
+      to-orange
+      absolute
+      inset-0 -z-10
+      -m-[1px]
+      rounded-[6px]
       border
       border-transparent
-      from-base-40
-      to-orange
       opacity-0
       will-change-[opacity]
       content-[''];
@@ -231,9 +261,12 @@
         hsla(0, 0%, 100%, 0)
       );
 
-      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+      -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
         linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
       mask-composite: exclude;
     }
 
