@@ -129,22 +129,22 @@
 <template>
   <div
     ref="roadmapContainer"
-    class="relative space-y-2 overflow-y-auto text-base-10"
+    class="text-base-10 relative space-y-2 overflow-y-auto"
   >
-    <div
-      class="flex translate-y-12 gap-x-4 transition-transform duration-1000 ease-in-out"
-    >
-      <h2 class="inline-block text-center text-7xl">Personal roadmap</h2>
-      <Icon
-        class="h-10 w-10 self-end text-gray-400"
-        name="raphael:roadmap"
-      />
+    <div class="translate-y-12 transition-transform duration-1000 ease-in-out">
+      <div>
+        <h3 class="inline text-center text-6xl">Roadmap</h3>
+        <Icon
+          class="text-base-20 ml-4 h-10 w-10 !align-baseline"
+          name="raphael:roadmap"
+        />
+      </div>
     </div>
     <div
       class="glass-effect space-y-8 overflow-auto rounded-md px-2 pb-6 shadow-sm"
     >
       <Icon
-        class="absolute top-0 right-40 h-full w-1/2 opacity-5"
+        class="absolute right-40 top-0 h-full w-1/2 opacity-5"
         name="raphael:roadmap"
       />
 
@@ -177,7 +177,7 @@
   @media (prefers-contrast: more) {
     :deep(.glass-effect) {
       @apply !bg-base-90/50
-    !text-base-10;
+      !text-base-10;
 
       & li span {
         @apply !text-base-10;
@@ -186,10 +186,10 @@
   }
 
   :deep(.glass-effect) {
-    @apply rounded-xl
-  border
-  border-base-90/20
+    @apply border-base-90/20
   bg-base-90/10
+  rounded-xl
+  border
   shadow-md
   backdrop-blur-sm;
   }
