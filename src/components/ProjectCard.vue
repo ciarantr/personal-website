@@ -16,27 +16,40 @@
     >
       <div>
         <!-- Project title -->
-        <span
-          class="border-orange absolute right-3 top-5 rounded-full border px-4 py-1 text-xs font-medium"
-        >
-          {{ details.name }}
-        </span>
-        <div class="space-y-6 pt-8">
+        <div class="space-y-4 sm:flex sm:justify-between sm:space-y-0">
+          <h5
+            class="border-orange h-max w-max rounded-full border px-2.5 py-0.5 text-xs  "
+          >
+            {{ details.name }}
+          </h5>
+          <div class="G-container-illuminate w-max p-1.5">
+            <nuxt-img
+              provider="cloudinary"
+              class="rounded-md sm:w-[175px]"
+              :src="`/${details.imageUrl}.jpg`"
+              :alt="`${details.name} project image`"
+              :modifiers="{ dpr: 'auto', f: 'auto' }"
+              quality="100"
+              fit='cover'
+              loading="lazy"
+              width="350"
+              height="350"
+            />
+          </div>
+        </div>
+        <div class="space-y-8 pt-8 sm:pt-16">
           <!-- Project description -->
-          <div class="space-y-2">
-            <span>Description</span>
-            <p class="w-5/6">
+          <div>
+            <p class="text-base-70 text-sm sm:w-5/6">
               {{ details.description }}
             </p>
           </div>
 
           <!-- Project technologies -->
-          <div class="space-y-2">
-            <span class="">Technologies used </span>
-
+          <div>
             <!-- Technologies list -->
             <ul
-              class="flex max-w-max flex-wrap gap-x-4 gap-y-4 rounded-lg border p-1 p-3 text-xs"
+              class="text-base-70 border-base-45 flex max-w-max flex-wrap gap-x-4 gap-y-4 rounded-lg border p-3 text-xs"
             >
               <li
                 v-for="{ language, percentage } in details.languages"
@@ -50,52 +63,36 @@
                 >
                 </span>
 
-                {{ language }} {{ percentage }} %
+                {{ language }} {{ percentage }}%
               </li>
             </ul>
           </div>
 
-          <div
-            class="space-y-4 md:flex md:flex-wrap md:justify-between md:space-y-0"
-          >
-            <div class="space-y-2">
-              <span>Topics</span>
-              <ul class="grid grid-cols-2 rounded-lg border p-3 capitalize">
-                <li
-                  v-for="topic in details.topics"
-                  :key="topic"
-                  class="w-max px-4 py-1 text-xs font-medium"
-                >
-                  {{ topic }}
-                </li>
-              </ul>
-            </div>
-            <!-- Project Links -->
-            <div class="space-x-3 md:self-end">
-              <!-- Github project link -->
-              <nuxt-link
-                :to="details.html_url"
-                aria-label="link to github project"
-                target="_blank"
-              >
-                <Icon
-                  class="hover:text-base-20 h-6 w-6 transition-colors duration-500"
-                  name="icon-park-outline:github"
-                />
-              </nuxt-link>
+          <!-- Project Links -->
+          <div class="flex justify-end gap-x-2">
+            <!-- Github project link -->
+            <nuxt-link
+              :to="details.html_url"
+              aria-label="link to github project"
+              target="_blank"
+            >
+              <Icon
+                class="hover:text-base-20 h-5 w-5 transition-colors duration-500"
+                name="icon-park-outline:github"
+              />
+            </nuxt-link>
 
-              <!-- Deployed project link -->
-              <nuxt-link
-                aria-label="link to deployed site"
-                :to="details.homepage"
-                target="_blank"
-              >
-                <Icon
-                  class="hover:text-base-20 h-7 w-7 transition-colors duration-500"
-                  name="tabler:external-link"
-                />
-              </nuxt-link>
-            </div>
+            <!-- Deployed project link -->
+            <nuxt-link
+              aria-label="link to deployed site"
+              :to="details.homepage"
+              target="_blank"
+            >
+              <Icon
+                class="hover:text-base-20 h-6 w-6 transition-colors duration-500"
+                name="tabler:external-link"
+              />
+            </nuxt-link>
           </div>
         </div>
       </div>
