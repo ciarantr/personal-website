@@ -10,14 +10,14 @@
 <template>
   <div class="G-container-shadow G-container-shadow-spacing-lg">
     <div>
-      <h3>
+      <h2 class="text-xl">
         <span
           aria-hidden="true"
-          class="text-base after:mx-1 after:text-[8px] after:content-['◍']"
+          class="after:mx-1 after:text-[8px] after:content-['◍']"
         >
         </span>
         {{ heading }}
-      </h3>
+      </h2>
     </div>
 
     <div>
@@ -25,7 +25,6 @@
     </div>
   </div>
 </template>
-
 
 <style lang="postcss" scoped>
   .G-container-shadow {
@@ -35,14 +34,14 @@
       grid-cols-[auto,1fr]
       items-center
       gap-x-4
-      text-2xl
+      text-lg
       capitalize;
 
       /* Horizontal line after heading */
       &::after {
-        @apply h-1
+        @apply bg-base-40
+        h-1
         w-full
-        bg-base-40
   	    content-[''];
       }
     }
@@ -51,12 +50,12 @@
       @apply pt-6;
 
       @screen md {
-        @apply pt-10 pl-8;
+        @apply pl-8 pt-10;
       }
     }
 
     /* Counter to headings */
-    h3::before {
+    h2::before {
       /* Increment the value of section counter by 1 */
       counter-increment: heading;
       content: counter(heading);
