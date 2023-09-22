@@ -1,8 +1,6 @@
 import { version } from './package.json'
 
 export default defineNuxtConfig({
-  // Src directory
-
   srcDir: 'src/',
 
   devtools: {
@@ -10,7 +8,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    githubSecret : process.env.GITHUB_TOKEN,
+    githubSecret: process.env.GITHUB_TOKEN,
 
     public: {
       CLIENT_VERSION: version,
@@ -43,7 +41,7 @@ export default defineNuxtConfig({
 
   image: {
     cloudinary: {
-      baseURL: 'https://res.cloudinary.com/c-io/image/upload/v1/dev-domain'
+      baseURL: 'https://res.cloudinary.com/c-io/image/upload/v1/dev-domain',
     },
   },
 
@@ -58,13 +56,14 @@ export default defineNuxtConfig({
         {
           name: 'keywords',
           content:
-            'web developer, web development, vuejs developer, full-stack, web developer, front-end developer ',
+            'web developer, web development, vuejs developer, ' +
+            'full-stack,full stack developer, developer, front-end developer',
         },
         {
           name: 'description',
           content:
-            "Hi, i'm Ciaran a full-stack web developer from Ireland." +
-            'I design & build websites using the latest web technologies that deliver blazingly fast responsive sites.',
+            'Full-stack solutions-oriented web developer proficient in tackling ' +
+            'complex challenges and building innovative web applications',
         },
         { name: 'msapplication-config', content: '/browserconfig.xml' },
         { name: 'msapplication-TileColor', content: '#525360' },
@@ -79,7 +78,6 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/svg+xml',
-          sizes: '32x32',
           href: '/favicon.svg',
         },
         {
