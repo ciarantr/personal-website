@@ -19,7 +19,7 @@
         class="text-base-20"
         name="ri:fire-fill"
       />
-      <h3>Featured projects</h3>
+      <h4>Featured projects</h4>
     </div>
     <ProjectCard :project-details="featuredProjects" />
     <hr />
