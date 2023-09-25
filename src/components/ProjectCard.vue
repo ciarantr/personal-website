@@ -18,16 +18,16 @@
         <!-- Project title -->
         <div class="space-y-4 sm:flex sm:justify-between sm:space-y-0">
           <h5
-            class="border-orange h-max w-max rounded-full border px-2.5 py-0.5 text-xs  "
+            class="border-orange h-max w-max rounded-full border px-2.5 py-0.5 text-sm  "
           >
             {{ details.name }}
           </h5>
-          <div class="G-container-illuminate w-max p-1.5">
+          <div class="G-container-illuminate p-1.5">
             <nuxt-img
               provider="cloudinary"
-              class="rounded-md sm:w-[175px]"
+              class="rounded-md w-full sm:w-[175px]"
               :src="`/${details.imageUrl}.jpg`"
-              :alt="`${details.name} project image`"
+              :alt="`${details.name} project`"
               :modifiers="{ dpr: 'auto', f: 'auto' }"
               quality="100"
               fit='cover'
@@ -40,7 +40,7 @@
         <div class="space-y-8 pt-8 sm:pt-16">
           <!-- Project description -->
           <div>
-            <p class="text-base-70 text-sm sm:w-5/6">
+            <p class="text-base-70  sm:w-5/6">
               {{ details.description }}
             </p>
           </div>
