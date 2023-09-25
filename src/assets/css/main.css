@@ -142,7 +142,7 @@
       inset 7px 7px 10px hsl(var(--base-20)),
       inset -7px -7px 10px hsl(var(--base-45));
 
-    @apply rounded-2xl;
+    @apply rounded-2xl px-4 py-4;
 
     &-spacing-base {
       @apply p-5;
@@ -231,7 +231,9 @@
       rounded-md
       border
       border-solid
-      p-6
+      px-2.5
+      py-8
+      sm:p-6
       transition-[background-color]
       duration-300 ease-in-out;
 
