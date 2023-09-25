@@ -5,7 +5,9 @@
 </script>
 
 <template>
-  <footer class="h-96 border-t border-base-40 bg-dark pt-12 md:pb-4">
+  <footer
+    aria-label='links to github & linkedin & copywrite'
+    class="h-96 border-t border-base-40 bg-dark pt-12 md:pb-4">
     <div
       class="container grid h-full place-items-center md:grid-cols-3 md:place-items-baseline"
     >
