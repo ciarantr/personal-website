@@ -40,7 +40,8 @@
       <Transition name="slide-fade">
         <div
           v-show="activeTab === index"
-          tabindex="-1"
+          :id='`panel-${index + 1}`'
+          :aria-labelledby='`tab-${index + 1}`'
           role="tabpanel"
           class="G-container-shadow-spacing-base absolute left-0 top-0 h-max w-full space-y-6"
         >
