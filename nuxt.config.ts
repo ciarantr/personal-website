@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxt/image-edge',
     '@nuxt/devtools',
+    '@nuxtseo/module',
   ],
   // Tailwind config
   tailwindcss: {
@@ -45,25 +46,40 @@ export default defineNuxtConfig({
     },
   },
 
+  // Build Configuration nuxt seo: https://nuxtseo.com/nuxt-seo/guides/configuring-modules
+  site: {
+    url: 'https://ciaran-io.dev',
+    name: 'Ciaran Toner',
+    description:
+      'Full stack solutions-oriented web developer proficient in tackling ' +
+      'complex challenges and building innovative web applications.',
+    defaultLocale: 'en',
+  },
+
+  ogImage: {
+    fonts: [
+      {
+        name: 'Lato',
+        weight: 400,
+        // path must point to a public font file
+        path: '/fonts/Lato-Regular.ttf',
+      }
+    ],
+  },
+
   app: {
     head: {
-      titleTemplate: 'Ciaran Toner | %s ',
-      htmlAttrs: {
-        lang: 'en',
+      templateParams: {
+        separator: '•'
       },
+      titleTemplate: '%s %separator% ',
       meta: [
         { name: 'author', content: 'Ciaran Toner' },
         {
           name: 'keywords',
           content:
             'web developer, web development, vuejs developer, ' +
-            'full-stack,full stack developer, developer, front-end developer',
-        },
-        {
-          name: 'description',
-          content:
-            'Full-stack solutions-oriented web developer proficient in tackling ' +
-            'complex challenges and building innovative web applications',
+            'full stack,full stack developer, developer, front-end developer',
         },
         { name: 'msapplication-config', content: '/browserconfig.xml' },
         { name: 'msapplication-TileColor', content: '#525360' },
@@ -88,6 +104,7 @@ export default defineNuxtConfig({
           color: '#525360',
         },
         { rel: 'manifest', href: '/site.webmanifest' },
+        {rel: 'canonical' , href: 'https://ciaran-io.dev'},
       ],
     },
   },
