@@ -13,10 +13,10 @@
 <template>
   <div
     ref="contactCard"
-    class="h-96 space-y-6 overflow-clip rounded-xl p-8 shadow-2xl transition-shadow duration-1000 ease-in-out"
+    class="sm:h-96 space-y-6 overflow-clip rounded-xl px-4 py-6 sm:p-8 shadow-2xl transition-shadow duration-1000 ease-in-out"
   >
     <div>
-      <h2 class="text-5xl">Whats next?</h2>
+      <h2 class="text-4xl sm:text-5xl">Whats next?</h2>
     </div>
     <p class="mx-auto max-w-prose">
       I am a dedicated and driven developer with a strong desire to continuously
