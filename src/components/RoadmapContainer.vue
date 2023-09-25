@@ -121,7 +121,7 @@
       observeTarget: roadmapContainer.value,
       target: roadmapHeading,
       style: '!translate-y-0',
-      threshold: 1,
+      threshold: 0.3,
     })
   })
 </script>
