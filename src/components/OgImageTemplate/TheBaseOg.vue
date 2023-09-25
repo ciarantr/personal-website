@@ -5,8 +5,16 @@
   })
 
   const props = defineProps({
-    title: String,
-    description: String,
+    title: {
+      type: String,
+      required: true,
+    },
+
+    description: {
+      type: String,
+      required: false,
+      default: '',
+    },
   })
 
   const backgroundFlareAttrs = computed(() => {
@@ -24,13 +32,18 @@
 </script>
 
 <template>
-  <div class="bg-[#0f2027] text-white">
+  <div class="bg-[#0f2027] text-white grid">
     <div v-bind="backgroundFlareAttrs" />
-    <div class="relative pl-4 pt-4">
+    <div class="relative pl-8 pt-8">
       <h1 class="text-6xl">
         {{ title }}
       </h1>
-      <p class="w-3/4 text-4xl">{{ description }}</p>
+      <div style='display: flex; width: 100%;'>
+
+      <Icon
+        name="uis:web-grid"
+        class=" w-98 h-98 text-[#12242b] ml-auto mt-4"/>
+      </div>
     </div>
 
     <nuxt-img
@@ -38,8 +51,8 @@
       quality="100"
       loading="lazy"
       src="/ciaran-toner.png"
-      width="300"
-      height="300"
+      width="400"
+      height="400"
       class="absolute bottom-0 rounded-tr-xl"
       alt="Ciaran's profile image"
       :modifiers="{ dpr: 2.0, f: 'auto' }"
