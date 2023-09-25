@@ -1,27 +1,15 @@
 <script setup>
   // TODO:(Enhancement) Change menu spans to svg
   const isMobileMenuOpen = ref(false)
-  const navigation = new Set(['about', 'experience', 'projects', 'contact'])
-  const subNavActive = ref(false)
-  const subNavFocus = ref(false)
+  const navigation = new Set([
+    'about',
+    'experience',
+    'projects',
+    'contact',
+    'resume',
+  ])
+
   const mobileSize = 640
-
-  // Hide resume submenu when focus is lost
-  // after 450ms
-  function hideSubMenu() {
-    setTimeout(
-      () =>
-        subNavActive.value && !subNavFocus.value
-          ? (subNavActive.value = false)
-          : null,
-      450,
-    )
-  }
-
-  function closeSubMenu() {
-    subNavFocus.value = false
-    subNavActive.value = false
-  }
 
   // Close mobile menu on screen sizes
   // greater than mobileSize
@@ -43,14 +31,16 @@
     </nuxt-link>
 
     <nav
-      aria-label="main navigation"
-      class="G-container-shadow G-container-shadow-spacing-base duration-350 mt-6 grid content-start gap-y-6 transition-[height] ease-in-out sm:relative sm:flex sm:h-max sm:items-center sm:justify-between sm:gap-y-0"
+      id="primary"
+      aria-label="main"
+      class="G-container-shadow duration-350 mt-6 items-center transition-[height] ease-in-out sm:relative sm:flex sm:justify-between sm:gap-y-0"
       :class="{
-        'h-16': !isMobileMenuOpen,
-        'absolute h-[90vh] left-0 right-0 top-0 z-50 mx-4': isMobileMenuOpen,
+        'h-[64px] ': !isMobileMenuOpen,
+        'absolute left-0 right-0 top-0 z-50 mx-2 h-[95vh] space-y-8':
+          isMobileMenuOpen,
       }"
     >
-      <div class="flex w-full gap-x-2 sm:w-auto">
+      <div class="flex items-center gap-x-2 sm:w-auto">
         <Icon
           name="arcticons:cinexplore"
           class="h-8 w-8"
@@ -58,8 +48,9 @@
 
         <!-- Mobile menu button -->
         <button
-          aria-controls="primary navigation"
-          aria-label="toggle primary navigation"
+          aria-controls="primary"
+          type="button"
+          aria-label="toggle main"
           :aria-expanded="isMobileMenuOpen"
           class="ml-auto sm:hidden"
           @click="isMobileMenuOpen = !isMobileMenuOpen"
@@ -75,6 +66,7 @@
               }"
               class="top-2 w-1/2"
             ></span>
+
             <span
               :class="{
                 'w-full': !isMobileMenuOpen,
@@ -83,6 +75,7 @@
               }"
               class="top-4"
             ></span>
+
             <span
               :class="{
                 'w-4/6': !isMobileMenuOpen,
@@ -98,8 +91,8 @@
       <div
         class="text-lg capitalize transition-opacity delay-150 ease-in sm:visible sm:flex sm:gap-x-4 sm:text-base sm:opacity-100 sm:transition-none"
         :class="{
-          'visible  opacity-100  ': isMobileMenuOpen,
-          'invisible opacity-0  ': !isMobileMenuOpen,
+          'visible  block h-auto opacity-100': isMobileMenuOpen,
+          'invisible hidden  h-0 opacity-0 ': !isMobileMenuOpen,
         }"
       >
         <ul
@@ -113,106 +106,74 @@
             v-for="list in navigation"
             :key="list"
             class="py-1.5 sm:py-0"
+            :class="{ hidden: list === 'resume' && isMobileMenuOpen }"
           >
             <a
-              :aria-label="`navigate to ${list} section`"
-              :href="`#${list}`"
+              :aria-label="`${list} section`"
+              :href="list === 'resume' ? '/resume' : `#${list}`"
+              :target="list === 'resume' ? '_blank' : '_self'"
               class="G-border-animate block w-full"
               @click="isMobileMenuOpen ? (isMobileMenuOpen = false) : null"
               >{{ list }}</a
             >
-          </li>
-          <li
-            class="G-border-animate hidden pt-1 sm:block sm:pt-0"
-            :class="{
-              'after:w-full': subNavActive,
-            }"
-            @mouseenter="subNavActive = true"
-            @mouseleave="hideSubMenu()"
-          >
-            Resume
           </li>
         </ul>
         <!-- Resume download / view mobile -->
         <div
           class="G-container-shadow G-container-shadow-spacing-base mt-3 space-y-2 sm:hidden"
         >
-          <div class="border-base-20 border-b-[0.5px] text-sm">Resume</div>
           <!-- view pdf -->
-          <ul class="space-y-1 text-sm">
+          <ul class="text-sm">
             <li>
               <nuxt-link
                 to="/resume"
+                target='_blank'
                 class="flex items-center justify-between pt-1"
-              >
-                View
-                <Icon
-                  name="ph:magnifying-glass-plus-bold"
-                  class="h-4 w-4"
-                />
+              >Resume
               </nuxt-link>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- Sub navigation resume desktop -->
-    <div
-      v-show="subNavActive"
-      class="z-50 pt-7 sm:absolute sm:right-[2.5rem] sm:top-[0.5rem]"
-      @mouseleave="closeSubMenu"
-      @mouseenter="subNavFocus = true"
-    >
-      <nav
-        aria-label="Main nav submenu"
-        class="bg-base-30 relative top-3 mt-4 space-y-2 rounded-md p-3 text-sm shadow-md"
-      >
-        <!-- view pdf -->
-        <nuxt-link
-          to="/resume"
-          target="_blank"
-          class="G-border-animate [&:hover_>_svg]:text-orange flex items-center justify-between gap-x-3 after:top-5"
-        >
-          View
-          <Icon
-            class="h-4 w-4 transition-colors duration-300 ease-in-out"
-            name="ph:magnifying-glass-plus-bold"
-          />
-        </nuxt-link>
-      </nav>
-    </div>
 
     <section
       aria-label="banner"
       class="G-container-shadow mt-16 py-28 text-center"
     >
       <div class="space-y-12">
-        <h1 class="text-3xl md:text-5xl text-center">
+        <h1 class="!text-base-70 text-center text-3xl md:text-4xl">
           Ciaran Toner
-          <span class="block md:inline text-xl">Full-Stack web developer</span>
+          <span class="text-base-20 block text-xl md:inline"
+            >Full stack web developer</span
+          >
         </h1>
-      <div>
-        <p
-          class="relative bg-gradient-to-r from-gray-400/50 via-gray-400/60 to-gray-400 bg-clip-text pb-1 text-center text-xl text-transparent inline-block max-w-[30ch]"
-        >
-          Building modern full stack web applications for today's web
-        </p>
-        <Icon
-          class="[&>circle]:text-orange text-base-20 h-5 w-5 md:mb-2 [&>circle]:animate-[pulse_3s_ease-in-out_infinite] !align-sub"
-          name="clarity:world-outline-badged"
-        />
-      </div>
+        <div class="flex justify-center">
+          <div
+            id="wrapper-text"
+            class="relative"
+          >
+            <p
+              class="relative bg-gradient-to-r from-gray-400/50 via-gray-400/60 to-gray-400 bg-clip-text pb-1 text-center text-xl text-transparent sm:inline-block sm:max-w-[40ch]"
+            >
+              Building modern full stack web applications for today's web
+            </p>
+            <Icon
+              class="[&>circle]:text-orange text-base-20 h-5 w-5 !align-sub md:mb-2 [&>circle]:animate-[pulse_3s_ease-in-out_infinite]"
+              name="clarity:world-outline-badged"
+            />
+          </div>
+        </div>
       </div>
     </section>
   </header>
 </template>
 
 <style lang="postcss" scoped>
-
   h1 {
     @apply text-base-20;
 
-  /* Bracket gradient */
+    /* Bracket gradient */
     span::before,
     span::after {
       @apply via-base-40
@@ -233,15 +194,15 @@
   }
 
   /* Underline border gradient */
-  p::after {
+  #wrapper-text::after {
     @apply via-base-40
     to-base-80
     absolute
-    -bottom-1
     inset-x-0
+    -bottom-1
     h-0.5
-    w-full
-    bg-gradient-to-tr from-transparent pr-2
-    content-[''];
+    bg-gradient-to-tr
+    from-transparent pr-2 content-['']
+    sm:inset-x-0;
   }
 </style>
