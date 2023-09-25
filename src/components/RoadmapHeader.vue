@@ -31,7 +31,7 @@
 </script>
 
 <template>
-  <header
+  <div
     class="relative z-20 flex items-center gap-x-4 border-b border-orange py-2.5 pl-6"
   >
     <Icon
@@ -45,6 +45,7 @@
         @mouseleave="$emit('closeRoadmapMenu')"
       >
         <button
+          type='button'
           aria-label="toggle roadmap menu"
           :aria-expanded="showRoadmapMenu"
           class="flex items-center rounded-md px-2 shadow"
@@ -80,7 +81,7 @@
         </Transition>
       </div>
     </nav>
-  </header>
+  </div>
 </template>
 
 <style scoped>
