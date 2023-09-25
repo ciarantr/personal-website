@@ -52,11 +52,11 @@
           I established a WordPress website for my business. Subsequently, I
           embarked on a journey to enhance my skills and successfully obtained a
           diploma in Full Stack Software Development from
-          <a
-            class="text-orange inline-block after:text-xs after:content-['_↗']"
+          <nuxt-link
+            class="text-orange underline underline-offset-2 inline-block after:text-xs after:content-['_↗'] mx-0.5"
             href="https://codeinstitute.net/ie/"
-            target="_blank"
-            >Code Institute</a
+            target='_blank'
+            >Code Institute</nuxt-link
           >
           Currently, I am further deepening my understanding of software
           development by pursuing a BSc in Computing at the Technological
