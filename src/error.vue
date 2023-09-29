@@ -4,8 +4,15 @@
   })
 
   useHead({
-    title: 'Page not found',
+    templateParams: {
+      separator: '•',
+      extraTitle: '404',
+    },
+
+    title: 'Page Not Found',
+    titleTemplate: '%s %separator %extraTitle',
   })
+
 
   const pageLinks = [
     {
