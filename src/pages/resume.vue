@@ -1,7 +1,16 @@
 <script setup lang="ts">
   definePageMeta({ layout: false })
   useHead({
+    templateParams: {
+      separator: '•',
+      titleExtra: 'Full stack web developer',
+    },
     title: 'Resume',
+    titleTemplate: '%s %separator %siteName %separator %titleExtra',
+  })
+  defineOgImage({
+    component: 'TheBaseOg',
+    title: 'Transforming Ideas into Powerful Solutions',
   })
 </script>
 

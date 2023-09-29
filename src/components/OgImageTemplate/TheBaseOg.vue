@@ -32,17 +32,17 @@
 </script>
 
 <template>
-  <div class="bg-[#0f2027] text-white grid">
+  <div class="grid bg-[#0f2027] text-white">
     <div v-bind="backgroundFlareAttrs" />
     <div class="relative pl-8 pt-8">
       <h1 class="text-6xl">
         {{ title }}
       </h1>
-      <div style='display: flex; width: 100%;'>
-
-      <Icon
-        name="uis:web-grid"
-        class=" w-98 h-98 text-[#12242b] ml-auto mt-4"/>
+      <div style="display: flex; width: 100%">
+        <Icon
+          name="uis:web-grid"
+          class="w-98 h-98 ml-auto mt-4 text-[#12242b]"
+        />
       </div>
     </div>
 

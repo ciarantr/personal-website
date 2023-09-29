@@ -9,6 +9,7 @@
   //  Define og image vue template
   defineOgImage({
     component: 'TheBaseOg',
+    title: 'Transforming Ideas into Powerful Solutions',
   })
 </script>
 
