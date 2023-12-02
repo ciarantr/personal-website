@@ -4,30 +4,17 @@
       type: Boolean,
       required: true,
     },
-    currentRoadmapTitle: {
-      type: String,
+    roadmapTitleOptions: {
+      type: Array,
       required: true,
     },
-    roadmap: {
-      type: Object,
-      required: true,
-    },
+  currentRoadmapTitle: {
+    type: String,
+    required: true,
+  },
   })
   defineEmits(['closeRoadmapMenu', 'openRoadmapMenu', 'updateRoadmap'])
 
-  const roadmapTitles = computed(() => {
-    // Get all roadmap titles from props.roadmap object
-    // Filter out the current roadmap title
-    const titles = []
-
-    for (const year in props.roadmap) {
-      for (const quarter in props.roadmap[year]) {
-        titles.push(props.roadmap[year][quarter].title)
-      }
-    }
-
-    return titles.filter((title) => title !== props.currentRoadmapTitle).sort()
-  })
 </script>
 
 <template>
@@ -40,7 +27,7 @@
     />
     <nav class="absolute top-1.5 left-16">
       <div
-        class="space-y-2"
+        class="space-y-2 capitalize"
         @mouseenter="$emit('openRoadmapMenu')"
         @mouseleave="$emit('closeRoadmapMenu')"
       >
@@ -48,7 +35,7 @@
           type='button'
           aria-label="toggle roadmap menu"
           :aria-expanded="showRoadmapMenu"
-          class="flex items-center rounded-md px-2 shadow"
+          class="flex items-center rounded-md px-2 shadow !capitalize"
         >
           {{ currentRoadmapTitle }}
           <Icon
@@ -63,18 +50,22 @@
             class="w-full space-y-2 rounded-md bg-[#91919a] px-2 py-4 shadow"
           >
             <template
-              v-for="(title, index) in roadmapTitles"
+              v-for="(title, index) in roadmapTitleOptions"
               :key="index"
             >
               <li
-                v-if="title"
-                class="cursor-pointer rounded-md p-2 hover:bg-base-80/30"
-                @click="
-                  $emit('updateRoadmap', title.toLowerCase()),
-                    $emit('closeRoadmapMenu')
-                "
               >
-                {{ title }}
+                <button
+                :class="{ 'bg-base-80/30': currentRoadmapTitle === title }"
+                  :disabled='currentRoadmapTitle === title'
+                  class='capitalize w-full h-full rounded-md p-2 hover:bg-base-80/80 '
+                @click="
+                  $emit('updateRoadmap', index),
+                    $emit('closeRoadmapMenu')
+                ">
+                  {{ title}}
+
+                </button>
               </li>
             </template>
           </ul>

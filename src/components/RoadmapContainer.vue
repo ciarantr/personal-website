@@ -1,118 +1,132 @@
 <script setup>
-  const roadmap = {
-    2022: {
-      q4: {
-        title: 'Q4 Roadmap 2022',
-        months: ['Oct', 'Nov', 'Dec'],
-        projects: [
-          {
-            title: 'Code Institute Project 1',
-            description: '',
-            status: 'complete',
-            area: 1,
-          },
-          {
-            title: 'Code Institute Project 2',
-            description: '',
-            status: 'in-progress',
-            area: 2,
-          },
-          {
-            title: 'Code Institute Project 3',
-            description: '',
-            status: 'todo',
-            area: 3,
-          },
-        ],
-      },
+  //  TODO: move data to db
+  const roadmap = [
+    {
+      title: 'Interface Design and Web Development',
+      description: '',
+      half: 'h1',
     },
-    2023: {
-      q1: {
-        title: 'Q1 Roadmap 2023',
-        projects: [
-          {
-            title: 'Code Institute Project 3',
-            description: '',
-            status: 'Todo',
-            area: 1,
-          },
-          {
-            title: 'TypeScript',
-            description: '',
-            status: 'Todo',
-            area: 2,
-          },
-          {
-            title: 'Continues Integration',
-            description: '',
-            status: 'Todo',
-            area: 3,
-          },
-          {
-            title: 'Code Institute Project 4',
-            description: '',
-            status: 'Todo',
-            area: 4,
-          },
-        ],
-        months: ['Jan', 'Feb', 'Mar'],
-      },
-      q2: {
-        title: 'Q2 Roadmap 2023',
-        months: ['Apr', 'May', 'Jun'],
-        projects: [
-          {
-            title: 'Code Institute Project 4',
-            description: '',
-            status: 'Todo',
-            area: 1,
-          },
-          {
-            title: 'Algorithms & Data Structures (JS)',
-            description: '',
-            status: 'Todo',
-            area: 2,
-          },
-          {
-            title: 'Code Institute Project 5',
-            description: '',
-            status: 'Todo',
-            area: 3,
-          },
-        ],
-      },
+    {
+      title: "CS50's Introduction to Computer Science",
+      description: '',
+      half: 'h1',
     },
-  }
+    {
+      title: 'Computer Technology 1',
+      description: '',
+      half: 'h1',
+    },
+    {
+      title: 'Programming Paradigms and Data Structures',
+      description: '',
+      half: 'h1',
+    },
+    {
+      title: 'Introduction to React: Building Dynamic Web Applications',
+      description: '',
+      half: 'h1',
+    },
+    {
+      title: 'Computing Fundamentals 2',
+      description: '',
+      half: 'h2',
+    },
+    {
+      title: 'Object Oriented Programming',
+      description: '',
+      half: 'h2',
+    },
+    {
+      title: 'Computer Technology 2',
+      description: '',
+      half: 'h2',
+    },
+    {
+      title: 'IOS App Development with Swift',
+      description: '',
+      half: 'h2',
+    },
+    {
+      title: 'Programming and Algorithms 2',
+      description: '',
+      half: 'h2',
+    },
+    {
+      title: 'Database Systems',
+      description: '',
+      half: 'h2',
+    },
+  ]
 
-  const currentRoadmapDates = ref({
-    roadmapYear: 2023,
-    roadmapQuarter: 'q1',
+  // Get the current year
+  const currentYear = ref()
+  currentYear.value = new Date().getFullYear()
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ]
+
+  // Check if we're in the first half or the second half of the year
+  const yearPeriod = ref()
+  yearPeriod.value = new Date().getMonth() < 6 ? 'h1' : 'h2'
+
+  const roadmapTitleOptions = ['roadmap 2024 (h1)', 'roadmap 2024 (h2)']
+
+  const currentRoadmapTitle = computed(() => {
+    return currentYear.value === 2024
+      ? `roadmap ${currentYear.value} (${yearPeriod.value})`
+      : `roadmap 2024 (h1)`
   })
+
+  const currentRoadmap = computed(() => {
+    return currentRoadmapTitle.value.includes('h1')
+      ? h1Projects.value
+      : h2Projects.value
+  })
+
+  const h1Projects = computed(() =>
+    roadmap.filter((project) => project.half === 'h1'),
+  )
+  const h2Projects = computed(() =>
+    roadmap.filter((project) => project.half === 'h2'),
+  )
 
   const roadmapContainer = ref(null)
   const showRoadmapMenu = ref(false)
   const roadmapLoading = ref(false)
-  const getRoadmap = ({ year, quarter }) => roadmap[year][quarter]
-  // Return roadmap data for the current roadmap year and quarter
-  const currentRoadmap = computed(() => {
-    return getRoadmap({
-      year: currentRoadmapDates.value.roadmapYear,
-      quarter: currentRoadmapDates.value.roadmapQuarter,
-    })
+
+  const roadmapDisplayMonths = computed(() => {
+    if (currentRoadmapTitle.value.includes('h1')) {
+      return months.slice(0, 6)
+    } else {
+      return months.slice(6)
+    }
   })
 
-  function updateRoadMap(roadmapTitle) {
-    const roadmapYear = roadmapTitle.substring(roadmapTitle.length - 4)
-    const roadmapQuarter = roadmapTitle.substring(0, 2)
-
-    currentRoadmapDates.value.roadmapYear = Number(roadmapYear)
-    currentRoadmapDates.value.roadmapQuarter = roadmapQuarter
-
+  //
+  function updateRoadMap(roadmapPeriod) {
     roadmapLoading.value = true
 
     setTimeout(() => {
+      currentYear.value = 2024
+
+      if (roadmapPeriod === 0) {
+        yearPeriod.value = 'h1'
+      } else {
+        yearPeriod.value = 'h2'
+      }
       roadmapLoading.value = false
-    }, 1000)
+    }, 750)
   }
 
   onMounted(() => {
@@ -129,7 +143,7 @@
 <template>
   <div
     ref="roadmapContainer"
-    class="text-base-10 relative space-y-2 overflow-y-auto"
+    class="text-base-10 relative space-y-2 "
   >
     <div class="translate-y-12 transition-transform duration-1000 ease-in-out">
       <div>
@@ -141,7 +155,7 @@
       </div>
     </div>
     <div
-      class="glass-effect space-y-8 overflow-auto rounded-md px-2 pb-6 shadow-sm"
+      class="glass-effect space-y-8  rounded-md px-2 pb-6 shadow-sm"
     >
       <Icon
         class="absolute right-40 top-0 h-full w-1/2 opacity-5"
@@ -151,20 +165,23 @@
       <RoadmapHeader
         class="glass-effect"
         :roadmap="roadmap"
-        :current-roadmap-title="currentRoadmap.title"
+        :current-roadmap-title="currentRoadmapTitle"
+        :roadmap-title-options="roadmapTitleOptions"
         :current-roadmap="currentRoadmap"
         :show-roadmap-menu="showRoadmapMenu"
         @open-roadmap-menu="showRoadmapMenu = true"
         @close-roadmap-menu="showRoadmapMenu = false"
         @update-roadmap="updateRoadMap"
       />
+<div class='overflow-x-auto pb-4'>
 
       <RoadmapProjects
         class="glass-effect min-w-[550px]"
-        :roadmap-months="currentRoadmap.months"
-        :roadmap-projects="currentRoadmap.projects"
+        :roadmap-months="roadmapDisplayMonths"
+        :roadmap-projects="currentRoadmap"
         :roadmap-loading="roadmapLoading"
       />
+</div>
     </div>
   </div>
 </template>
