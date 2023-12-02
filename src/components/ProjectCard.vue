@@ -16,23 +16,23 @@
     >
       <div>
         <!-- Project title -->
-        <div class="space-y-4 sm:flex sm:justify-between sm:space-y-0">
+        <div class="space-y-6">
           <h5
-            class="border-orange h-max w-max rounded-full border px-2.5 py-0.5 text-sm  "
+            class="border-orange h-max w-max rounded-full border px-2.5 py-0.5 text-sm capitalize"
           >
             {{ details.name }}
           </h5>
-          <div class="G-container-illuminate p-1.5">
+          <div class="G-container-illuminate p-3.5">
             <nuxt-img
               provider="cloudinary"
-              class="rounded-md w-full sm:w-[175px]"
-              :src="`/${details.imageUrl}.jpg`"
+              class="aspect-video w-full rounded-md object-cover object-top"
+              :src="`/${details.imageUrl}.webp`"
               :alt="`${details.name} project`"
               :modifiers="{ dpr: 'auto', f: 'auto' }"
               quality="100"
-              fit='cover'
+              fit="cover"
               loading="lazy"
-              width="350"
+              width="624"
               height="350"
             />
           </div>
@@ -40,7 +40,7 @@
         <div class="space-y-8 pt-8 sm:pt-16">
           <!-- Project description -->
           <div>
-            <p class="text-base-70  sm:w-5/6">
+            <p class="text-base-70 sm:w-5/6">
               {{ details.description }}
             </p>
           </div>
