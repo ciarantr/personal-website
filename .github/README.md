@@ -80,30 +80,28 @@ If you have any inquiries or opportunities for collaboration, please do not hesi
 > 
 > Selected as the deployment platform, offering fast, secure, scalable hosting solution for the website.
 
+## Coming Soon: Developer's Blog ![blog icon](https://api.iconify.design/fa6-solid:blog.svg?color=%23888888&width=24&height=24)
 
-# Coming Soon: Developer's Blog ![blog icon](https://api.iconify.design/fa6-solid:blog.svg?color=%23888888&width=24&height=24)
-
-I'm super excited to announce the launch of my blog section and can't wait to share it with you! 🔥
+I'm very excited to announce the launch of my blog section and can't wait to share it with you! 🔥
 
 This addition to my portfolio will not only act as a medium to share my learning journey, but also as a platform to engage, discuss, and learn together.
 
-Here's a brief of what to expect:
+## **Here's a brief of what to expect:**
 
-## Tools & Technologies ![tools icon](https://api.iconify.design/game-icons:toolbox.svg?color=%23888888&width=24&height=24)
+- ### Tools & Technologies ![tools icon](https://api.iconify.design/game-icons:toolbox.svg?color=%23888888&width=24&height=24)
 
-I'll be writing about the various tools and technologies that I use in my day-to-day work, share insights, tips, and best practices to hone your skills in them.
+  I'll be writing about the various tools and technologies that I use in my day-to-day work, share insights, tips, and best practices to hone your skills in them.
 
-## Developer's Health Corner ![heart icon](https://api.iconify.design/game-icons:techno-heart.svg?color=%23888888&width=24&height=24)
+- ### Developer's Health Corner ![heart icon](https://api.iconify.design/game-icons:techno-heart.svg?color=%23888888&width=24&height=24)
 
-In the race of learning and building, health often takes a backseat. Not anymore! With my 'Developer's Health Corner', I will share wellness tips, exercises, and healthy habits that every developer must incorporate in their routine for a sustainable and long-term coding journey.
+  In the race of learning and building, health often takes a backseat. Not anymore! With my 'Developer's Health Corner', I will share wellness tips, exercises, and healthy habits that every developer must incorporate in their routine for a sustainable and long-term coding journey.
 
-### Stay tuned for more updates! 📢
+- ### Stay tuned for more updates! 📢
 
-If you're as excited as I am and have topic suggestions that you'd want me to cover, feel free to drop me an email.
+  If you're as excited as I am and have topic suggestions that you'd want me to cover, feel free to drop me an email.
+  Let's learn, build, and grow together!!
+  
+  
+  Keep an eye on the progress and feel free to contribute to this repository!
 
-Let's learn, build, and grow together!!
-
-
-Keep an eye on the progress and feel free to contribute to this repository!
-
-### Fuelling Future Innovations: Stay Curious, Keep Coding! ![terminal icon](https://api.iconify.design/ph:terminal.svg?color=%23888888&width=24&height=24)
+## Fuelling Future Innovations: Stay Curious, Keep Coding! ![terminal icon](https://api.iconify.design/ph:terminal.svg?color=%23888888&width=24&height=24)
