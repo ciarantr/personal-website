@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
     '@nuxt/image-edge',
-    // '@nuxt/devtools',
+    '@nuxt/devtools',
     '@nuxtseo/module',
     "@nuxt/image"
   ],
