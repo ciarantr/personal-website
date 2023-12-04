@@ -12,6 +12,8 @@
     component: 'TheBaseOg',
     title: 'Transforming Ideas into Powerful Solutions',
   })
+  const runtimeConfig = useRuntimeConfig()
+  const cloudinaryURL = runtimeConfig.public.cloudinaryURL
 </script>
 
 <template>
@@ -20,7 +22,7 @@
     role="document"
     loading="eager"
     class="mt-12 h-screen w-full"
-    src="https://res.cloudinary.com/c-io/image/upload/dev-domain/resume-ciaran-toner.pdf"
+    :src="cloudinaryURL + 'resume-ciaran-toner.pdf'"
     type="application/pdf"
   />
 </template>

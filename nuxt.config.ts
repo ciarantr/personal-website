@@ -12,6 +12,7 @@ export default defineNuxtConfig({
 
     public: {
       CLIENT_VERSION: version,
+      cloudinaryURL: 'https://res.cloudinary.com/c-io/image/upload/v1/dev-domain/',
     },
   },
   // configuration incorrect see
@@ -29,8 +30,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
     '@nuxt/image-edge',
-    '@nuxt/devtools',
+    // '@nuxt/devtools',
     '@nuxtseo/module',
+    "@nuxt/image"
   ],
   // Tailwind config
   tailwindcss: {
@@ -48,7 +50,7 @@ export default defineNuxtConfig({
 
   // Build Configuration nuxt seo: https://nuxtseo.com/nuxt-seo/guides/configuring-modules
   site: {
-    url: 'https://ciaran-io.dev',
+    // url: 'https://ciaran-io.dev',
     name: 'Ciaran Toner',
     description:
       'Full stack solutions-oriented web developer proficient in tackling ' +
@@ -72,7 +74,7 @@ export default defineNuxtConfig({
       templateParams: {
         separator: '•'
       },
-      titleTemplate: '%s %separator% ',
+      titleTemplate: '%s %separator %siteName',
       meta: [
         { name: 'author', content: 'Ciaran Toner' },
         {
