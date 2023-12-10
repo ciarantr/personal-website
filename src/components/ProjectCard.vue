@@ -12,17 +12,15 @@
     <div
       v-for="details in projectDetails"
       :key="details.name"
-      class="G-container-illuminate lg:w-2/3 lg:even:justify-self-end"
+      class="G-container-illuminate shadow-lg lg:w-2/3 lg:even:justify-self-end"
     >
       <div>
         <!-- Project title -->
         <div class="space-y-6">
-          <h5
-            class="border-orange h-max w-max rounded-full border px-2.5 py-0.5 text-sm capitalize"
-          >
+          <h5 class="border-orange h-max w-max border-b capitalize">
             {{ details.name }}
           </h5>
-          <div class="G-container-illuminate p-3.5">
+          <div class="G-container-illuminate p-3.5 hover:!border-none">
             <nuxt-img
               provider="cloudinary"
               class="aspect-video w-full rounded-md object-cover object-top"
@@ -40,7 +38,7 @@
         <div class="space-y-8 pt-8 sm:pt-16">
           <!-- Project description -->
           <div>
-            <p class="text-base-70 sm:w-5/6">
+            <p class="text-sm sm:w-5/6">
               {{ details.description }}
             </p>
           </div>
@@ -49,19 +47,20 @@
           <div>
             <!-- Technologies list -->
             <ul
-              class="text-base-70 border-base-45 flex max-w-max flex-wrap gap-x-4 gap-y-4 rounded-lg border p-3 text-xs"
+              class="flex max-w-max flex-wrap gap-x-4 gap-y-4 rounded-lg text-xs"
             >
               <li
                 v-for="{ language, percentage } in details.languages"
                 :key="language"
                 class="flex gap-x-0.5"
+                :data-technology="language"
               >
                 <!-- technology color (global css) -->
-                <span
+                <!-- <span
                   aria-hidden="true"
                   :data-technology="language"
                 >
-                </span>
+                </span> -->
 
                 {{ language }} {{ percentage }}%
               </li>
@@ -89,8 +88,8 @@
               target="_blank"
             >
               <Icon
-                class="hover:text-base-20 h-6 w-6 transition-colors duration-500"
-                name="tabler:external-link"
+                class="hover:text-base-20 h-5 w-5 transition-colors duration-500"
+                name="mynaui:external-link"
               />
             </nuxt-link>
           </div>
