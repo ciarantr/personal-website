@@ -113,7 +113,6 @@
     }
   })
 
-  //
   function updateRoadMap(roadmapPeriod) {
     roadmapLoading.value = true
 
@@ -143,7 +142,7 @@
 <template>
   <div
     ref="roadmapContainer"
-    class="text-base-10 relative space-y-2 "
+    class="text-base-10 relative space-y-2"
   >
     <div class="translate-y-12 transition-transform duration-1000 ease-in-out">
       <div>
@@ -154,13 +153,12 @@
         />
       </div>
     </div>
-    <div
-      class="glass-effect space-y-8  rounded-md px-2 pb-6 shadow-sm"
-    >
+    <div class="glass-effect space-y-8 rounded-md px-2 pb-6 shadow-sm">
       <Icon
         class="absolute right-40 top-0 h-full w-1/2 opacity-5"
         name="raphael:roadmap"
       />
+      <!--:is-roadmap-menu="showRoadmapMenu === true ? showRoadmapMenu = false : showRoadmapMenu = true"-->
 
       <RoadmapHeader
         class="glass-effect"
@@ -169,19 +167,23 @@
         :roadmap-title-options="roadmapTitleOptions"
         :current-roadmap="currentRoadmap"
         :show-roadmap-menu="showRoadmapMenu"
+        @is-menu-active="
+          showRoadmapMenu === true
+            ? (showRoadmapMenu = false)
+            : (showRoadmapMenu = true)
+        "
         @open-roadmap-menu="showRoadmapMenu = true"
         @close-roadmap-menu="showRoadmapMenu = false"
         @update-roadmap="updateRoadMap"
       />
-<div class='overflow-x-auto pb-4'>
-
-      <RoadmapProjects
-        class="glass-effect min-w-[550px]"
-        :roadmap-months="roadmapDisplayMonths"
-        :roadmap-projects="currentRoadmap"
-        :roadmap-loading="roadmapLoading"
-      />
-</div>
+      <div class="overflow-x-auto pb-4">
+        <RoadmapProjects
+          class="glass-effect min-w-[550px]"
+          :roadmap-months="roadmapDisplayMonths"
+          :roadmap-projects="currentRoadmap"
+          :roadmap-loading="roadmapLoading"
+        />
+      </div>
     </div>
   </div>
 </template>

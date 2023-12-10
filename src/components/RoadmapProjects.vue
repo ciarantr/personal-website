@@ -27,11 +27,9 @@
 <template>
   <div
     ref="roadmapList"
-    class="space-y-8 rounded-md p-4 md:px-4  overflow-hidden"
+    class="space-y-8 overflow-hidden rounded-md p-4 md:px-4"
   >
-    <div
-      class="grid grid-flow-col border-b h-7 "
-    >
+    <div class="grid h-7 grid-flow-col border-b">
       <div
         v-for="(months, index) in roadmapMonths"
         :key="index"
@@ -41,11 +39,10 @@
       </div>
     </div>
 
-
     <TransitionGroup
       name="list"
       tag="ul"
-      class="grid grid-cols-3 grid-rows-5 gap-y-8 "
+      class="grid grid-cols-3 grid-rows-5 gap-y-8"
     >
       <li
         v-for="({ title }, index) in roadmapProjects"
@@ -67,7 +64,9 @@
 <style scoped lang="postcss">
   .list-enter-active,
   .list-leave-active {
-    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+    transition:
+      opacity 0.5s ease-in,
+      transform 0.5s ease-in;
   }
   .list-enter-from,
   .list-leave-to {
