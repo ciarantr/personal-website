@@ -6,53 +6,72 @@
 
 <template>
   <footer
-    aria-label='links to github & linkedin & copywrite'
-    class="h-96 border-t border-base-40 bg-dark pt-12 md:pb-4">
+    aria-label="links to github & linkedin & copywrite"
+    class="border-base-40 h-96 border-t pt-12 md:pb-4"
+  >
     <div
-      class="container grid h-full place-items-center md:grid-cols-3 md:place-items-baseline"
+      class="to-base-20/70 container grid h-full w-full rounded-xl bg-gradient-to-br from-transparent p-4 text-xs shadow-2xl transition-shadow"
     >
-      <div
-        class="grid h-full w-full rounded-xl bg-gradient-to-b from-base-15 via-base-15 to-dark p-4 shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-orange max-md:col-span-2 md:w-1/2"
-      >
-        <Icon
-          class="text-base-50 h-8 w-8"
-          name="arcticons:cinexplore"
-        />
-
-        <div class="mt-auto flex gap-x-3 md:justify-between">
+      <div class="text-center">
+        <div
+          id="title"
+          class="flex items-center justify-center gap-x-2 text-sm"
+        >
           <!-- GitHub link -->
           <nuxt-link
-            aria-label="link to github personal profile"
+            aria-label="link to github profile"
             to="https://github.com/ciaran-io"
             target="_blank"
-            class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-base-20 via-base-20 to-dark"
+            class="G-border-animate"
           >
-            <Icon
-              class="text-base-50 h-6 w-6"
-              name="icon-park-outline:github"
-            />
+            GitHub
           </nuxt-link>
+          <span aria-hidden="true">&bullet;</span>
           <!-- Linkedin -->
           <nuxt-link
-            aria-label="link to github personal linkedin profile"
+            aria-label="link to linkedin profile"
             to="https://www.linkedin.com/in/ciaran-toner/"
             target="_blank"
-            class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-base-20 via-base-20 to-dark"
+            class="G-border-animate"
           >
-            <Icon
-              class="text-base-50 h-6 w-6"
-              name="brandico:linkedin-rect"
-            />
+            Linkedin
           </nuxt-link>
         </div>
       </div>
 
       <div
-        class="col-span-2 w-full space-y-2 rounded-xl bg-gradient-to-r from-base-15 via-base-15 to-dark p-4 text-xs shadow-2xl transition-shadow duration-300 ease-in-out hover:shadow-orange sm:flex sm:justify-between sm:space-y-0 md:mt-auto"
+        class="hover:shadow-orange mt-auto w-full rounded-xl p-4 text-xs shadow-2xl transition-shadow duration-300 ease-in-out sm:flex sm:justify-between sm:space-y-0"
       >
-        <div>Copyright © {{ date }} Designed & created by Ciaran Toner</div>
-        <div>Made with NuxtJs | VueJs | Tailwindcss v{{ version }}</div>
+        <div class="flex items-center gap-x-1">
+          <p>Copyright © {{ date }} Designed & created by Ciaran Toner</p>
+          <Icon
+            name="arcticons:cinexplore"
+            class="h-4 w-4"
+          />
+        </div>
+        <p>Created with NuxtJs | VueJs | Tailwindcss on v{{ version }}</p>
       </div>
     </div>
   </footer>
 </template>
+
+<style lang="postcss" scoped>
+  #title::before,
+  #title::after {
+    @apply via-base-40
+      to-base-45
+      bg-gradient-to-b
+      from-transparent
+      bg-clip-text
+      text-2xl
+      text-transparent;
+  }
+
+  #title::before {
+    content: '{ ';
+  }
+
+  #title::after {
+    content: ' }';
+  }
+</style>
