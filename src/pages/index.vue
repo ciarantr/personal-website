@@ -11,74 +11,117 @@
     component: 'TheBaseOg',
     title: 'Transforming Ideas into Powerful Solutions',
   })
+  const isMobileMenuOpen = useMenu()
+
+  function hideMobileMenuOnScroll() {
+    if (window.scrollY > 450) {
+      isMobileMenuOpen.value = false
+    }
+  }
+  // watch to close the mobile menu if user scrolls past 250px when open
+  watch(isMobileMenuOpen, (isOpen) => {
+    if (isOpen) {
+      window.addEventListener('scroll', hideMobileMenuOnScroll)
+    } else {
+      // remove event listener
+      window.removeEventListener('scroll', hideMobileMenuOnScroll)
+    }
+  })
 </script>
 
 <template>
-  <main
-    id="main-content"
-    class="mt-48"
-  >
-    <div class="container lg:max-w-5xl">
-      <div class="mt-12 space-y-32">
-        <!-- About me  -->
-        <content-container
-          id="about"
-          heading="About"
-        >
-          <template #content-main>
-            <about-content />
-          </template>
-        </content-container>
+  <div>
+    <main
+      id="main-content"
+      class="mt-96"
+      :class="{
+        'blur-sm': isMobileMenuOpen,
+      }"
+    >
+      <div class="container lg:max-w-5xl">
+        <div class="space-y-48">
+          <!-- About me  -->
+          <content-container
+            id="about"
+            heading="About"
+            class="relative"
+          >
+            <template #content-main>
+              <p
+                class="text-base-10/80 px-4 first-letter:float-left first-letter:mr-3 first-letter:text-7xl md:max-w-xl md:px-0"
+              >
+                Driven web developer, designer, and entrepreneur, my digital
+                journey sparked to life in 2017 when I crafted a WordPress
+                website for my health business. This venture wasn't just a
+                business initiative; it was the spark that ignited my curiosity
+                in the vast expanse of the digital universe. As I navigated
+                through design challenges and coding problems, I discovered the
+                joy of unveiling solutions and creating user-friendly
+                interfaces. This pursuit to enhance reach and growth for my
+                business turned into an enriching learning journey, fuelling a
+                yearning to know more, do more, and delve deeper into the
+                fascinating realm of technology.
+                <br /><br />
+                This ignited a passion that led to a diploma in Full Stack
+                Software Development from Code Institute and is now propelling
+                me through a BSc in Computing at the Technological University of
+                Dublin. Tapping into technology's transformative potential, I
+                passionately embrace opportunities to enhance my understanding
+                of software development. My quest is to continually refine my
+                knowledge, striving to fulfil my highest potential within the
+                ever-evolving canvas of computer science."
+              </p>
+            </template>
+          </content-container>
 
-        <!-- Work history -->
-        <content-container
-          id="experience"
-          heading="Were I have worked"
+          <!-- Work history -->
+          <content-container
+            id="experience"
+            heading="Were I have worked"
+          >
+            <template #content-main>
+              <job-history-container />
+            </template>
+          </content-container>
+        </div>
+
+        <!-- Projects -->
+        <section
+          aria-label="completed web development projects with description & links"
+          class="mt-64 space-y-12"
         >
-          <template #content-main>
-            <job-history-container />
-          </template>
-        </content-container>
+          <div class="text-center">
+            <h3 class="inline text-6xl">Some things I built</h3>
+            <icon
+              class="text-base-20 ml-4 !align-bottom text-5xl"
+              name="mdi:hammer-wrench"
+            />
+          </div>
+          <project-container id="projects" />
+        </section>
       </div>
-
-      <!-- Projects -->
+      <!-- Technology used slide -->
       <section
-        aria-label="completed web development projects with description & links"
-        class="mt-64 space-y-12"
+        id="tech-stack"
+        aria-label="list of technologist I have used"
+        class="relative mt-64 space-y-12 overflow-clip"
       >
-        <div class="text-center">
-          <h3 class="inline text-6xl">Some things I built</h3>
+        <div class="relative z-50 text-center">
+          <h3 class="inline text-6xl">Technologies I use</h3>
           <icon
-            class="text-base-20 ml-4 !align-bottom text-5xl"
-            name="mdi:hammer-wrench"
+            class="text-base-20 ml-4 !align-baseline text-5xl"
+            name="material-symbols:settings-suggest"
           />
         </div>
-        <project-container id="projects" />
+        <lazy-tech-stack-card />
       </section>
-    </div>
-    <!-- Technology used slide -->
-    <section
-      id="tech-stack"
-      aria-label="list of technologist I have used"
-      class="relative mt-64 space-y-12 overflow-clip"
-    >
-      <div class="relative z-50 text-center">
-        <h3 class="inline text-6xl">Technologies I use</h3>
-        <icon
-          class="text-base-20 ml-4 !align-baseline text-5xl"
-          name="material-symbols:settings-suggest"
-        />
-      </div>
-      <lazy-tech-stack-card />
-    </section>
+    </main>
     <!-- Gradient wrapper  -->
-    <div
-      class="to-dark mt-64 space-y-64 bg-gradient-to-b from-transparent pb-96"
-    >
+    <div class="to-dark mt-64 space-y-64 bg-gradient-to-b from-transparent">
       <!-- Roadmap -->
       <section
         ref="roadmapSection"
-        aria-label='roadmap of my learning journey from 2022 to 2023'
+        aria-label="development roadmap"
         class="container space-y-12 lg:max-w-5xl"
       >
         <lazy-roadmap-container />
@@ -86,13 +129,14 @@
       <!-- Contact us -->
       <section
         id="contact"
-        aria-label='contact me via email'
+        aria-label="contact me via email"
         class="mx-auto h-full px-4 pt-32 md:w-max md:px-0"
       >
         <lazy-contact-card />
       </section>
+      <LazyTheFooter />
     </div>
-  </main>
+  </div>
 </template>
 
 <style lang="postcss" scoped>
@@ -109,28 +153,34 @@
     text-transparent;
   }
 
-  /* Faded appearance on overflow tech cards   */
-  #tech-stack {
-    &::before,
-    &::after {
-      @apply absolute
-      top-20
-      z-20
-      block
-      h-full
-      w-[10%]
-      content-[''];
+  /*Faded appearance on overflow tech cards   */
+  #tech-stack div:last-child::before,
+  #tech-stack div:last-child::after {
+    @apply absolute  z-20 block w-full  content-[''];
+  }
+
+  @screen md {
+    #tech-stack div:last-child::before,
+    #tech-stack div:last-child::after {
+      @apply !h-full w-[10%];
+    }
+  }
+
+  #tech-stack div:last-child::before {
+    @apply from-base-30 via-base-30 -top-36 left-0 h-1/3 bg-gradient-to-b;
+  }
+
+  #tech-stack div:last-child::after {
+    @apply via-base-30 from-base-30  bottom-0 left-0 h-1/5 bg-gradient-to-t;
+  }
+
+  @screen md {
+    #tech-stack div:last-child::before {
+      @apply top-0  bg-gradient-to-r;
     }
 
-    &::before {
-      @apply from-base-30
-      left-0 bg-gradient-to-r;
-    }
-
-    &::after {
-      @apply from-base-30
-      right-0
-      bg-gradient-to-l;
+    #tech-stack div:last-child::after {
+      @apply left-auto right-0 bg-gradient-to-l;
     }
   }
 </style>
@@ -139,5 +189,14 @@
   body {
     /* Set a counter named 'section', and its initial value is 0. */
     counter-reset: heading;
+  }
+  /* 
+  scroll-top margin for anchor section in nav
+  set to match nav menu height when opened
+   */
+  #about,
+  #experience,
+  #projects {
+    scroll-margin-top: 500px;
   }
 </style>
