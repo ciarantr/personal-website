@@ -13,7 +13,7 @@
 <template>
   <div
     ref="contactCard"
-    class="grid gap-y-6 overflow-clip rounded-xl px-4 py-6 shadow-2xl transition-shadow duration-1000 ease-in-out sm:h-96 sm:p-8"
+    class="grid gap-y-12 overflow-clip rounded-xl px-4 py-12 shadow-2xl transition-shadow duration-1000 ease-in-out sm:h-96 sm:p-8"
   >
     <div>
       <h2 class="text-4xl sm:text-5xl">Whats next?</h2>

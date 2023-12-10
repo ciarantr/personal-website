@@ -7,7 +7,7 @@
 <template>
   <footer
     aria-label="links to github & linkedin & copywrite"
-    class="border-base-40 h-96 border-t pt-12 md:pb-4"
+    class="border-base-40 h-96 border-t pt-12 md:pb-4 "
   >
     <div
       class="to-base-20/70 container grid h-full w-full rounded-xl bg-gradient-to-br from-transparent p-4 text-xs shadow-2xl transition-shadow"
@@ -42,14 +42,14 @@
       <div
         class="hover:shadow-orange mt-auto w-full rounded-xl p-4 text-xs shadow-2xl transition-shadow duration-300 ease-in-out sm:flex sm:justify-between sm:space-y-0"
       >
-        <div class="flex items-center gap-x-1">
           <p>Copyright © {{ date }} Designed & created by Ciaran Toner</p>
+        <div class='flex gap-x-1'>
           <Icon
             name="arcticons:cinexplore"
             class="h-4 w-4"
           />
+          <p>Created with NuxtJs | VueJs | Tailwindcss on v{{ version }}</p>
         </div>
-        <p>Created with NuxtJs | VueJs | Tailwindcss on v{{ version }}</p>
       </div>
     </div>
   </footer>
