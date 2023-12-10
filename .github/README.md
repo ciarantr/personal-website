@@ -12,72 +12,72 @@
 
 The key motivation behind this project was to create a dynamic representation of my coding expertise. This portfolio leverages the [GitHub API](https://docs.github.com/en/rest/) to retrieve data from projects I've worked on.
 
-
 ## Projects Showcase ![projects icon](https://api.iconify.design/material-symbols-light:wallpaper-slideshow.svg?color=%23888888&width=24&height=24)
 
 This website dynamically renders all my GitHub repos. You'll be able to see the projects I've worked on, including detailed insights like the coding languages used and more.
-
 
 ## Tech Roadmap ![Roadmap icon](https://api.iconify.design/raphael:roadmap.svg?color=%23888888&width=24&height=24!)
 
 Don't forget to check out my roadmap for 2024! It'll give a snapshot of the technologies I'm planning to explore in the coming year.
 
-
 ## Resume ![resume icon](https://api.iconify.design/ooui:special-pages-ltr.svg?color=%23888888)
 
 Resume is hosted on [Cloudinary](https://res.cloudinary.com/c-io/image/upload/dev-domain/resume-ciaran-toner.pdf) and hence, you can access it anywhere, anytime.
-
 
 ## Links ![link icon](https://api.iconify.design/mdi:link.svg?color=%23888888&width=24&height=24)
 
 Aside from this, You'll also find links to my:
 
--  [GitHub](https://github.com/ciaran-io)
--  [LinkedIn](https://www.linkedin.com/in/ciaran-toner/)
-- [Website](https://ciaran-io.dev/)
-
+- [GitHub](https://github.com/ciaran-io)
+- [LinkedIn](https://www.linkedin.com/in/ciaran-toner/)
+- [Contact Email](mailto:hi%40ciaran-io.dev?subject=Hi%20Ciaran,%20I%20came%20across%20your%20portfolio%20website%20and%20would%20like%20to%20connect%20with%20you!&body=Hi%20Ciaran,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20website%20and%20would%20like%20to%20connect%20with%20you!%0D%0A%0D%0A%0D%0A%0D%0A%0D%0ARegards,%0D%0A%0D%0A)
 
 ## Get in Touch ![email icon](https://api.iconify.design/material-symbols:alternate-email.svg?color=%23888888&width=24&height=24)
 
 If you have any inquiries or opportunities for collaboration, please do not hesitate to contact me. You can find the 'What's next' section at the bottom of the page, where you can email me.
 
-
 ## Technologies Used ![tech icon](https://api.iconify.design/mdi:code-braces.svg?color=%23888888&width=24&height=24)
 
 **Built with Open-Source Giants: A Testament to the Power of Community Collaboration** 🤝
 
->![GitHub API logo](https://api.iconify.design/skill-icons:github-dark.svg?color=%23888888&width=24&height=24) **[GitHub API](https://docs.github.com/en/rest/)**
-> 
+> ![GitHub API logo](https://api.iconify.design/skill-icons:github-dark.svg?color=%23888888&width=24&height=24) **[GitHub API](https://docs.github.com/en/rest/)**
+>
 > Used to retrieve data from my GitHub repositories and dynamically render them on the website.
 >
 > ---
->![Vue.js logo](https://api.iconify.design/devicon:vuejs.svg?color=%23888888&width=24&height=24) **[Vue.js](https://vuejs.org/)** 
-> 
->Utilized as the main JavaScript framework for creating an interactive and efficient frontend to build the user interface.
+>
+> ![Vue.js logo](https://api.iconify.design/devicon:vuejs.svg?color=%23888888&width=24&height=24) **[Vue.js](https://vuejs.org/)**
+>
+> Utilized as the main JavaScript framework for creating an interactive and efficient frontend to build the user interface.
 >
 > ---
->![Vite.js logo](https://api.iconify.design/vscode-icons:file-type-vite.svg?color=%23888888&width=24&height=24) **[Vite.js](https://vitejs.dev/)**
-> 
+>
+> ![Vite.js logo](https://api.iconify.design/vscode-icons:file-type-vite.svg?color=%23888888&width=24&height=24) **[Vite.js](https://vitejs.dev/)**
+>
 > Used as a next-generation front-end build tool for faster and leaner development, energizing well with Vue.js.
-> 
-> ---
->![Nuxt logo](https://api.iconify.design/logos:nuxt-icon.svg?color=%23888888&width=24&height=24) **[Nuxt](https://nuxtjs.org/)**
-> 
->Used as a static site generator to build a performant, static, and SEO-friendly website.
 >
 > ---
+>
+> ![Nuxt logo](https://api.iconify.design/logos:nuxt-icon.svg?color=%23888888&width=24&height=24) **[Nuxt](https://nuxtjs.org/)**
+>
+> Used as a static site generator to build a performant, static, and SEO-friendly website.
+>
+> ---
+>
 > ![Tailwind CSS logo](https://api.iconify.design/logos:tailwindcss-icon.svg?color=%23888888&width=24&height=24) **[Tailwind CSS](https://tailwindcss.com/)**
 >
 > Used as a utility-first CSS framework to rapidly build custom user interfaces.
-> 
+>
 > ---
-> ![Cloudinary logo](https://api.iconify.design/logos:cloudinary-icon.svg?color=%23888888&width=24&height=24) **[Cloudinary](https://cloudinary.com/)** 
-> 
+>
+> ![Cloudinary logo](https://api.iconify.design/logos:cloudinary-icon.svg?color=%23888888&width=24&height=24) **[Cloudinary](https://cloudinary.com/)**
+>
 > Chosen for reliable cloud-based storage to manage and deliver images and videos, used for assets such as my resume and >project images.
 >
 > ---
-> ![Cloudflare Pages logo](https://api.iconify.design/logos:cloudflare-icon.svg?color=%23888888&&width=24&height=24) **[Cloudflare Pages](https://pages.cloudflare.com/)** 
-> 
+>
+> ![Cloudflare Pages logo](https://api.iconify.design/logos:cloudflare-icon.svg?color=%23888888&&width=24&height=24) **[Cloudflare Pages](https://pages.cloudflare.com/)**
+>
 > Selected as the deployment platform, offering fast, secure, scalable hosting solution for the website.
 
 ## Coming Soon: Developer's Blog ![blog icon](https://api.iconify.design/fa6-solid:blog.svg?color=%23888888&width=24&height=24)
@@ -100,8 +100,7 @@ This addition to my portfolio will not only act as a medium to share my learning
 
   If you're as excited as I am and have topic suggestions that you'd want me to cover, feel free to drop me an email.
   Let's learn, build, and grow together!!
-  
-  
+
   Keep an eye on the progress and feel free to contribute to this repository!
 
 ## Fuelling Future Innovations: Stay Curious, Keep Coding! ![terminal icon](https://api.iconify.design/ph:terminal.svg?color=%23888888&width=24&height=24)
