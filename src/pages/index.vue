@@ -198,5 +198,9 @@
   #experience,
   #projects {
     scroll-margin-top: 500px;
+    
+    @screen sm {
+      scroll-margin-top: 0px;
+    }
   }
 </style>
