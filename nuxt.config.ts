@@ -12,7 +12,8 @@ export default defineNuxtConfig({
 
     public: {
       CLIENT_VERSION: version,
-      cloudinaryURL: 'https://res.cloudinary.com/c-io/image/upload/v1/dev-domain/',
+      cloudinaryURL:
+        'https://res.cloudinary.com/c-io/image/upload/v1/dev-domain/',
     },
   },
   // configuration incorrect see
@@ -32,7 +33,7 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     '@nuxt/devtools',
     '@nuxtseo/module',
-    "@nuxt/image"
+    '@nuxt/image',
   ],
   // Tailwind config
   tailwindcss: {
@@ -50,7 +51,7 @@ export default defineNuxtConfig({
 
   // Build Configuration nuxt seo: https://nuxtseo.com/nuxt-seo/guides/configuring-modules
   site: {
-    // url: 'https://ciaran-io.dev',
+    url: 'https://ciaran-io.dev',
     name: 'Ciaran Toner',
     description:
       'Full stack solutions-oriented web developer proficient in tackling ' +
@@ -65,14 +66,14 @@ export default defineNuxtConfig({
         weight: 400,
         // path must point to a public font file
         path: '/fonts/Lato-Regular.ttf',
-      }
+      },
     ],
   },
 
   app: {
     head: {
       templateParams: {
-        separator: '•'
+        separator: '•',
       },
       titleTemplate: '%s %separator %siteName',
       meta: [
@@ -106,7 +107,7 @@ export default defineNuxtConfig({
           color: '#525360',
         },
         { rel: 'manifest', href: '/site.webmanifest' },
-        {rel: 'canonical' , href: 'https://ciaran-io.dev'},
+        { rel: 'canonical', href: 'https://ciaran-io.dev' },
       ],
     },
   },

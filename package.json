@@ -1,12 +1,13 @@
 {
   "author": "Ciaran Toner",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "eslintConfig": {
     "extends": "./config/.eslintrc.yaml"
   },
   "scripts": {
     "dev": "nuxt dev",
-    "build": "nuxt generate -m"
+    "build": "nuxt generate -m",
+    "format": "prettier --write ./"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.0.2",
