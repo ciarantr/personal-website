@@ -80,8 +80,7 @@
     animation-iteration-count: infinite;
     animation-direction: normal;
     animation-fill-mode: both;
-    /*animation-play-state: v-bind(animationPaused);*/
-    animation-play-state: running;
+    animation-play-state: v-bind(animationPaused);
 
     &:hover {
       animation-play-state: paused;
@@ -89,31 +88,31 @@
   }
 
   /* Animate cards if no preference for reduced motion */
-  /*@media (prefers-reduced-motion: no-preference) {*/
-  /*  @keyframes technology-cards {*/
-  /*    0% {*/
-  /*      transform: translateY(0);*/
-  /*    }*/
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes technology-cards {
+      0% {
+        transform: translateY(0);
+      }
 
-  /*    100% {*/
-  /*      transform: translateY(-40%);*/
-  /*    }*/
-  /*  }*/
+      100% {
+        transform: translateY(-40%);
+      }
+    }
 
-  /*  @screen md {*/
-  /*    @keyframes technology-cards {*/
-  /*      0% {*/
-  /*        transform: translateX(0);*/
+  @screen md {
+      @keyframes technology-cards {
+        0% {
+          transform: translateX(0);
 
-  /*      }*/
+        }
 
-  /*      100% {*/
-  /*        transform: translateX(-50%);*/
+        100% {
+          transform: translateX(-50%);
 
-  /*      }*/
-  /*    }*/
-  /*  }*/
-  /*}*/
+        }
+      }
+    }
+  }
 
   /* code attribution */
   /* https://codersblock.com/blog/creating-glow-effects-with-css/#putting-it-all-together */
