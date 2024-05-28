@@ -3,23 +3,23 @@
 
   const { data: repos } = await useFetch('/api/github/repoData')
 
-  const projects = computed(() =>
-    repos.value?.filter((repo) => repo.name === 'pantry')
+  const projects = computed(
+    () => repos.value?.filter((repo) => repo.name === 'pantry'),
   )
-  const featuredProjects = computed(() =>
-    repos.value?.filter((repo) => repo.name !== 'pantry')
+  const featuredProjects = computed(
+    () => repos.value?.filter((repo) => repo.name !== 'pantry'),
   )
 </script>
 
 <template>
-  <div class="G-container-shadow G-container-shadow-spacing-lg">
+  <div>
     <!-- Featured projects -->
-    <div class="flex items-center gap-x-2 text-2xl">
+    <div class="flex items-center gap-x-2 text-xl">
       <Icon
         class="text-base-20"
         name="ri:fire-fill"
       />
-      <h4>Featured projects</h4>
+      <h4>Featured Projects</h4>
     </div>
     <ProjectCard :project-details="featuredProjects" />
     <hr />
@@ -28,9 +28,9 @@
     <div class="flex items-center gap-x-2 pt-12 text-2xl">
       <Icon
         class="text-base-20"
-        name="mdi:folder-open"
+        name="mdi:creation"
       />
-      <h4>Projects</h4>
+      <h4>Other Works</h4>
     </div>
     <ProjectCard :project-details="projects" />
   </div>

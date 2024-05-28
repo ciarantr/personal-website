@@ -1,33 +1,70 @@
 <script setup lang="ts">
   const jobHistory = [
     {
+      name: 'Freelance Web Developer',
+      timeInJob: {
+        start: '2024',
+        end: 'Present',
+      },
+      position: ['Web Developer'],
+      responsibilities: [
+        '	Client Requirements Analysis',
+        '	Custom Web Design and Development',
+        '	Responsive Web Design Implementation',
+        '	Website Maintenance and Updates',
+        '	SEO Optimisation',
+        '	Technical Support and Troubleshooting',
+      ],
+      website: 'Coming soon...',
+    },
+    {
+      name: 'Sports Direct',
+      timeInJob: {
+        start: '2024',
+        end: '2022',
+      },
+      position: ['Sales Assistant'],
+      responsibilities: [
+        'Customer Care and Support',
+        'Merchandising and Promotions Handling',
+        'Inventory Control and Loss Prevention',
+        'Product Knowledge and Sales Support',
+        'Point of Sale Operations',
+        'Teamwork and Collaboration',
+      ],
+      website: 'www.sportsdirect.com',
+    },
+    {
       name: 'Love Nature',
       timeInJob: {
-        start: 'June 2021',
-        end: 'May 2023',
+        start: '2022',
+        end: '2023',
       },
-      position: ['developer online store'],
+      position: ['Senior Web Developer'],
       responsibilities: [
-        'Ux / Ui developer & maintainer',
-        'Implementing security best practices',
-        'Updating & maintaining store inventory',
-        'Updating design for promotional campaigns',
+        '	UX/UI Development and Maintenance',
+        '	Security Best Practices Implementation',
+        '	E-commerce Inventory Management',
+        '	Promotional Design Updates',
+        '	Web Performance Optimisation',
+        '	Technical Leadership and Team Collaboration',
       ],
       website: 'lovenature.ie',
     },
     {
       name: 'Nourish',
       timeInJob: {
-        start: 'January 2019',
-        end: 'March 2021',
+        start: '2019',
+        end: '2020',
       },
-      position: ['Assistant manager', 'Manager'],
+      position: ['Manager'],
       responsibilities: [
-        'Coaching, mentoring, and leading a team of 12',
-        'Planning, prioritizing & delegation tasks to the team',
-        'Ensured a culture of excellent customer service was maintained always',
-        'Merchandising store & promotional items to ensure sales targets where met & provide a great customer experience ',
-        'Inventory management & loss prevention',
+        'Sales Strategy Development',
+        'Customer Relationship Management',
+        'Promotional Campaigns ',
+        'Market Trend Analysis ',
+        'Sales Training Programs',
+        'Customer Feedback Implementation',
       ],
       website: 'www.nourish.ie',
     },
@@ -37,17 +74,20 @@
         start: 'January 2017',
         end: 'December 2018',
       },
-      position: ['Managing Director', 'Manager'],
+      position: ['Business Owner', 'General Manager'],
       responsibilities: [
-        'Managing daily operations as general manager',
-        'Business finances & general accounting',
-        'Marketing, advertising & sales; both in-store & online store',
+        '    Operations Management',
+        'Financial Oversight',
+        '	Marketing and Advertising Strategy',
+        'E-Commerce Development',
+        '	Inventory Control',
+        'Customer Relations Management',
       ],
     },
   ]
 
   const jobNames = computed<Array<string>>(() =>
-    jobHistory.map((el) => el.name)
+    jobHistory.map((el) => el.name),
   )
   const activeTab = ref<number>(0)
 

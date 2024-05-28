@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   defineProps({
     jobHistory: {
       type: Array,
@@ -13,6 +13,7 @@
   const tabPanel = ref(null)
   const tabMinHeight = ref(null)
 
+
   // set min height of tab panel to max scroll height of tab content
   function getMaxScrollHeight(tabElements) {
     const elementHeights = []
@@ -21,6 +22,10 @@
     }
     tabMinHeight.value = Math.max(...elementHeights)
   }
+
+  // function getResponsibilities(responsibilities) {
+  //   return responsibilities.sort()
+  // }
 
   onMounted(() => {
     getMaxScrollHeight(tabPanel.value)
@@ -31,7 +36,7 @@
   <div
     ref="tabPanel"
     :style="{ 'min-height': tabMinHeight + 100 + 'px' }"
-    class="G-container-shadow relative overflow-y-auto overflow-x-hidden"
+    class="relative overflow-y-auto overflow-x-hidden"
   >
     <template
       v-for="(history, index) in jobHistory"
@@ -40,8 +45,8 @@
       <Transition name="slide-fade">
         <div
           v-show="activeTab === index"
-          :id='`panel-${index + 1}`'
-          :aria-labelledby='`tab-${index + 1}`'
+          :id="`panel-${index + 1}`"
+          :aria-labelledby="`tab-${index + 1}`"
           role="tabpanel"
           class="G-container-shadow-spacing-base absolute left-0 top-0 h-max w-full space-y-6"
         >
@@ -49,16 +54,16 @@
           <div class="flex flex-wrap justify-between">
             <div class="font-bold capitalize">{{ history.name }}</div>
 
-            <div v-if="history.website">
+            <!-- <div v-if="history.website">
               <nuxt-link
                 :to="`https://${history.website}`"
                 target="_blank"
                 >@{{ history.name }}</nuxt-link
               >
-            </div>
+            </div> -->
           </div>
           <!-- Time in job / position -->
-          <div class="mt-4 border-b-2 border-base-45 pb-1">
+          <div class="border-base-45 mt-4 border-b-2 pb-1">
             <div class="text-sm">
               {{ history.timeInJob.start }} - {{ history.timeInJob.end }}
               <span
@@ -75,11 +80,13 @@
           </div>
           <!-- Jobs responsibility -->
           <div>
-            <div>Core responsibilities:</div>
-            <ul class="ml-4 mt-4 grid list-disc gap-y-4 gap-x-6 sm:grid-cols-2">
+            <div>Primary Duties:</div>
+            <ul class="ml-4 mt-4 grid grid-cols-2 items-baseline gap-y-4 list-disc gap-x-8 ">
               <li
-                v-for="(responsibility, index) in history.responsibilities"
-                :key="index"
+                v-for="(responsibility, idx) in 
+                  history.responsibilities.sort()"
+                :key="idx"
+                class=""
               >
                 <span>{{ responsibility }}</span>
               </li>
