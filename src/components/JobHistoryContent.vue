@@ -11,21 +11,17 @@
     },
   })
   const tabPanel = ref(null)
-  const tabMinHeight = ref(null)
+  const tabMinHeight = ref(null || 0)
 
 
   // set min height of tab panel to max scroll height of tab content
-  function getMaxScrollHeight(tabElements) {
+  function getMaxScrollHeight(tabElements: HTMLElement) {
     const elementHeights = []
     for (const child of tabElements.children) {
       elementHeights.push(child.scrollHeight)
     }
     tabMinHeight.value = Math.max(...elementHeights)
   }
-
-  // function getResponsibilities(responsibilities) {
-  //   return responsibilities.sort()
-  // }
 
   onMounted(() => {
     getMaxScrollHeight(tabPanel.value)
@@ -35,7 +31,7 @@
 <template>
   <div
     ref="tabPanel"
-    :style="{ 'min-height': tabMinHeight + 100 + 'px' }"
+    :style="{ 'min-height': tabMinHeight  + 'px' }"
     class="relative overflow-y-auto overflow-x-hidden"
   >
     <template
@@ -80,8 +76,8 @@
           </div>
           <!-- Jobs responsibility -->
           <div>
-            <div>Primary Duties:</div>
-            <ul class="ml-4 mt-4 grid grid-cols-2 items-baseline gap-y-4 list-disc gap-x-8 ">
+            <div>Primary Responsibilities:</div>
+            <ul class="ml-4 mt-4 sm:grid sm:grid-cols-2 sm:items-baseline sm:gap-y-4 list-disc sm:gap-x-8 space-y-2 sm:space-y-0 ">
               <li
                 v-for="(responsibility, idx) in 
                   history.responsibilities.sort()"

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   const emit = defineEmits(['changeTab'])
 
   defineProps({
@@ -13,21 +13,23 @@
     },
   })
 
-  function emitData(index) {
+  function emitData(index: number) {
     emit('changeTab', index)
   }
+  const tabWidth = ref(0);
+  const offset = ref(0);
 </script>
 
 <template>
   <ul
     role="tablist"
-    class="tab-container G-container-shadow G-container-shadow-spacing-base relative row-start-2 grid auto-cols-[minmax(100px,1fr)] grid-flow-col items-center overflow-x-auto md:row-start-1 md:mt-0 md:grid-flow-row"
+    class="tab-container G-container-shadow G-container-shadow-spacing-base relative row-start-2 grid gap-x-8 md:gap-x-0  grid-flow-col items-baseline overflow-x-auto md:row-start-1 md:mt-0 md:grid-flow-row"
   >
     <li
       v-for="(title, index) in tabTitle"
       :id="`tab-${index + 1}`"
       :key="index"
-      class="relative h-full min-w-max cursor-pointer text-center transition-colors duration-700 md:grid md:items-center md:text-left"
+      class="relative h-full min-w-max cursor-pointer text-center transition-colors duration-700 md:grid md:items-center md:text-left "
       role="tab"
       tabindex="0"
       :aria-controls="`panel-${index + 1}`"
@@ -37,7 +39,9 @@
         { 'active-tab': activeTab === index },
       ]"
       @keyup.enter="emitData(index)"
-      @click="emitData(index)"
+      @click="emitData(index), 
+      tabWidth = $event.target.clientWidth, 
+      offset = $event.target.offsetLeft"
     >
       {{ title }}
     </li>
@@ -51,13 +55,14 @@
     relative
     block
     h-[1.5px]
-    w-1/2
     rounded-md
-    transition-[left]
+    /* transition-[left] */
     duration-500
     content-[''];
     top: -14px;
-    left: calc((100% * v-bind(activeTab)) + 25%);
+    left: calc(v-bind(offset + 'px')  - 20px);
+    transition: left 500ms, width 500ms;
+    width: v-bind(tabWidth ? tabWidth   + 'px' : '100%');
 
     /* On screen sizes => 768px */
     @screen md {

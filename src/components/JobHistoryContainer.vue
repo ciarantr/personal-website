@@ -21,7 +21,7 @@
       name: 'Sports Direct',
       timeInJob: {
         start: '2024',
-        end: '2022',
+        end: 'Present',
       },
       position: ['Sales Assistant'],
       responsibilities: [
