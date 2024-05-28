@@ -30,16 +30,14 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    '@nuxt/image-edge',
+    '@nuxt/image',
     '@nuxt/devtools',
     '@nuxtseo/module',
-    '@nuxt/image',
   ],
   // Tailwind config
   tailwindcss: {
     cssPath: '~/assets/css/main.css',
     configPath: '~~/config/tailwind.config.js',
-    injectPosition: 0,
     viewer: false,
   },
 
