@@ -60,8 +60,12 @@
     duration-500
     content-[''];
     top: -14px;
-    left: calc(v-bind(offset + 'px')  - 20px);
     transition: left 500ms, width 500ms;
+     /* FIXME: Fix the left position of the tab indicator with the ternary operator 
+     offset is offsetLeft of the tab element 
+     20 is the padding of the tab container 
+     */
+    left: v-bind(offset ? (offset - 20) + 'px' : '0px') ;
     width: v-bind(tabWidth ? tabWidth   + 'px' : '100%');
 
     /* On screen sizes => 768px */
