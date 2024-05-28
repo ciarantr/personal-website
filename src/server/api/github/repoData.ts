@@ -6,7 +6,7 @@ const selectedRepos = appConfig.githubRepos
 const githubURL: string = appConfig.githubURL
 
 const repoLanguageUrls = selectedRepos.map(
-  (repo) => `${githubURL}/${repo}/languages`
+  (repo) => `${githubURL}/${repo}/languages`,
 )
 
 const repoUrls = selectedRepos.map((repo) => `${githubURL}/${repo}`)
@@ -28,26 +28,25 @@ async function fetchUrls(urls: Array<string>) {
           Authorization: `Bearer ${githubAPI}`,
           'X-GitHub-Api-Version': '2022-11-28',
         },
-      })
+      }),
     )
     const responses = await Promise.all(requests)
     const data: Array<Object> = await Promise.all(
-      responses.map((response) => response.json())
+      responses.map((response) => response.json()),
     )
     return data
   } catch (error) {
     console.error(error, 'error loading github data from api')
   }
-
 }
 
 function extractKeyRepoData(data: Array<any>) {
   const repoData: Array<repoData> = []
   const languages: Array<Object> = []
 
-  for (let { name, description, language, homepage, html_url} of data) {
-    const imageUrl = name;
-    name = name.replace(/-/g, " ")
+  for (let { name, description, language, homepage, html_url } of data) {
+    const imageUrl = name
+    name = name.replace(/-/g, ' ')
 
     repoData.push({
       name,
@@ -56,19 +55,18 @@ function extractKeyRepoData(data: Array<any>) {
       language,
       homepage,
       html_url,
-      languages
+      languages,
     })
   }
   return repoData
 }
 
 function convertRepoLanguageData(repoLang: Object): Array<Object> {
-
   const total = Object.values(repoLang).reduce((a, b) => a + b, 0)
 
   // convert the values to percentages
   const percentages = Object.values(repoLang).map((value) =>
-    ((value / total) * 100).toFixed(2)
+    ((value / total) * 100).toFixed(2),
   )
   // convert the keys to an array
   const languages = Object.keys(repoLang)
@@ -80,9 +78,7 @@ function convertRepoLanguageData(repoLang: Object): Array<Object> {
   }))
 }
 
-export default defineEventHandler( (event) => {
-
-
+export default defineEventHandler((event) => {
   async function githubRepoData() {
     const repoData = await fetchUrls(repoUrls).then((repoData) => {
       if (repoData) {
@@ -92,14 +88,13 @@ export default defineEventHandler( (event) => {
     const repoLangData = await fetchUrls(repoLanguageUrls)
 
     // add the language data to the repoData
-    if ( repoData && repoLangData) {
+    if (repoData && repoLangData) {
       repoData.forEach((repo, index) => {
-
-        repo.languages = convertRepoLanguageData((repoLangData[index]))
+        repo.languages = convertRepoLanguageData(repoLangData[index])
       })
     }
     return repoData
   }
 
-  return  githubRepoData()
+  return githubRepoData()
 })

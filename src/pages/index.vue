@@ -39,7 +39,49 @@
       }"
     >
       <div class="container lg:max-w-5xl">
-        <div class="space-y-48">
+        <div class="space-y-64">
+          <section class="space-y-24">
+            <div class="space-y-2 text-left text-3xl">
+              <h2 class="inline">Crafting Dynamic Web Solutions</h2>
+              <icon
+                class="text-base-20 ml-4 !align-bottom"
+                name="material-symbols:dynamic-feed"
+              />
+              <p class="max-w-2xl text-base">
+                Specialising in Crafting Dynamic Web Solutions, my personal
+                portfolio encapsulates my dedication to innovative design and
+                advanced development. Each project underscores my passion for
+                creating user-centric, visually appealing, and functional
+                digital experiences.
+              </p>
+            </div>
+
+            <content-container
+              id="projects"
+              heading="Some things I built"
+            >
+              <template #content-main>
+                <project-container id="projects" />
+              </template>
+            </content-container>
+          </section>
+          <!-- Projects
+          <section
+            aria-label="completed web development projects with description & links"
+            class="mt-64 space-y-12"
+          >
+         
+          </section> -->
+
+          <!-- Work history -->
+          <content-container
+            id="experience"
+            heading="Were I have worked"
+          >
+            <template #content-main>
+              <job-history-container />
+            </template>
+          </content-container>
           <!-- About me  -->
           <content-container
             id="about"
@@ -48,7 +90,7 @@
           >
             <template #content-main>
               <p
-                class="text-base-10/80 px-4 first-letter:float-left first-letter:mr-3 first-letter:text-7xl md:max-w-xl md:px-0"
+                class="first-letter:text-base-20 px-4 first-letter:float-left first-letter:mr-3 first-letter:text-7xl md:max-w-xl md:px-0"
               >
                 Driven web developer, designer, and entrepreneur, my digital
                 journey sparked to life in 2017 when I crafted a WordPress
@@ -73,38 +115,13 @@
               </p>
             </template>
           </content-container>
-
-          <!-- Work history -->
-          <content-container
-            id="experience"
-            heading="Were I have worked"
-          >
-            <template #content-main>
-              <job-history-container />
-            </template>
-          </content-container>
         </div>
-
-        <!-- Projects -->
-        <section
-          aria-label="completed web development projects with description & links"
-          class="mt-64 space-y-12"
-        >
-          <div class="text-center">
-            <h3 class="inline text-6xl">Some things I built</h3>
-            <icon
-              class="text-base-20 ml-4 !align-bottom text-5xl"
-              name="mdi:hammer-wrench"
-            />
-          </div>
-          <project-container id="projects" />
-        </section>
       </div>
       <!-- Technology used slide -->
       <section
         id="tech-stack"
         aria-label="list of technologist I have used"
-        class="relative mt-64 space-y-12 overflow-clip"
+        class="relative mt-96 space-y-12 overflow-clip"
       >
         <div class="relative z-50 text-center">
           <h3 class="inline text-6xl">Technologies I use</h3>
@@ -117,7 +134,7 @@
       </section>
     </main>
     <!-- Gradient wrapper  -->
-    <div class="to-dark mt-64 space-y-64 bg-gradient-to-b from-transparent">
+    <div class="to-dark mt-96 space-y-64 bg-gradient-to-b from-transparent">
       <!-- Roadmap -->
       <section
         ref="roadmapSection"
@@ -198,7 +215,7 @@
   #experience,
   #projects {
     scroll-margin-top: 500px;
-    
+
     @screen sm {
       scroll-margin-top: 0px;
     }

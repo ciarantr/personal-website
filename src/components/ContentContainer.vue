@@ -10,14 +10,14 @@
 <template>
   <div class="G-container-shadow G-container-shadow-spacing-lg">
     <div>
-      <h2 class="text-xl">
+      <h3 class="text-xl">
         <span
           aria-hidden="true"
           class="after:mx-1 after:text-[8px] after:content-['◍']"
         >
         </span>
         {{ heading }}
-      </h2>
+      </h3>
     </div>
 
     <div>
@@ -55,7 +55,7 @@
     }
 
     /* Counter to headings */
-    h2::before {
+    h3::before {
       /* Increment the value of section counter by 1 */
       counter-increment: heading;
       content: counter(heading);

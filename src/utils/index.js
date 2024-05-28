@@ -11,7 +11,7 @@ export function createObserver({ observeTarget, target, style, threshold }) {
     (entry) => {
       target.classList.toggle(style, entry[0].isIntersecting)
     },
-    { threshold }
+    { threshold },
   )
   observer.observe(observeTarget)
 }

@@ -13,7 +13,6 @@
     titleTemplate: '%s %separator %extraTitle',
   })
 
-
   const pageLinks = [
     {
       label: 'Home',
@@ -41,7 +40,7 @@
       >
         <div
           aria-label="hidden"
-          class="G-container-shadow absolute top-3 right-3 !rounded-md py-1 px-3 text-sm font-medium"
+          class="G-container-shadow absolute right-3 top-3 !rounded-md px-3 py-1 text-sm font-medium"
         >
           404
         </div>
@@ -61,31 +60,31 @@
             class="G-container-shadow G-container-shadow-spacing-lg"
           >
             <nuxt-link
-              class=" group flex items-center gap-x-4 "
+              class="group flex items-center gap-x-4"
               :to="link.url"
             >
               <!-- page link icon -->
               <div>
                 <Icon
-                  class="h-6 w-6 group-hover:text-base-20 transition-colors duration-300 ease-in-out"
+                  class="group-hover:text-base-20 h-6 w-6 transition-colors duration-300 ease-in-out"
                   :name="link.icon"
                 />
               </div>
               <div>
                 <!-- page link & text -->
                 <h3
-                  class="max-w-min border-b border-b-transparent text-lg font-medium transition-all ease-in-out duration-300 group-hover:border-orange group-hover:text-base-20"
+                  class="group-hover:border-orange group-hover:text-base-20 max-w-min border-b border-b-transparent text-lg font-medium transition-all duration-300 ease-in-out"
                 >
                   {{ link.label }}
                 </h3>
                 <p
-                  class="transition-colors duration-300 ease-in-out group-hover:!text-base-20"
+                  class="group-hover:!text-base-20 transition-colors duration-300 ease-in-out"
                 >
                   {{ link.content }}
                 </p>
               </div>
               <Icon
-                class="ml-auto transition-all duration-300 group-hover:h-7 group-hover:w-7 group-hover:text-base-20 ease-in-out"
+                class="group-hover:text-base-20 ml-auto transition-all duration-300 ease-in-out group-hover:h-7 group-hover:w-7"
                 name="material-symbols:arrow-forward-ios"
               />
             </nuxt-link>

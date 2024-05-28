@@ -67,13 +67,25 @@
     },
   ]
 
-  const technologyListOne = computed(() => technologies.slice(0, 6))
+  const technologyListOne = computed(() => technologies.slice(0, 13))
+  // const technologyListOne = computed(() => technologies.slice(0, 13))
 
-  const technologyListTwo = computed(() => technologies.slice(6, 13))
+  const technologyListTwo = ref([])
+
+  onMounted(() => {
+    // get screen width and slice array on small screens
+    const screenWidth = window.innerWidth
+    if (screenWidth > 768) {
+      technologyListOne.value = technologies.slice(0, 6)
+      technologyListTwo.value = technologies.slice(6, 13)
+    }
+  })
 </script>
 
 <template>
-  <div class="relative space-y-12 pt-2 pb-12">
+  <div
+    class="relative max-h-[600px] space-y-12 overscroll-y-contain px-8 pb-12 pt-2 md:max-h-none md:px-0"
+  >
     <TechStackList :technologies="technologyListOne" />
     <TechStackList :technologies="technologyListTwo" />
   </div>
@@ -84,9 +96,10 @@
     & > div {
       animation-direction: normal;
     }
-
-    & :nth-child(2) {
-      animation-direction: reverse;
+    @screen md {
+      & :nth-child(2) {
+        animation-direction: reverse;
+      }
     }
     /* @media (prefers-reduced-motion: no-preference) {
       &::before {
