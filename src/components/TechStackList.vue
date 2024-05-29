@@ -74,7 +74,7 @@
     @apply transform-gpu;
     will-change: transform;
     animation-name: technology-cards;
-    animation-duration: 25s;
+    animation-duration: 35s;
     animation-timing-function: ease-out;
     animation-delay: 0s;
     animation-iteration-count: infinite;

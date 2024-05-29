@@ -121,9 +121,9 @@
       <section
         id="tech-stack"
         aria-label="list of technologist I have used"
-        class="relative mt-96 space-y-12 overflow-clip"
+        class="relative mt-96  overflow-clip"
       >
-        <div class="relative z-50 text-center">
+        <div class="relative z-50 text-center bg-base-30 ">
           <h3 class="inline text-6xl">Technologies I use</h3>
           <icon
             class="text-base-20 ml-4 !align-baseline text-5xl"
@@ -184,7 +184,7 @@
   }
 
   #tech-stack div:last-child::before {
-    @apply from-base-30 via-base-30 -top-36 left-0 h-1/3 bg-gradient-to-b;
+    @apply from-base-30 via-base-30 -top-56 left-0 h-[58%] bg-gradient-to-b ;
   }
 
   #tech-stack div:last-child::after {
@@ -193,7 +193,7 @@
 
   @screen md {
     #tech-stack div:last-child::before {
-      @apply top-0  bg-gradient-to-r;
+      @apply top-0  bg-gradient-to-r h-1/3 ;
     }
 
     #tech-stack div:last-child::after {

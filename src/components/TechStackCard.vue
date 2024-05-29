@@ -84,7 +84,7 @@
 
 <template>
   <div
-    class="relative max-h-[600px] space-y-12 overscroll-y-contain px-8 pb-12 pt-2 md:max-h-none md:px-0"
+    class="relative max-h-[800px] space-y-12 overscroll-y-contain px-8 pb-12 pt-2 md:max-h-none md:px-0 mt-20"
   >
     <TechStackList :technologies="technologyListOne" />
     <TechStackList :technologies="technologyListTwo" />
