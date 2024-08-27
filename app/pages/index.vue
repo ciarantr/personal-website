@@ -33,10 +33,10 @@
   <div>
     <main
       id="main-content"
-      class="mt-96"
       :class="{
         'blur-sm': isMobileMenuOpen,
       }"
+      class="mt-96"
     >
       <div class="container lg:max-w-5xl">
         <div class="space-y-64">
@@ -44,7 +44,7 @@
             <div class="space-y-2 text-left text-3xl">
               <h2 class="inline">Crafting Dynamic Web Solutions</h2>
               <icon
-                class="ml-4 !align-bottom text-base-20"
+                class="text-base-20 ml-4 !align-bottom"
                 name="material-symbols:dynamic-feed"
               />
               <p class="max-w-2xl text-base">
@@ -90,7 +90,7 @@
           >
             <template #content-main>
               <p
-                class="px-4 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:text-base-20 md:max-w-xl md:px-0"
+                class="first-letter:text-base-20 px-4 first-letter:float-left first-letter:mr-3 first-letter:text-7xl md:max-w-xl md:px-0"
               >
                 Driven web developer, designer, and entrepreneur, my digital
                 journey sparked to life in 2017 when I crafted a WordPress
@@ -123,10 +123,10 @@
         aria-label="list of technologist I have used"
         class="relative mt-96 overflow-clip"
       >
-        <div class="relative z-50 bg-base-30 text-center">
+        <div class="bg-base-30 relative z-50 text-center">
           <h3 class="inline text-6xl">Technologies I use</h3>
           <icon
-            class="ml-4 !align-baseline text-5xl text-base-20"
+            class="text-base-20 ml-4 !align-baseline text-5xl"
             name="material-symbols:settings-suggest"
           />
         </div>
@@ -134,7 +134,7 @@
       </section>
     </main>
     <!-- Gradient wrapper  -->
-    <div class="mt-96 space-y-64 bg-gradient-to-b from-transparent to-dark">
+    <div class="to-dark mt-96 space-y-64 bg-gradient-to-b from-transparent">
       <!-- Roadmap -->
       <section
         ref="roadmapSection"
@@ -177,11 +177,11 @@
   }
 
   #tech-stack div:last-child::before {
-    @apply -top-56 left-0 h-[58%] bg-gradient-to-b from-base-30 via-base-30;
+    @apply from-base-30 via-base-30 -top-56 left-0 h-[58%] bg-gradient-to-b;
   }
 
   #tech-stack div:last-child::after {
-    @apply bottom-0 left-0 h-1/5 bg-gradient-to-t from-base-30 via-base-30;
+    @apply from-base-30 via-base-30 bottom-0 left-0 h-1/5 bg-gradient-to-t;
   }
 
   @screen md {
