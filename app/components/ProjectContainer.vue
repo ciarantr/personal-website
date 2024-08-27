@@ -3,6 +3,7 @@
 
   const { data: repos } = await useFetch('/api/github/repoData')
 
+
   const projects = computed(
     () => repos.value?.filter((repo) => repo.name === 'pantry'),
   )
@@ -14,7 +15,7 @@
 <template>
   <div>
     <!-- Featured projects -->
-    <div class="flex items-center gap-x-2 text-xl">
+    <div class="gap-x-2 flex items-center text-xl">
       <Icon
         class="text-base-20"
         name="ri:fire-fill"
@@ -25,7 +26,7 @@
     <hr />
 
     <!-- Projects -->
-    <div class="flex items-center gap-x-2 pt-12 text-2xl">
+    <div class="gap-x-2 flex items-center pt-12 text-2xl">
       <Icon
         class="text-base-20"
         name="mdi:creation"

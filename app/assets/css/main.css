@@ -179,9 +179,13 @@
   }
 
   /* technology color circle*/
-  [data-technology] {
-    @apply border-orange/40
-    border-b;
+  @layer utilities {
+
+    [data-technology] {
+      @apply
+      /* border-orange/40 */
+      border-b;
+    }
   }
   /*css color*/
 
@@ -196,7 +200,8 @@
       @apply relative;
 
       &::after {
-        @apply border-orange
+        @apply
+         border-orange
        absolute
        left-0 block
        w-0
@@ -213,7 +218,8 @@
 
   /* Add lighter background & orange borders on hover */
   .G-container-illuminate {
-    @apply border-base-90/5 bg-base-90/5
+    @apply
+     border-base-90/5 bg-base-90/5
       relative
       z-50
       cursor-pointer
@@ -227,13 +233,15 @@
       ease-in-out sm:p-6;
 
     &:hover {
-      @apply bg-base-90/10
+      @apply
+       bg-base-90/10
       border-transparent;
     }
 
     &::after {
-      @apply from-base-40
-      to-orange
+      @apply
+       from-base-40
+       to-orange
       absolute
       inset-0 -z-10
       -m-[1px]

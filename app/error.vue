@@ -1,7 +1,7 @@
 <script setup>
-  definePageMeta({
-    layout: false,
-  })
+  // definePageMeta({
+  //   layout: false,
+  // })
 
   useHead({
     templateParams: {

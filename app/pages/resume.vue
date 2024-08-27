@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  definePageMeta({ layout: false })
+  // definePageMeta({ layout: false })
   useHead({
     templateParams: {
       separator: '•',

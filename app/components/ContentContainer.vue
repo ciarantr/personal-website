@@ -39,7 +39,7 @@
 
       /* Horizontal line after heading */
       &::after {
-        @apply bg-base-40
+        @applybg-base-40
         h-1
         w-full
   	    content-[''];
