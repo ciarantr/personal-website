@@ -23,7 +23,7 @@
     <li
       v-for="(technology, index) in technologies"
       :key="index"
-      class="bg-base-40 relative rounded-lg shadow md:mr-4 md:min-h-[150px] md:min-w-[350px] md:transition-all md:duration-500 md:ease-in-out md:hover:-translate-y-4 md:hover:[z-index:100] md:[&_div:nth-child(2n)]:hover:!opacity-80"
+      class="/* bg-base-40 */ relative rounded-lg shadow md:mr-4 md:min-h-[150px] md:min-w-[350px] md:transition-all md:duration-500 md:ease-in-out md:hover:-translate-y-4 md:hover:[z-index:100] md:[&_div:nth-child(2n)]:hover:!opacity-80"
     >
       <div class="relative z-50 h-full w-full rounded-lg bg-inherit p-4 shadow">
         <div class="text-base-20 grid grid-cols-[auto_1fr] gap-x-6">

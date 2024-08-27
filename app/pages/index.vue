@@ -44,7 +44,7 @@
             <div class="space-y-2 text-left text-3xl">
               <h2 class="inline">Crafting Dynamic Web Solutions</h2>
               <icon
-                class="text-base-20 ml-4 !align-bottom"
+                class="ml-4 !align-bottom text-base-20"
                 name="material-symbols:dynamic-feed"
               />
               <p class="max-w-2xl text-base">
@@ -70,7 +70,7 @@
             aria-label="completed web development projects with description & links"
             class="mt-64 space-y-12"
           >
-         
+
           </section> -->
 
           <!-- Work history -->
@@ -90,7 +90,7 @@
           >
             <template #content-main>
               <p
-                class="first-letter:text-base-20 px-4 first-letter:float-left first-letter:mr-3 first-letter:text-7xl md:max-w-xl md:px-0"
+                class="px-4 first-letter:float-left first-letter:mr-3 first-letter:text-7xl first-letter:text-base-20 md:max-w-xl md:px-0"
               >
                 Driven web developer, designer, and entrepreneur, my digital
                 journey sparked to life in 2017 when I crafted a WordPress
@@ -121,12 +121,12 @@
       <section
         id="tech-stack"
         aria-label="list of technologist I have used"
-        class="relative mt-96  overflow-clip"
+        class="relative mt-96 overflow-clip"
       >
-        <div class="relative z-50 text-center bg-base-30 ">
+        <div class="relative z-50 bg-base-30 text-center">
           <h3 class="inline text-6xl">Technologies I use</h3>
           <icon
-            class="text-base-20 ml-4 !align-baseline text-5xl"
+            class="ml-4 !align-baseline text-5xl text-base-20"
             name="material-symbols:settings-suggest"
           />
         </div>
@@ -134,7 +134,7 @@
       </section>
     </main>
     <!-- Gradient wrapper  -->
-    <div class="to-dark mt-96 space-y-64 bg-gradient-to-b from-transparent">
+    <div class="mt-96 space-y-64 bg-gradient-to-b from-transparent to-dark">
       <!-- Roadmap -->
       <section
         ref="roadmapSection"
@@ -160,20 +160,13 @@
   /* Gradient on all h2 */
   :deep(h3),
   :deep(h2) {
-    @apply bg-gradient-to-r
-    from-gray-400/50
-    via-gray-400/60
-    to-gray-400
-    bg-clip-text
-    pb-1
-    text-center
-    text-transparent;
+    @apply bg-gradient-to-r from-gray-400/50 via-gray-400/60 to-gray-400 bg-clip-text pb-1 text-center text-transparent;
   }
 
   /*Faded appearance on overflow tech cards   */
   #tech-stack div:last-child::before,
   #tech-stack div:last-child::after {
-    @apply absolute  z-20 block w-full  content-[''];
+    @apply absolute z-20 block w-full content-[''];
   }
 
   @screen md {
@@ -184,16 +177,16 @@
   }
 
   #tech-stack div:last-child::before {
-    @apply from-base-30 via-base-30 -top-56 left-0 h-[58%] bg-gradient-to-b ;
+    @apply -top-56 left-0 h-[58%] bg-gradient-to-b from-base-30 via-base-30;
   }
 
   #tech-stack div:last-child::after {
-    @apply via-base-30 from-base-30  bottom-0 left-0 h-1/5 bg-gradient-to-t;
+    @apply bottom-0 left-0 h-1/5 bg-gradient-to-t from-base-30 via-base-30;
   }
 
   @screen md {
     #tech-stack div:last-child::before {
-      @apply top-0  bg-gradient-to-r h-1/3 ;
+      @apply top-0 h-1/3 bg-gradient-to-r;
     }
 
     #tech-stack div:last-child::after {
@@ -207,7 +200,7 @@
     /* Set a counter named 'section', and its initial value is 0. */
     counter-reset: heading;
   }
-  /* 
+  /*
   scroll-top margin for anchor section in nav
   set to match nav menu height when opened
    */

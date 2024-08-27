@@ -1,10 +1,12 @@
 import { version } from './package.json'
 
 export default defineNuxtConfig({
-  srcDir: 'src/',
+  future: {
+    compatibilityVersion: 4,
+  },
 
   devtools: {
-    enabled: false,
+    enabled: true,
   },
 
   runtimeConfig: {
@@ -16,6 +18,7 @@ export default defineNuxtConfig({
         'https://res.cloudinary.com/c-io/image/upload/v1/dev-domain/',
     },
   },
+
   // configuration incorrect see
   // https://github.com/unjs/nitro/discussions/1298
   // nitro: {
@@ -29,15 +32,17 @@ export default defineNuxtConfig({
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/tailwindcss',
-    'nuxt-icon',
-    '@nuxt/image',
-    '@nuxt/devtools',
-    '@nuxtseo/module',
+    '@nuxt/icon',
+    '@nuxt/image', // "@nuxt/ui",
+    '@nuxt/eslint',
+    '@nuxt/icon',
+    '@nuxtjs/seo',
   ],
+
   // Tailwind config
   tailwindcss: {
     cssPath: '~/assets/css/main.css',
-    configPath: '~~/config/tailwind.config.js',
+    configPath: '~~/config/tailwind.config.ts',
     viewer: false,
   },
 
@@ -109,4 +114,6 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  compatibilityDate: '2024-07-26',
 })

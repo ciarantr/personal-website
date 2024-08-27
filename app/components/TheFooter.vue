@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   const runtimeConfig = useRuntimeConfig()
   const version = runtimeConfig.public.CLIENT_VERSION
   const date = computed(() => new Date().getFullYear())
@@ -7,15 +7,15 @@
 <template>
   <footer
     aria-label="links to github & linkedin & copywrite"
-    class="border-base-40 h-96 border-t pt-12 md:pb-4"
+    class="border-base-40 h-96 md:pb-4 pt-12 border-t"
   >
     <div
-      class="to-base-20/70 container grid h-full w-full rounded-xl bg-gradient-to-br from-transparent p-4 text-xs shadow-2xl transition-shadow"
+      class="to-base-20/70 rounded-xl bg-gradient-to-br from-transparent container grid w-full h-full p-4 text-xs transition-shadow shadow-2xl"
     >
       <div class="text-center">
         <div
           id="title"
-          class="flex items-center justify-center gap-x-2 text-sm"
+          class="gap-x-2 flex items-center justify-center text-sm"
         >
           <!-- GitHub link -->
           <nuxt-link
@@ -40,13 +40,13 @@
       </div>
 
       <div
-        class="hover:shadow-orange mt-auto w-full rounded-xl p-4 text-xs shadow-2xl transition-shadow duration-300 ease-in-out sm:flex sm:justify-between sm:space-y-0"
+        class="hover:shadow-orange rounded-xl sm:flex sm:justify-between sm:space-y-0 w-full p-4 mt-auto text-xs transition-shadow duration-300 ease-in-out shadow-2xl sapce-y-4"
       >
         <p>Copyright © {{ date }} Designed & Created by Ciaran Toner</p>
-        <div class="flex gap-x-1">
+        <div class="gap-x-1 flex">
           <Icon
             name="arcticons:cinexplore"
-            class="h-4 w-4"
+            class="w-4 h-4"
           />
           <p>
             Built with Nuxt | Vue.js & Tailwindcss &nbsp;
