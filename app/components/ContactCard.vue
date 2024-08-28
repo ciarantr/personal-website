@@ -25,7 +25,7 @@
     <!-- Mailto -->
     <div>
       <nuxt-link
-        to="mailto:hi@ciaran-io.dev"
+        to="mailto:hi@ciaran.foo"
         class="G-container-illuminate [:hover&_:nth-child(2)]:text-orange flex items-center gap-x-2 !p-2.5 [:hover&_:nth-child(2)]:grow [:hover&_:nth-child(2)]:translate-x-[96%] [:hover&_:nth-child(2)]:opacity-100"
         >Let's connect
         <Icon name="mdi:mail" />

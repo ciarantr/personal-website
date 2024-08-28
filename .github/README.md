@@ -30,7 +30,7 @@ Aside from this, You'll also find links to my:
 
 - [GitHub](https://github.com/ciarantr)
 - [LinkedIn](https://www.linkedin.com/in/ciaran-toner/)
-- [Contact Email](mailto:hi%40ciaran-io.dev?subject=Hi%20Ciaran,%20I%20came%20across%20your%20portfolio%20website%20and%20would%20like%20to%20connect%20with%20you!&body=Hi%20Ciaran,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20website%20and%20would%20like%20to%20connect%20with%20you!%0D%0A%0D%0A%0D%0A%0D%0A%0D%0ARegards,%0D%0A%0D%0A)
+- [Contact Email](mailto:hi%40ciaran.foo?subject=Hi%20Ciaran,%20I%20came%20across%20your%20portfolio%20website%20and%20would%20like%20to%20connect%20with%20you!&body=Hi%20Ciaran,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20website%20and%20would%20like%20to%20connect%20with%20you!%0D%0A%0D%0A%0D%0A%0D%0A%0D%0ARegards,%0D%0A%0D%0A)
 
 ## Get in Touch ![email icon](https://api.iconify.design/material-symbols:alternate-email.svg?color=%23888888&width=24&height=24)
 

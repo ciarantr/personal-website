@@ -215,7 +215,7 @@
           </nuxt-link>
           <!-- email -->
           <nuxt-link
-            to="mailto:hi@ciaran-io.dev"
+            to="mailto:hi@ciaran.foo"
             class="bg-base-20 hover:shadow-base-70/50 group flex items-center gap-x-1 rounded px-2.5 py-2 shadow-lg shadow-transparent transition-all duration-300 ease-in-out"
           >
             Contact
