@@ -1,6 +1,6 @@
 {
-  "name": "ciaran-io.dev",
-  "short_name": "ciaran-io.dev",
+  "name": "ciaran.foo",
+  "short_name": "ciaran.foo",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

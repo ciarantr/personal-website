@@ -54,7 +54,7 @@ export default defineNuxtConfig({
 
   // Build Configuration nuxt seo: https://nuxtseo.com/nuxt-seo/guides/configuring-modules
   site: {
-    url: 'https://ciaran-io.dev',
+    url: 'https://ciaran.foo',
     name: 'Ciaran Toner',
     description:
       'Full stack solutions-oriented web developer proficient in tackling ' +
@@ -110,7 +110,7 @@ export default defineNuxtConfig({
           color: '#525360',
         },
         { rel: 'manifest', href: '/site.webmanifest' },
-        { rel: 'canonical', href: 'https://ciaran-io.dev' },
+        { rel: 'canonical', href: 'https://ciaran.foo' },
       ],
     },
   },

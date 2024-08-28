@@ -2,11 +2,11 @@
 
 ![website](https://img.shields.io/website?down_color=red&down_message=offline&logo=cloudflare&logoColor=white&up_color=green&up_message=online&url=https%3A%2F%2Fciaran.io)
 ![Cloudflare Pages deployed](https://img.shields.io/badge/Cloudflare%20Pages-deployed-brightgreen?logo=cloudflare&logoColor=white)
-![version](https://img.shields.io/badge/dynamic/json?logo=bun&color=brightgreen&label=version&query=$.version&url=https://raw.githubusercontent.com/ciaran-io/portfolio/main/package.json)
-![last commit](https://img.shields.io/github/last-commit/ciaran-io/portfolio?color=blueviolet&logo=git&logoColor=white)
-![languages](https://img.shields.io/github/languages/count/ciaran-io/portfolio?color=yellow&logo=github)
-![top language](https://img.shields.io/github/languages/top/ciaran-io/portfolio?color=yellow&logo=github)
-![views](https://img.shields.io/github/watchers/ciaran-io/portfolio?logo=github)
+![version](https://img.shields.io/badge/dynamic/json?logo=bun&color=brightgreen&label=version&query=$.version&url=https://raw.githubusercontent.com/ciarantr/portfolio/main/package.json)
+![last commit](https://img.shields.io/github/last-commit/ciarantr/portfolio?color=blueviolet&logo=git&logoColor=white)
+![languages](https://img.shields.io/github/languages/count/ciarantr/portfolio?color=yellow&logo=github)
+![top language](https://img.shields.io/github/languages/top/ciarantr/portfolio?color=yellow&logo=github)
+![views](https://img.shields.io/github/watchers/ciarantr/portfolio?logo=github)
 
 **Welcome to the repository of my portfolio website!**
 
@@ -28,7 +28,7 @@ Resume is hosted on [Cloudinary](https://res.cloudinary.com/c-io/image/upload/de
 
 Aside from this, You'll also find links to my:
 
-- [GitHub](https://github.com/ciaran-io)
+- [GitHub](https://github.com/ciarantr)
 - [LinkedIn](https://www.linkedin.com/in/ciaran-toner/)
 - [Contact Email](mailto:hi%40ciaran-io.dev?subject=Hi%20Ciaran,%20I%20came%20across%20your%20portfolio%20website%20and%20would%20like%20to%20connect%20with%20you!&body=Hi%20Ciaran,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20website%20and%20would%20like%20to%20connect%20with%20you!%0D%0A%0D%0A%0D%0A%0D%0A%0D%0ARegards,%0D%0A%0D%0A)
 

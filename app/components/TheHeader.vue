@@ -125,7 +125,7 @@
             </li>
             <li>
               <nuxt-link
-                to="https://github.com/ciaran-io"
+                to="https://github.com/ciarantr"
                 target="_blank"
                 class="flex items-center justify-between"
                 >GitHub
@@ -148,7 +148,7 @@
       <!-- linkedin / github links -->
       <div class="hidden items-center justify-end gap-x-3 sm:flex">
         <nuxt-link
-          to="https://github.com/ciaran-io"
+          to="https://github.com/ciarantr"
           target="_blank"
           class="hover:text-base-20 transition-colors duration-200"
         >

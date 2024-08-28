@@ -20,7 +20,7 @@
           <!-- GitHub link -->
           <nuxt-link
             aria-label="link to github profile"
-            to="https://github.com/ciaran-io"
+            to="https://github.com/ciarantr"
             target="_blank"
             class="G-border-animate"
           >
