@@ -4,7 +4,7 @@
 ![Cloudflare Pages deployed](https://img.shields.io/badge/Cloudflare%20Pages-deployed-brightgreen?logo=cloudflare&logoColor=white)
 ![version](https://img.shields.io/badge/dynamic/json?logo=bun&color=brightgreen&label=version&query=$.version&url=https://raw.githubusercontent.com/ciarantr/personal-website/refs/heads/main/package.json)
 ![last commit](https://img.shields.io/github/last-commit/ciarantr/personal-website?color=blueviolet&logo=git&logoColor=white)
-![languages](https://img.shields.io/github/languages/count/ciarantr/portfolio?color=yellow&logo=github)
+![languages](https://img.shields.io/github/languages/count/ciarantr/personal-website?color=yellow&logo=github)
 ![top language](https://img.shields.io/github/languages/top/ciarantr/personal-website?color=yellow&logo=github)
 ![views](https://img.shields.io/github/watchers/ciarantr/personal-website?logo=github)
 
