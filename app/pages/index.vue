@@ -43,9 +43,7 @@
         <div class="space-y-64">
           <section class="space-y-24">
             <div class="space-y-2 text-left text-3xl">
-              <h2 class="inline">
-                Crafting Dynamic Web Solutions
-              </h2>
+              <h2 class="inline">Crafting Dynamic Web Solutions</h2>
               <icon
                 class="text-base-20 ml-4 !align-bottom"
                 name="material-symbols:dynamic-feed"
@@ -95,26 +93,31 @@
               <p
                 class="first-letter:text-base-20 px-4 first-letter:float-left first-letter:mr-3 first-letter:text-7xl md:max-w-xl md:px-0"
               >
-                Driven web developer, designer, and entrepreneur, my digital
-                journey sparked to life in 2017 when I crafted a WordPress
-                website for my health business. This venture wasn't just a
-                business initiative; it was the spark that ignited my curiosity
-                in the vast expanse of the digital universe. As I navigated
-                through design challenges and coding problems, I discovered the
-                joy of unveiling solutions and creating user-friendly
-                interfaces. This pursuit to enhance reach and growth for my
-                business turned into an enriching learning journey, fuelling a
-                yearning to know more, do more, and delve deeper into the
-                fascinating realm of technology.
-                <br /><br />
-                This ignited a passion that led to a diploma in Full Stack
-                Software Development from Code Institute and is now propelling
-                me through a BSc in Computing at the Technological University of
-                Dublin. Tapping into technology's transformative potential, I
-                passionately embrace opportunities to enhance my understanding
-                of software development. My quest is to continually refine my
-                knowledge, striving to fulfil my highest potential within the
-                ever-evolving canvas of computer science."
+                Innovative software engineer with a unique trajectory from
+                entrepreneurship to technology. My journey began in 2017 when I
+                developed a WordPress website for my health business, igniting a
+                passion for digital solutions that bridge business needs and
+                technical capabilities. This initial spark led me to pursue a
+                diploma in Full Stack Software Development from Code Institute,
+                and I'm currently advancing my expertise through a BSc in
+                Computing at the Technological University of Dublin.
+                <br><br>
+                My multifaceted background allows me to approach software engineering with a
+                holistic perspective, combining technical acumen with business
+                insight. Specializing in Site Reliability Engineering (SRE), I'm
+                dedicated to designing and implementing scalable, resilient
+                systems that drive business value. My focus lies in optimizing
+                performance, automating processes, and ensuring high
+                availability of critical services.
+                <br> <br>
+                I thrive on translating
+                complex technical concepts into tangible business solutions,
+                always seeking innovative ways to enhance system reliability and
+                efficiency. Committed to continuous learning, I actively engage
+                with emerging technologies and best practices in software
+                development and SRE. My goal is to contribute to
+                forward-thinking teams, tackling challenging projects that push
+                the boundaries of what's possible in modern enterprise systems.
               </p>
             </template>
           </content-container>
