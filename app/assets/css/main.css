@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TODO: Dark theme*/
+/* [data-theme='dark'] {
+   --base: 100, 8%;
+} */
+
+/* TODO(perf): refactor animation prefers-reduced-motion */
+/* * performance selector */
+
+/* Note: G- prefix specifies a global style  */
+/*-------------------------------------------*\
+    1.Base
+     - Color Palette
+     - Transitions
+    2.Components
+      - Card shadows
+      - Buttons
+    3.Animations
+    4.Accessibility
+\*-------------------------------------------*/
+
+/*
+ **************************
+  Base styles
+ ************************** */
+@layer base {
+  @font-face {
+    font-family: 'Lato';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Lato-Regular.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    font-display: swap;
+    src: url('/fonts/Lato-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    font-display: swap;
+    src: url('/fonts/Lato-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Julius Sans One';
+    font-display: swap;
+    src: url('/fonts/JuliusSansOne-Regular-subset.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  :root {
+    /* Base theme gray */
+    --base: 236 8%;
+    --base-10: var(--base) 10%;
+    --base-15: var(--base) 15%; /*  shadow one  */
+    --base-20: var(--base) 25%; /*  shadow one  */
+    --base-30: var(--base) 35%; /* body & base shadow  */
+    --base-40: var(--base) 40%; /*  h2 hr  */
+    --base-45: var(--base) 45%; /* shadow secondary */
+    --base-60: var(--base) 65%; /* Inactive tabs */
+    --base-70: var(--base) 70%; /* base text */
+    --base-80: var(--base) 80%; /* content heading */
+    --base-90: var(--base) 90%; /* content heading */
+    --orange: 17 85% 60%;
+    --dark: 213 19% 12%;
+
+    --html-color: hsl(0, 20%, 70%);
+    --css-color: hsl(240, 20%, 70%);
+    --typescript-color: hsl(200, 20%, 70%);
+    --javascript-color: hsl(60, 20%, 70%);
+    --python-color: hsl(120, 20%, 70%);
+    --other-color: hsl(300, 20%, 70%);
+
+    /* Transition */
+    --transition-2: 200s;
+    --transition-5: 500s;
+    --transition-7: 700s;
+  }
+
+  html {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    scroll-behavior: smooth;
+    background-color: hsl(var(--base-30));
+    color: hsl(var(--base-80));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: hsl(var(--base-90));
+  }
+
+  /*
+ **************************
+  Accessibility styles
+ ************************** */
+  @media (prefers-contrast: more) {
+    body,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li {
+      color: hsl(var(--base-90)) !important;
+    }
+  }
+
+  /* Remove animation styles when reduced motion is preferred */
+  @media (prefers-reduced-motion: reduce) {
+    /* Reset or remove animation styles */
+    * {
+      animation: none !important;
+    }
+  }
+}
+
+/*
+ **************************
+  components styles
+ ************************** */
+@layer components {
+  /* card components */
+  .G-container-shadow {
+    background: hsl(var(--base-30));
+    box-shadow:
+      inset 7px 7px 10px hsl(var(--base-20)),
+      inset -7px -7px 10px hsl(var(--base-45));
+
+    @apply rounded-2xl px-4 py-4;
+
+    &-spacing-base {
+      @apply p-5;
+    }
+
+    &-spacing-lg {
+      @apply px-3 py-8;
+
+      @screen md {
+        @apply px-6 pb-10 pt-8;
+        /* @apply px-8; */
+      }
+    }
+  }
+
+  /* card components */
+  .button {
+    @apply rounded-md px-3 py-1;
+  }
+
+  .gradient-gray {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--base-30)) 0%,
+      hsl(var(--base-30)) 100%
+    );
+  }
+
+  /* technology color circle*/
+  @layer utilities {
+
+    [data-technology] {
+      @apply
+      /* border-orange/40 */
+      border-b;
+    }
+  }
+  /*css color*/
+
+  /*
+ **************************
+  Animations styles
+ ************************** */
+
+  /* Animation effect on hover for anchor tags */
+  @screen sm {
+    .G-border-animate {
+      @apply relative;
+
+      &::after {
+        @apply
+         border-orange
+       absolute
+       left-0 block
+       w-0
+       border-b
+       transition-[width]
+       ease-in content-[''];
+      }
+
+      &:hover::after {
+        @apply w-full;
+      }
+    }
+  }
+
+  /* Add lighter background & orange borders on hover */
+  .G-container-illuminate {
+    @apply
+     border-base-90/5 bg-base-90/5
+      relative
+      z-50
+      cursor-pointer
+      rounded-md
+      border
+      border-solid
+      px-2.5
+      py-8
+      transition-[background-color]
+      duration-300
+      ease-in-out sm:p-6;
+
+    &:hover {
+      @apply
+       bg-base-90/10
+      border-transparent;
+    }
+
+    &::after {
+      @apply
+       from-base-40
+       to-orange
+      absolute
+      inset-0 -z-10
+      -m-[1px]
+      rounded-[6px]
+      border
+      border-transparent
+      opacity-0
+      will-change-[opacity]
+      content-[''];
+      background-image: linear-gradient(
+        145deg,
+        hsla(0, 0%, 100%, 0.074),
+        hsla(0, 0%, 100%, 0.024) 23.96%,
+        hsla(0, 0%, 100%, 0.092) 48.44%,
+        hsla(0, 0%, 100%, 0.15) 76.04%,
+        hsla(0, 0%, 100%, 0)
+      );
+
+      -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+      mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+    }
+
+    &:nth-child(odd)::after {
+      @apply bg-gradient-to-l;
+    }
+
+    &:nth-child(even)::after {
+      @apply bg-gradient-to-r;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}
