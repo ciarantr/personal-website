@@ -6,19 +6,20 @@
     "build": "nuxt generate -m",
     "format": "prettier --write ./"
   },
-    "vue": "latest"
-    "nuxt": "^3.13.2",
-    "vue-router": "^4.4.5"
   "dependencies": {
+    "nuxt": "^3.13.2",
+    "vue": "latest",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "typescript": "^5.6.3",
+    "eslint": "^9.13.0",
     "@nuxt/eslint": "^0.6.0",
     "@nuxt/icon": "^1.5.6",
+    "@nuxt/image": "^1.8.1",
+    "@nuxtjs/seo": "^2.0.0-rc.23",
     "@nuxtjs/tailwindcss": "^6.7.0",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8"
-    "@nuxt/image": "^1.8.1",
-    "@nuxtjs/seo": "^2.0.0-rc.23",
-    "eslint": "^9.13.0",
   }
 }

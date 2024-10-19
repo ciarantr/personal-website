@@ -39,10 +39,10 @@
       }"
       class="mt-96"
     >
-      <div class="container lg:max-w-5xl">
+      <div class="lg:max-w-5xl container">
         <div class="space-y-64">
           <section class="space-y-24">
-            <div class="space-y-2 text-left text-3xl">
+            <div class="space-y-2 text-3xl text-left">
               <h2 class="inline">Crafting Dynamic Web Solutions</h2>
               <icon
                 class="text-base-20 ml-4 !align-bottom"
@@ -91,7 +91,7 @@
           >
             <template #content-main>
               <p
-                class="first-letter:text-base-20 px-4 first-letter:float-left first-letter:mr-3 first-letter:text-7xl md:max-w-xl md:px-0"
+                class="first-letter:text-base-20 first-letter:float-left first-letter:mr-3 first-letter:text-7xl md:max-w-xl md:px-0 px-4"
               >
                 Innovative software engineer with a unique trajectory from
                 entrepreneurship to technology. My journey began in 2017 when I
@@ -101,23 +101,24 @@
                 diploma in Full Stack Software Development from Code Institute,
                 and I'm currently advancing my expertise through a BSc in
                 Computing at the Technological University of Dublin.
-                <br><br>
-                My multifaceted background allows me to approach software engineering with a
-                holistic perspective, combining technical acumen with business
-                insight. Specializing in Site Reliability Engineering (SRE), I'm
-                dedicated to designing and implementing scalable, resilient
-                systems that drive business value. My focus lies in optimizing
-                performance, automating processes, and ensuring high
-                availability of critical services.
-                <br> <br>
-                I thrive on translating
-                complex technical concepts into tangible business solutions,
-                always seeking innovative ways to enhance system reliability and
-                efficiency. Committed to continuous learning, I actively engage
-                with emerging technologies and best practices in software
-                development and SRE. My goal is to contribute to
-                forward-thinking teams, tackling challenging projects that push
-                the boundaries of what's possible in modern enterprise systems.
+                <br ><br >
+                My multifaceted background allows me to approach software
+                engineering with a holistic perspective, combining technical
+                acumen with business insight. Specializing in Site Reliability
+                Engineering (SRE), I'm dedicated to designing and implementing
+                scalable, resilient systems that drive business value. My focus
+                lies in optimizing performance, automating processes, and
+                ensuring high availability of critical services.
+                <br >
+                <br >
+                I thrive on translating complex technical concepts into tangible
+                business solutions, always seeking innovative ways to enhance
+                system reliability and efficiency. Committed to continuous
+                learning, I actively engage with emerging technologies and best
+                practices in software development and SRE. My goal is to
+                contribute to forward-thinking teams, tackling challenging
+                projects that push the boundaries of what's possible in modern
+                enterprise systems.
               </p>
             </template>
           </content-container>
@@ -127,7 +128,7 @@
       <section
         id="tech-stack"
         aria-label="list of technologist I have used"
-        class="relative mt-96 overflow-clip"
+        class="mt-96 overflow-clip relative"
       >
         <div class="bg-base-30 relative z-50 text-center">
           <h3 class="inline text-6xl">Technologies I use</h3>
@@ -140,12 +141,12 @@
       </section>
     </main>
     <!-- Gradient wrapper  -->
-    <div class="to-dark mt-96 space-y-64 bg-gradient-to-b from-transparent">
+    <div class="to-dark mt-96 bg-gradient-to-b from-transparent space-y-64">
       <!-- Roadmap -->
       <section
         ref="roadmapSection"
         aria-label="development roadmap"
-        class="container space-y-12 lg:max-w-5xl"
+        class="lg:max-w-5xl container space-y-12"
       >
         <lazy-roadmap-container />
       </section>
@@ -153,7 +154,7 @@
       <section
         id="contact"
         aria-label="contact me via email"
-        class="mx-auto h-full px-4 pt-32 md:w-max md:px-0"
+        class="md:w-max md:px-0 h-full px-4 pt-32 mx-auto"
       >
         <lazy-contact-card />
       </section>
