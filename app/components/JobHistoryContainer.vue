@@ -1,19 +1,35 @@
 <script setup lang="ts">
   const jobHistory = [
     {
-      name: 'Freelance Web Developer',
+      name: 'ServiceNow',
       timeInJob: {
         start: '2024',
         end: 'Present',
       },
+      position: ['Site Reliability Engineer - Intern (Cloud Operations)'],
+      responsibilities: [
+        'Performance Monitoring and Optimization',
+        'Incident Response and Root Cause Analysis',
+        'Automation of Deployment Processes',
+        'Cross-team Collaboration for Service Reliability',
+        'Cloud Infrastructure Management',
+      ],
+      website: 'https://www.servicenow.com',
+    },
+    {
+      name: 'Freelance Web Developer',
+      timeInJob: {
+        start: '2024',
+        end: '2024',
+      },
       position: ['Web Developer'],
       responsibilities: [
-        '	Client Requirements Analysis',
-        '	Custom Web Design and Development',
-        '	Responsive Web Design Implementation',
-        '	Website Maintenance and Updates',
-        '	SEO Optimisation',
-        '	Technical Support and Troubleshooting',
+        'Client Requirements Analysis',
+        'Custom Web Design and Development',
+        'Responsive Web Design Implementation',
+        'Website Maintenance and Updates',
+        'SEO Optimisation',
+        'Technical Support and Troubleshooting',
       ],
       website: 'Coming soon...',
     },
@@ -21,7 +37,7 @@
       name: 'Sports Direct',
       timeInJob: {
         start: '2024',
-        end: 'Present',
+        end: '2024',
       },
       position: ['Sales Assistant'],
       responsibilities: [

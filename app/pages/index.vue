@@ -3,7 +3,7 @@
     templateParams: {
       separator: '•',
     },
-    title: 'Full Stack Web Developer',
+    title: 'Software Engineer - Business Solutions Architect',
     titleTemplate: '%siteName %separator %s',
   })
   //  Define og image vue template
@@ -18,6 +18,7 @@
       isMobileMenuOpen.value = false
     }
   }
+
   // watch to close the mobile menu if user scrolls past 250px when open
   watch(isMobileMenuOpen, (isOpen) => {
     if (isOpen) {
@@ -42,17 +43,22 @@
         <div class="space-y-64">
           <section class="space-y-24">
             <div class="space-y-2 text-left text-3xl">
-              <h2 class="inline">Crafting Dynamic Web Solutions</h2>
+              <h2 class="inline">
+                Bridging Technology and Business: Full-Stack Solutions for the
+                Modern Enterprise
+              </h2>
               <icon
                 class="text-base-20 ml-4 !align-bottom"
                 name="material-symbols:dynamic-feed"
               />
               <p class="max-w-2xl text-base">
-                Specialising in Crafting Dynamic Web Solutions, my personal
-                portfolio encapsulates my dedication to innovative design and
-                advanced development. Each project underscores my passion for
-                creating user-centric, visually appealing, and functional
-                digital experiences.
+                Architecting robust, scalable systems that drive business value.
+                Explore my portfolio of projects showcasing the intersection of
+                software engineering, site reliability, and strategic business
+                solutions. Discover how I leverage cutting-edge technologies to
+                create resilient, efficient applications that meet critical
+                organizational needs and pave the way for digital
+                transformation.
               </p>
             </div>
 
@@ -200,6 +206,7 @@
     /* Set a counter named 'section', and its initial value is 0. */
     counter-reset: heading;
   }
+
   /*
   scroll-top margin for anchor section in nav
   set to match nav menu height when opened
