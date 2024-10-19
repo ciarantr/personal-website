@@ -1,4 +1,4 @@
-# My Personal Portfolio Website ![portfolio icon](https://api.iconify.design/game-icons:wizard-face.svg?color=%23888888&width=50&height=50)
+# Portfolio Website ![portfolio icon](https://api.iconify.design/game-icons:wizard-face.svg?color=%23888888&width=50&height=50)
 
 ![website](https://img.shields.io/website?down_color=red&down_message=offline&logo=cloudflare&logoColor=white&up_color=green&up_message=online&url=https%3A%2F%2Fciaran.foo)
 ![Cloudflare Pages deployed](https://img.shields.io/badge/Cloudflare%20Pages-deployed-brightgreen?logo=cloudflare&logoColor=white)
