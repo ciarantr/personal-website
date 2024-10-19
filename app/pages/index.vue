@@ -44,21 +44,18 @@
           <section class="space-y-24">
             <div class="space-y-2 text-left text-3xl">
               <h2 class="inline">
-                Bridging Technology and Business: Full-Stack Solutions for the
-                Modern Enterprise
+                Crafting Dynamic Web Solutions
               </h2>
               <icon
                 class="text-base-20 ml-4 !align-bottom"
                 name="material-symbols:dynamic-feed"
               />
               <p class="max-w-2xl text-base">
-                Architecting robust, scalable systems that drive business value.
-                Explore my portfolio of projects showcasing the intersection of
-                software engineering, site reliability, and strategic business
-                solutions. Discover how I leverage cutting-edge technologies to
-                create resilient, efficient applications that meet critical
-                organizational needs and pave the way for digital
-                transformation.
+                Specialising in Crafting Dynamic Web Solutions, my personal
+                portfolio encapsulates my dedication to innovative design and
+                advanced development. Each project underscores my passion for
+                creating user-centric, visually appealing, and functional
+                digital experiences.
               </p>
             </div>
 

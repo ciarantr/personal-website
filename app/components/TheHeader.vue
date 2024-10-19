@@ -72,7 +72,7 @@
             <span
               :class="{
                 'w-4/6': !isMobileMenuOpen,
-                'w-[25px] rotate-45 [translate:_-3px_-11px] ': isMobileMenuOpen,
+                'w-[25px] rotate-45 [translate:_-3px_-11px]': isMobileMenuOpen,
               }"
               class="top-6"
             ></span>
@@ -184,9 +184,10 @@
           class="relative text-left"
         >
           <h1
-            class="text-base-90/70 relative max-w-[20ch] pb-1 text-3xl sm:inline-block md:text-5xl"
+            class="text-base-90/70 relative max-w-[30ch] pb-1 text-3xl sm:inline-block md:text-3xl"
           >
-            Building Full-Stack Applications For Today's Web.
+            Bridging Technology and Business: Full-Stack Solutions for the
+            Modern Enterprise
           </h1>
           <Icon
             class="[&>circle]:text-orange text-base-20 h-12 w-12 !align-sub md:mb-2 [&>circle]:animate-[pulse_3s_ease-in-out_infinite]"
@@ -195,11 +196,11 @@
         </div>
 
         <p class="text-base-10/70 text-lg md:w-[50ch]">
-          Pioneering digital frontiers through adept full-stack web development.
-          I invite you to explore my diverse selection of projects, get a taste
-          of the cutting-edge technologies I employ, and gain insights into my
-          ambitious future roadmap — a testament to my relentless quest for
-          growth and innovation.
+          Architecting robust, scalable systems that drive business value.
+          Explore my portfolio showcasing software engineering, site
+          reliability, and strategic business solutions. Discover how I leverage
+          cutting-edge tech to create resilient, efficient applications that
+          meet critical needs and pave the way for digital transformation.
         </p>
         <!-- Resume contact email -->
         <div class="flex items-baseline gap-x-4">
@@ -236,14 +237,6 @@
   }
   /* Underline border gradient */
   #main-heading-text::after {
-    @apply via-base-40
-    to-base-80
-    absolute
-    inset-x-0
-    -bottom-1
-    h-0.5
-    bg-gradient-to-tr
-    from-transparent pr-2 content-['']
-    sm:inset-x-0;
+    @apply via-base-40 to-base-80 absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-tr from-transparent pr-2 content-[''] sm:inset-x-0;
   }
 </style>
