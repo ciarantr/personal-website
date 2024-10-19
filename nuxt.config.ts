@@ -10,12 +10,13 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    githubSecret : process.env.GITHUB_TOKEN,
+    githubSecret: process.env.GITHUB_TOKEN,
 
     public: {
       CLIENT_VERSION: version,
     },
   },
+
   // configuration incorrect see
   // https://github.com/unjs/nitro/discussions/1298
   // nitro: {
@@ -29,10 +30,11 @@ export default defineNuxtConfig({
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/tailwindcss',
-    'nuxt-icon',
-    '@nuxt/image-edge',
-    '@nuxt/devtools',
+    '@nuxt/icon',
+    '@nuxt/eslint',
+    '@nuxt/image',
   ],
+
   // Tailwind config
   tailwindcss: {
     cssPath: '~/assets/css/main.css',
@@ -93,4 +95,6 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  compatibilityDate: '2024-10-19',
 })
