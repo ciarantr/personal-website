@@ -1,12 +1,12 @@
 # My Personal Portfolio Website ![portfolio icon](https://api.iconify.design/game-icons:wizard-face.svg?color=%23888888&width=50&height=50)
 
-![website](https://img.shields.io/website?down_color=red&down_message=offline&logo=cloudflare&logoColor=white&up_color=green&up_message=online&url=https%3A%2F%2Fciaran.io)
+![website](https://img.shields.io/website?down_color=red&down_message=offline&logo=cloudflare&logoColor=white&up_color=green&up_message=online&url=https%3A%2F%2Fciaran.foo)
 ![Cloudflare Pages deployed](https://img.shields.io/badge/Cloudflare%20Pages-deployed-brightgreen?logo=cloudflare&logoColor=white)
-![version](https://img.shields.io/badge/dynamic/json?logo=bun&color=brightgreen&label=version&query=$.version&url=https://raw.githubusercontent.com/ciarantr/portfolio/main/package.json)
-![last commit](https://img.shields.io/github/last-commit/ciarantr/portfolio?color=blueviolet&logo=git&logoColor=white)
+![version](https://img.shields.io/badge/dynamic/json?logo=bun&color=brightgreen&label=version&query=$.version&url=https://raw.githubusercontent.com/ciarantr/personal-website/refs/heads/main/package.json)
+![last commit](https://img.shields.io/github/last-commit/ciarantr/personal-website?color=blueviolet&logo=git&logoColor=white)
 ![languages](https://img.shields.io/github/languages/count/ciarantr/portfolio?color=yellow&logo=github)
-![top language](https://img.shields.io/github/languages/top/ciarantr/portfolio?color=yellow&logo=github)
-![views](https://img.shields.io/github/watchers/ciarantr/portfolio?logo=github)
+![top language](https://img.shields.io/github/languages/top/ciarantr/personal-website?color=yellow&logo=github)
+![views](https://img.shields.io/github/watchers/ciarantr/personal-website?logo=github)
 
 **Welcome to the repository of my portfolio website!**
 
