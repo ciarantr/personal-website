@@ -57,8 +57,10 @@ export default defineNuxtConfig({
     url: 'https://ciaran.foo',
     name: 'Ciaran Toner',
     description:
-      'Full stack solutions-oriented web developer proficient in tackling ' +
-      'complex challenges and building innovative web applications.',
+      'Experienced Software Engineer specializing in Site Reliability Engineering ' +
+      '(SRE). Expertise in designing, implementing, and maintaining scalable, highly available systems. ' +
+      'Skilled in cloud infrastructure, automation, performance optimization, and incident response. ' +
+      'Bridging the gap between development and operations to deliver reliable, efficient solutions that drive business value.',
     defaultLocale: 'en',
   },
 
@@ -84,8 +86,11 @@ export default defineNuxtConfig({
         {
           name: 'keywords',
           content:
-            'web developer, web development, vuejs developer, ' +
-            'full stack,full stack developer, developer, front-end developer',
+            'Site Reliability Engineering, SRE, DevOps, Cloud Infrastructure, ' +
+            'Automation, Scalability, Performance Optimization, Incident Response, ' +
+            'Monitoring, Kubernetes, CI/CD, Infrastructure as Code, SLOs, SLIs, Observability, ' +
+            'Resilience Engineering, Chaos Engineering, Cloud Platforms, Microservices, ' +
+            'Distributed Systems',
         },
         { name: 'msapplication-config', content: '/browserconfig.xml' },
         { name: 'msapplication-TileColor', content: '#525360' },
