@@ -35,7 +35,7 @@ function activeAndInitialValues(element: HTMLElement) {
 <template>
   <ul
     role="tablist"
-    class="tab-container G-container-shadow G-container-shadow-spacing-base relative row-start-2 grid gap-x-8 md:gap-x-0  grid-flow-col items-baseline  md:row-start-1 md:mt-0 md:grid-flow-row  overflow-x-auto md:overflow-x-hidden"
+    class="tab-container G-container-shadow G-container-shadow-spacing-base relative row-start-2 grid gap-x-8 md:gap-x-0  grid-flow-col items-baseline  md:row-start-1 md:mt-0 md:grid-flow-row  overflow-x-auto md:overflow-x-hidden overflow-y-clip"
   >
     <li
     v-for="(title, index) in tabTitle"
@@ -43,9 +43,9 @@ function activeAndInitialValues(element: HTMLElement) {
     :key="index"
       :style="{
         '--offset': `${offset - 20}px`,
-         '--tab-width': tabWidth ? `${tabWidth}px` : '100%' 
+        '--tab-width': tabWidth ? `${tabWidth}px` : '100%'
         }"
-      class="relative md:h-full min-w-max cursor-pointer text-center transition-colors duration-700 md:grid md:items-center md:text-left "
+      class="relative md:h-full min-w-max cursor-pointer text-center transition-colors duration-700 md:grid md:items-center md:text-left  "
       role="tab"
       tabindex="0"
       :aria-controls="`panel-${index + 1}`"
@@ -66,7 +66,7 @@ function activeAndInitialValues(element: HTMLElement) {
   /* Highlight selected tab */
   .highlight-tab::before {
     @apply bg-orange
-    relative
+    absolute
     block
     h-[1.5px]
     rounded-md

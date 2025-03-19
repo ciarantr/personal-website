@@ -6,7 +6,7 @@
     title: 'Software Engineer - Business Solutions Architect',
     titleTemplate: '%siteName %separator %s',
   })
-  //  Define og image vue template
+   //  Define og image vue template
   defineOgImage({
     component: 'TheBaseOg',
     title: 'Transforming Ideas into Powerful Solutions',
@@ -179,7 +179,7 @@
   @screen md {
     #tech-stack div:last-child::before,
     #tech-stack div:last-child::after {
-      @apply !h-full w-[10%];
+      @apply !h-full w-[10%] ;
     }
   }
 

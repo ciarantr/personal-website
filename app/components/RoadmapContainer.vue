@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   //  TODO: move data to db
   const roadmap = [
     {
@@ -129,7 +129,7 @@
   }
 
   onMounted(() => {
-    const roadmapHeading = roadmapContainer.value.firstElementChild
+    const roadmapHeading = roadmapContainer?.value.firstElementChild
     createObserver({
       observeTarget: roadmapContainer.value,
       target: roadmapHeading,

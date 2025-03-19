@@ -32,7 +32,7 @@
   <div
     ref="tabPanel"
     :style="{ 'min-height': tabMinHeight  + 'px' }"
-    class="relative overflow-y-auto overflow-x-hidden"
+    class="relative md:overflow-y-scroll md:overflow-x-hidden"
   >
     <template
       v-for="(history, index) in jobHistory"
@@ -79,7 +79,7 @@
             <div>Primary Responsibilities:</div>
             <ul class="ml-4 mt-4 sm:grid sm:grid-cols-2 sm:items-baseline sm:gap-y-4 list-disc sm:gap-x-8 space-y-2 sm:space-y-0 ">
               <li
-                v-for="(responsibility, idx) in 
+                v-for="(responsibility, idx) in
                   history.responsibilities.sort()"
                 :key="idx"
                 class=""
