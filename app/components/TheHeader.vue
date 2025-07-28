@@ -21,7 +21,8 @@
     <nuxt-link
       to="/#main-content"
       class="bg-base-20 fixed left-0 top-0 z-[100] w-full -translate-y-full p-1 text-center transition-transform focus:translate-y-0"
-      >Skip to main content
+    >
+      Skip to main content
     </nuxt-link>
 
     <nav
@@ -189,10 +190,8 @@
             Bridging Technology and Business: Full-Stack Solutions for the
             Modern Enterprise
           </h1>
-          <Icon
-            class="[&>circle]:text-orange text-base-20 h-12 w-12 !align-sub md:mb-2 [&>circle]:animate-[pulse_3s_ease-in-out_infinite]"
-            name="clarity:world-outline-badged"
-          />
+
+          <WorldIcon />
         </div>
 
         <p class="text-base-10/70 text-lg md:w-[50ch]">
@@ -208,7 +207,8 @@
             to="/resume"
             target="_blank"
             class="bg-base-20 hover:shadow-base-70/50 group flex items-center gap-x-1 rounded px-2.5 py-2 shadow-lg shadow-transparent transition-all duration-300 ease-in-out"
-            >Resume
+          >
+            Resume
             <Icon
               class="group-hover:text-orange inline-block h-5 w-5 transition-colors duration-300 md:text-transparent"
               name="mynaui:external-link"
