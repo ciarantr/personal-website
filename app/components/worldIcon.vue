@@ -1,14 +1,3 @@
-<script setup lang='ts'>
-
-  const animationPaused = ref(null)
-  onMounted(() =>
-    // Turn off animation in development
-    process.env.NODE_ENV === 'production'
-      ? (animationPaused.value = 'running')
-      : (animationPaused.value = 'paused'),
-  )
-
-</script>
 
 
 <template>
@@ -17,8 +6,8 @@
     width="32"
     height="32"
     viewBox="0 0 36 36"
-  :class="{ '[&>circle]:animate-[pulse_3s_ease-in-out_infinite]': !animationPaused }"
-    class="[&>circle]:text-orange text-base-20 inline h-8 w-8 !align-sub md:mb-2 "
+    class="[&>circle]:animate-[pulse_3s_ease-in-out_infinite]
+    [&>circle]:text-orange text-base-20 inline h-8 w-8 !align-sub md:mb-2 "
   >
     <!-- Icon from Clarity by VMware - https://github.com/vmware/clarity-assets/blob/master/LICENSE -->
     <path
@@ -44,5 +33,3 @@
     />
   </svg>
 </template>
-
-<style lang="postcss" scoped></style>
