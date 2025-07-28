@@ -13,7 +13,6 @@
   const tabPanel = ref(null)
   const tabMinHeight = ref(null || 0)
 
-
   // set min height of tab panel to max scroll height of tab content
   function getMaxScrollHeight(tabElements: HTMLElement) {
     const elementHeights = []
@@ -31,8 +30,8 @@
 <template>
   <div
     ref="tabPanel"
-    :style="{ 'min-height': tabMinHeight  + 'px' }"
-    class="relative md:overflow-y-scroll md:overflow-x-hidden"
+    :style="{ 'min-height': tabMinHeight + 'px' }"
+    class="relative"
   >
     <template
       v-for="(history, index) in jobHistory"
@@ -77,10 +76,11 @@
           <!-- Jobs responsibility -->
           <div>
             <div>Primary Responsibilities:</div>
-            <ul class="ml-4 mt-4 sm:grid sm:grid-cols-2 sm:items-baseline sm:gap-y-4 list-disc sm:gap-x-8 space-y-2 sm:space-y-0 ">
+            <ul
+              class="ml-4 mt-4 list-disc space-y-2 sm:grid sm:grid-cols-2 sm:items-baseline sm:gap-x-8 sm:gap-y-4 sm:space-y-0"
+            >
               <li
-                v-for="(responsibility, idx) in
-                  history.responsibilities.sort()"
+                v-for="(responsibility, idx) in history.responsibilities.sort()"
                 :key="idx"
                 class=""
               >
